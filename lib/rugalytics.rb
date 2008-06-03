@@ -36,3 +36,5 @@ end
 require File.dirname(__FILE__) + '/rugalytics/connection'
 require File.dirname(__FILE__) + '/rugalytics/account'
 require File.dirname(__FILE__) + '/rugalytics/profile'
+require File.dirname(__FILE__) + '/rugalytics/report'
+require File.dirname(__FILE__) + '/rugalytics/item'
