@@ -1,0 +1,2705 @@
+<?xml version="1.0" ?>
+<AnalyticsReport>
+	<Report name="Dashboard">
+		<Title id="Title">
+			<CompareStateHelp>Compare report data to overall site performance and include report data when calculating site performance (% of Site Total or Site Avg.).</CompareStateHelp>
+			<PrimaryDateRange>March 1, 2008 - March 8, 2008</PrimaryDateRange>
+			<Compare>false</Compare>
+			<Sampled>false</Sampled>
+			<CompareStateMsg>Site</CompareStateMsg>
+			<Name>Dashboard</Name>
+			<Detail>
+			</Detail>
+			<CompareMsg>Comparing to:</CompareMsg>
+			<ProfileName>webgroup.nd.edu</ProfileName>
+			<ShowCompare>true</ShowCompare>
+			<DetailSeparator> | </DetailSeparator>
+		</Title>
+		<Graph id="Graph">
+			<ShowHover>true</ShowHover>
+			<Format>NORMAL</Format>
+			<Compare>false</Compare>
+			<XAxisLabel>February 11, 2008</XAxisLabel>
+			<XAxisLabel>February 18, 2008</XAxisLabel>
+			<XAxisLabel>February 25, 2008</XAxisLabel>
+			<XAxisLabel>March 3, 2008</XAxisLabel>
+			<SelectedSerie>primary</SelectedSerie>
+			<SelectedSerie>compare</SelectedSerie>
+			<Serie>
+				<SelectionStartIndex>22</SelectionStartIndex>
+				<SelectionEndIndex>29</SelectionEndIndex>
+				<Style>
+					<PointShape>CIRCLE</PointShape>
+					<PointRadius>9</PointRadius>
+					<FillColor>30668</FillColor>
+					<FillAlpha>10</FillAlpha>
+					<LineThickness>4</LineThickness>
+					<ActiveColor>30668</ActiveColor>
+					<InactiveColor>11654895</InactiveColor>
+				</Style>
+				<Id>primary</Id>
+				<Label>Visits</Label>
+				<YLabel>150</YLabel>
+				<YLabel>300</YLabel>
+				<ValueCategory>visits</ValueCategory>
+				<Point>
+					<Value>67</Value>
+					<Label>February 8, 2008</Label>
+				</Point>
+				<Point>
+					<Value>12</Value>
+					<Label>February 9, 2008</Label>
+				</Point>
+				<Point>
+					<Value>31</Value>
+					<Label>February 10, 2008</Label>
+				</Point>
+				<Point>
+					<Value>225</Value>
+					<Label>February 11, 2008</Label>
+				</Point>
+				<Point>
+					<Value>58</Value>
+					<Label>February 12, 2008</Label>
+				</Point>
+				<Point>
+					<Value>59</Value>
+					<Label>February 13, 2008</Label>
+				</Point>
+				<Point>
+					<Value>59</Value>
+					<Label>February 14, 2008</Label>
+				</Point>
+				<Point>
+					<Value>47</Value>
+					<Label>February 15, 2008</Label>
+				</Point>
+				<Point>
+					<Value>17</Value>
+					<Label>February 16, 2008</Label>
+				</Point>
+				<Point>
+					<Value>17</Value>
+					<Label>February 17, 2008</Label>
+				</Point>
+				<Point>
+					<Value>43</Value>
+					<Label>February 18, 2008</Label>
+				</Point>
+				<Point>
+					<Value>58</Value>
+					<Label>February 19, 2008</Label>
+				</Point>
+				<Point>
+					<Value>28</Value>
+					<Label>February 20, 2008</Label>
+				</Point>
+				<Point>
+					<Value>28</Value>
+					<Label>February 21, 2008</Label>
+				</Point>
+				<Point>
+					<Value>25</Value>
+					<Label>February 22, 2008</Label>
+				</Point>
+				<Point>
+					<Value>18</Value>
+					<Label>February 23, 2008</Label>
+				</Point>
+				<Point>
+					<Value>26</Value>
+					<Label>February 24, 2008</Label>
+				</Point>
+				<Point>
+					<Value>39</Value>
+					<Label>February 25, 2008</Label>
+				</Point>
+				<Point>
+					<Value>34</Value>
+					<Label>February 26, 2008</Label>
+				</Point>
+				<Point>
+					<Value>33</Value>
+					<Label>February 27, 2008</Label>
+				</Point>
+				<Point>
+					<Value>51</Value>
+					<Label>February 28, 2008</Label>
+				</Point>
+				<Point>
+					<Value>24</Value>
+					<Label>February 29, 2008</Label>
+				</Point>
+				<Point>
+					<Value>9</Value>
+					<Label>March 1, 2008</Label>
+				</Point>
+				<Point>
+					<Value>18</Value>
+					<Label>March 2, 2008</Label>
+				</Point>
+				<Point>
+					<Value>31</Value>
+					<Label>March 3, 2008</Label>
+				</Point>
+				<Point>
+					<Value>48</Value>
+					<Label>March 4, 2008</Label>
+				</Point>
+				<Point>
+					<Value>62</Value>
+					<Label>March 5, 2008</Label>
+				</Point>
+				<Point>
+					<Value>33</Value>
+					<Label>March 6, 2008</Label>
+				</Point>
+				<Point>
+					<Value>27</Value>
+					<Label>March 7, 2008</Label>
+				</Point>
+				<Point>
+					<Value>0</Value>
+					<Label>March 8, 2008</Label>
+				</Point>
+				<Point>
+					<Value>0</Value>
+					<Label>March 9, 2008</Label>
+				</Point>
+			</Serie>
+		</Graph>
+		<Narrative id="Narrative">
+			<Message>Site Usage</Message>
+			<Type>DASHBOARD</Type>
+			<Compare>false</Compare>
+		</Narrative>
+		<Sparkline id="VisitsSparkline">
+			<PrimaryValue>67.0</PrimaryValue>
+			<PrimaryValue>12.0</PrimaryValue>
+			<PrimaryValue>31.0</PrimaryValue>
+			<PrimaryValue>225.0</PrimaryValue>
+			<PrimaryValue>58.0</PrimaryValue>
+			<PrimaryValue>59.0</PrimaryValue>
+			<PrimaryValue>59.0</PrimaryValue>
+			<PrimaryValue>47.0</PrimaryValue>
+			<PrimaryValue>17.0</PrimaryValue>
+			<PrimaryValue>17.0</PrimaryValue>
+			<PrimaryValue>43.0</PrimaryValue>
+			<PrimaryValue>58.0</PrimaryValue>
+			<PrimaryValue>28.0</PrimaryValue>
+			<PrimaryValue>28.0</PrimaryValue>
+			<PrimaryValue>25.0</PrimaryValue>
+			<PrimaryValue>18.0</PrimaryValue>
+			<PrimaryValue>26.0</PrimaryValue>
+			<PrimaryValue>39.0</PrimaryValue>
+			<PrimaryValue>34.0</PrimaryValue>
+			<PrimaryValue>33.0</PrimaryValue>
+			<PrimaryValue>51.0</PrimaryValue>
+			<PrimaryValue>24.0</PrimaryValue>
+			<PrimaryValue>9.0</PrimaryValue>
+			<PrimaryValue>18.0</PrimaryValue>
+			<PrimaryValue>31.0</PrimaryValue>
+			<PrimaryValue>48.0</PrimaryValue>
+			<PrimaryValue>62.0</PrimaryValue>
+			<PrimaryValue>33.0</PrimaryValue>
+			<PrimaryValue>27.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="VisitsSummary">
+			<Active>true</Active>
+			<Message>Visits</Message>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>228</SummaryValue>
+		</ItemSummary>
+		<Sparkline id="PageviewsSparkline">
+			<PrimaryValue>72.0</PrimaryValue>
+			<PrimaryValue>21.0</PrimaryValue>
+			<PrimaryValue>50.0</PrimaryValue>
+			<PrimaryValue>541.0</PrimaryValue>
+			<PrimaryValue>92.0</PrimaryValue>
+			<PrimaryValue>62.0</PrimaryValue>
+			<PrimaryValue>77.0</PrimaryValue>
+			<PrimaryValue>61.0</PrimaryValue>
+			<PrimaryValue>19.0</PrimaryValue>
+			<PrimaryValue>21.0</PrimaryValue>
+			<PrimaryValue>64.0</PrimaryValue>
+			<PrimaryValue>102.0</PrimaryValue>
+			<PrimaryValue>44.0</PrimaryValue>
+			<PrimaryValue>40.0</PrimaryValue>
+			<PrimaryValue>35.0</PrimaryValue>
+			<PrimaryValue>20.0</PrimaryValue>
+			<PrimaryValue>29.0</PrimaryValue>
+			<PrimaryValue>61.0</PrimaryValue>
+			<PrimaryValue>35.0</PrimaryValue>
+			<PrimaryValue>35.0</PrimaryValue>
+			<PrimaryValue>70.0</PrimaryValue>
+			<PrimaryValue>25.0</PrimaryValue>
+			<PrimaryValue>9.0</PrimaryValue>
+			<PrimaryValue>18.0</PrimaryValue>
+			<PrimaryValue>48.0</PrimaryValue>
+			<PrimaryValue>64.0</PrimaryValue>
+			<PrimaryValue>79.0</PrimaryValue>
+			<PrimaryValue>33.0</PrimaryValue>
+			<PrimaryValue>32.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="PageviewsSummary">
+			<Active>true</Active>
+			<Message>Pageviews</Message>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>283</SummaryValue>
+		</ItemSummary>
+		<Sparkline id="AvgPageSparkline">
+			<PrimaryValue>1.0746268656716418</PrimaryValue>
+			<PrimaryValue>1.75</PrimaryValue>
+			<PrimaryValue>1.6129032258064515</PrimaryValue>
+			<PrimaryValue>2.4044444444444446</PrimaryValue>
+			<PrimaryValue>1.5862068965517242</PrimaryValue>
+			<PrimaryValue>1.0508474576271187</PrimaryValue>
+			<PrimaryValue>1.305084745762712</PrimaryValue>
+			<PrimaryValue>1.297872340425532</PrimaryValue>
+			<PrimaryValue>1.1176470588235294</PrimaryValue>
+			<PrimaryValue>1.2352941176470589</PrimaryValue>
+			<PrimaryValue>1.4883720930232558</PrimaryValue>
+			<PrimaryValue>1.7586206896551724</PrimaryValue>
+			<PrimaryValue>1.5714285714285714</PrimaryValue>
+			<PrimaryValue>1.4285714285714286</PrimaryValue>
+			<PrimaryValue>1.4</PrimaryValue>
+			<PrimaryValue>1.1111111111111112</PrimaryValue>
+			<PrimaryValue>1.1153846153846154</PrimaryValue>
+			<PrimaryValue>1.564102564102564</PrimaryValue>
+			<PrimaryValue>1.0294117647058822</PrimaryValue>
+			<PrimaryValue>1.0606060606060606</PrimaryValue>
+			<PrimaryValue>1.3725490196078431</PrimaryValue>
+			<PrimaryValue>1.0416666666666667</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>1.5483870967741935</PrimaryValue>
+			<PrimaryValue>1.3333333333333333</PrimaryValue>
+			<PrimaryValue>1.2741935483870968</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>1.1851851851851851</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="AvgPageSummary">
+			<Active>true</Active>
+			<Message>Pages/Visit</Message>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>1.24</SummaryValue>
+		</ItemSummary>
+		<Sparkline id="TimeOnSiteSparkline">
+			<PrimaryValue>1.4776119402985075</PrimaryValue>
+			<PrimaryValue>47.916666666666664</PrimaryValue>
+			<PrimaryValue>47.16129032258065</PrimaryValue>
+			<PrimaryValue>41.98222222222222</PrimaryValue>
+			<PrimaryValue>55.05172413793103</PrimaryValue>
+			<PrimaryValue>1.4915254237288136</PrimaryValue>
+			<PrimaryValue>10.305084745762711</PrimaryValue>
+			<PrimaryValue>2.276595744680851</PrimaryValue>
+			<PrimaryValue>1.588235294117647</PrimaryValue>
+			<PrimaryValue>1.411764705882353</PrimaryValue>
+			<PrimaryValue>46.13953488372093</PrimaryValue>
+			<PrimaryValue>32.827586206896555</PrimaryValue>
+			<PrimaryValue>85.57142857142857</PrimaryValue>
+			<PrimaryValue>45.82142857142857</PrimaryValue>
+			<PrimaryValue>1.36</PrimaryValue>
+			<PrimaryValue>1.3333333333333333</PrimaryValue>
+			<PrimaryValue>15.653846153846153</PrimaryValue>
+			<PrimaryValue>28.794871794871796</PrimaryValue>
+			<PrimaryValue>0.11764705882352941</PrimaryValue>
+			<PrimaryValue>2.0303030303030303</PrimaryValue>
+			<PrimaryValue>19.568627450980394</PrimaryValue>
+			<PrimaryValue>0.125</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>24.322580645161292</PrimaryValue>
+			<PrimaryValue>19.416666666666668</PrimaryValue>
+			<PrimaryValue>23.161290322580644</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>3.888888888888889</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="TimeOnSiteSummary">
+			<Active>true</Active>
+			<Message>Avg. Time on Site</Message>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>00:00:14</SummaryValue>
+		</ItemSummary>
+		<Sparkline id="BounceRateSparkline">
+			<PrimaryValue>0.9701492537313433</PrimaryValue>
+			<PrimaryValue>0.75</PrimaryValue>
+			<PrimaryValue>0.9032258064516129</PrimaryValue>
+			<PrimaryValue>0.92</PrimaryValue>
+			<PrimaryValue>0.8620689655172413</PrimaryValue>
+			<PrimaryValue>0.9491525423728814</PrimaryValue>
+			<PrimaryValue>0.864406779661017</PrimaryValue>
+			<PrimaryValue>0.8936170212765957</PrimaryValue>
+			<PrimaryValue>0.8823529411764706</PrimaryValue>
+			<PrimaryValue>0.8235294117647058</PrimaryValue>
+			<PrimaryValue>0.9069767441860465</PrimaryValue>
+			<PrimaryValue>0.8448275862068966</PrimaryValue>
+			<PrimaryValue>0.8571428571428571</PrimaryValue>
+			<PrimaryValue>0.7857142857142857</PrimaryValue>
+			<PrimaryValue>0.88</PrimaryValue>
+			<PrimaryValue>0.8888888888888888</PrimaryValue>
+			<PrimaryValue>0.8846153846153846</PrimaryValue>
+			<PrimaryValue>0.8717948717948718</PrimaryValue>
+			<PrimaryValue>0.9705882352941176</PrimaryValue>
+			<PrimaryValue>0.9393939393939394</PrimaryValue>
+			<PrimaryValue>0.9411764705882353</PrimaryValue>
+			<PrimaryValue>0.9583333333333334</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>0.8387096774193549</PrimaryValue>
+			<PrimaryValue>0.875</PrimaryValue>
+			<PrimaryValue>0.9193548387096774</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>0.9629629629629629</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="BounceRateSummary">
+			<Active>true</Active>
+			<Message>Bounce Rate</Message>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>92.54%</SummaryValue>
+		</ItemSummary>
+		<Sparkline id="NewVisitsSparkline">
+			<PrimaryValue>0.9552238805970149</PrimaryValue>
+			<PrimaryValue>0.9166666666666666</PrimaryValue>
+			<PrimaryValue>0.967741935483871</PrimaryValue>
+			<PrimaryValue>0.96</PrimaryValue>
+			<PrimaryValue>0.8103448275862069</PrimaryValue>
+			<PrimaryValue>0.864406779661017</PrimaryValue>
+			<PrimaryValue>0.9152542372881356</PrimaryValue>
+			<PrimaryValue>0.9574468085106383</PrimaryValue>
+			<PrimaryValue>0.8823529411764706</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>0.8372093023255814</PrimaryValue>
+			<PrimaryValue>0.8620689655172413</PrimaryValue>
+			<PrimaryValue>0.8571428571428571</PrimaryValue>
+			<PrimaryValue>0.8571428571428571</PrimaryValue>
+			<PrimaryValue>0.76</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>0.9615384615384616</PrimaryValue>
+			<PrimaryValue>0.8461538461538461</PrimaryValue>
+			<PrimaryValue>0.9411764705882353</PrimaryValue>
+			<PrimaryValue>0.9393939393939394</PrimaryValue>
+			<PrimaryValue>0.8431372549019608</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>0.7777777777777778</PrimaryValue>
+			<PrimaryValue>0.9444444444444444</PrimaryValue>
+			<PrimaryValue>0.9032258064516129</PrimaryValue>
+			<PrimaryValue>0.9375</PrimaryValue>
+			<PrimaryValue>0.9516129032258065</PrimaryValue>
+			<PrimaryValue>0.7575757575757576</PrimaryValue>
+			<PrimaryValue>0.8518518518518519</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="NewVisitsSummary">
+			<Active>true</Active>
+			<Message>% New Visits</Message>
+			<LinkParams>view=1</LinkParams>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>89.47%</SummaryValue>
+		</ItemSummary>
+		<Title id="Title">
+			<CompareStateHelp>Compare report data to overall site performance and include report data when calculating site performance (% of Site Total or Site Avg.).</CompareStateHelp>
+			<PrimaryDateRange>March 1, 2008 - March 8, 2008</PrimaryDateRange>
+			<Compare>false</Compare>
+			<Sampled>false</Sampled>
+			<CompareStateMsg>Site</CompareStateMsg>
+			<Name>Visitors Overview</Name>
+			<Detail>
+			</Detail>
+			<CompareMsg>Comparing to:</CompareMsg>
+			<ProfileName>webgroup.nd.edu</ProfileName>
+			<ShowCompare>true</ShowCompare>
+			<DetailSeparator> | </DetailSeparator>
+		</Title>
+		<Graph id="Graph">
+			<ShowHover>true</ShowHover>
+			<Format>NORMAL</Format>
+			<Compare>false</Compare>
+			<XAxisLabel>February 11, 2008</XAxisLabel>
+			<XAxisLabel>February 18, 2008</XAxisLabel>
+			<XAxisLabel>February 25, 2008</XAxisLabel>
+			<XAxisLabel>March 3, 2008</XAxisLabel>
+			<SelectedSerie>primary</SelectedSerie>
+			<SelectedSerie>compare</SelectedSerie>
+			<Serie>
+				<SelectionStartIndex>22</SelectionStartIndex>
+				<SelectionEndIndex>29</SelectionEndIndex>
+				<Style>
+					<PointShape>CIRCLE</PointShape>
+					<PointRadius>9</PointRadius>
+					<FillColor>30668</FillColor>
+					<FillAlpha>10</FillAlpha>
+					<LineThickness>4</LineThickness>
+					<ActiveColor>30668</ActiveColor>
+					<InactiveColor>11654895</InactiveColor>
+				</Style>
+				<Id>primary</Id>
+				<Label>Visitors</Label>
+				<YLabel>150</YLabel>
+				<YLabel>300</YLabel>
+				<ValueCategory>visitors</ValueCategory>
+				<Point>
+					<Value>67</Value>
+					<Label>February 8, 2008</Label>
+				</Point>
+				<Point>
+					<Value>12</Value>
+					<Label>February 9, 2008</Label>
+				</Point>
+				<Point>
+					<Value>31</Value>
+					<Label>February 10, 2008</Label>
+				</Point>
+				<Point>
+					<Value>223</Value>
+					<Label>February 11, 2008</Label>
+				</Point>
+				<Point>
+					<Value>57</Value>
+					<Label>February 12, 2008</Label>
+				</Point>
+				<Point>
+					<Value>58</Value>
+					<Label>February 13, 2008</Label>
+				</Point>
+				<Point>
+					<Value>58</Value>
+					<Label>February 14, 2008</Label>
+				</Point>
+				<Point>
+					<Value>47</Value>
+					<Label>February 15, 2008</Label>
+				</Point>
+				<Point>
+					<Value>17</Value>
+					<Label>February 16, 2008</Label>
+				</Point>
+				<Point>
+					<Value>17</Value>
+					<Label>February 17, 2008</Label>
+				</Point>
+				<Point>
+					<Value>41</Value>
+					<Label>February 18, 2008</Label>
+				</Point>
+				<Point>
+					<Value>54</Value>
+					<Label>February 19, 2008</Label>
+				</Point>
+				<Point>
+					<Value>28</Value>
+					<Label>February 20, 2008</Label>
+				</Point>
+				<Point>
+					<Value>28</Value>
+					<Label>February 21, 2008</Label>
+				</Point>
+				<Point>
+					<Value>24</Value>
+					<Label>February 22, 2008</Label>
+				</Point>
+				<Point>
+					<Value>18</Value>
+					<Label>February 23, 2008</Label>
+				</Point>
+				<Point>
+					<Value>26</Value>
+					<Label>February 24, 2008</Label>
+				</Point>
+				<Point>
+					<Value>37</Value>
+					<Label>February 25, 2008</Label>
+				</Point>
+				<Point>
+					<Value>34</Value>
+					<Label>February 26, 2008</Label>
+				</Point>
+				<Point>
+					<Value>33</Value>
+					<Label>February 27, 2008</Label>
+				</Point>
+				<Point>
+					<Value>51</Value>
+					<Label>February 28, 2008</Label>
+				</Point>
+				<Point>
+					<Value>24</Value>
+					<Label>February 29, 2008</Label>
+				</Point>
+				<Point>
+					<Value>7</Value>
+					<Label>March 1, 2008</Label>
+				</Point>
+				<Point>
+					<Value>18</Value>
+					<Label>March 2, 2008</Label>
+				</Point>
+				<Point>
+					<Value>30</Value>
+					<Label>March 3, 2008</Label>
+				</Point>
+				<Point>
+					<Value>48</Value>
+					<Label>March 4, 2008</Label>
+				</Point>
+				<Point>
+					<Value>60</Value>
+					<Label>March 5, 2008</Label>
+				</Point>
+				<Point>
+					<Value>30</Value>
+					<Label>March 6, 2008</Label>
+				</Point>
+				<Point>
+					<Value>25</Value>
+					<Label>March 7, 2008</Label>
+				</Point>
+				<Point>
+					<Value>0</Value>
+					<Label>March 8, 2008</Label>
+				</Point>
+				<Point>
+					<Value>0</Value>
+					<Label>March 9, 2008</Label>
+				</Point>
+			</Serie>
+		</Graph>
+		<Narrative id="NarrativeTitle">
+			<Message>212 people visited this site</Message>
+			<Type>NORMAL</Type>
+			<Compare>false</Compare>
+		</Narrative>
+		<Sparkline id="VisitsSparkline">
+			<PrimaryValue>67.0</PrimaryValue>
+			<PrimaryValue>12.0</PrimaryValue>
+			<PrimaryValue>31.0</PrimaryValue>
+			<PrimaryValue>225.0</PrimaryValue>
+			<PrimaryValue>58.0</PrimaryValue>
+			<PrimaryValue>59.0</PrimaryValue>
+			<PrimaryValue>59.0</PrimaryValue>
+			<PrimaryValue>47.0</PrimaryValue>
+			<PrimaryValue>17.0</PrimaryValue>
+			<PrimaryValue>17.0</PrimaryValue>
+			<PrimaryValue>43.0</PrimaryValue>
+			<PrimaryValue>58.0</PrimaryValue>
+			<PrimaryValue>28.0</PrimaryValue>
+			<PrimaryValue>28.0</PrimaryValue>
+			<PrimaryValue>25.0</PrimaryValue>
+			<PrimaryValue>18.0</PrimaryValue>
+			<PrimaryValue>26.0</PrimaryValue>
+			<PrimaryValue>39.0</PrimaryValue>
+			<PrimaryValue>34.0</PrimaryValue>
+			<PrimaryValue>33.0</PrimaryValue>
+			<PrimaryValue>51.0</PrimaryValue>
+			<PrimaryValue>24.0</PrimaryValue>
+			<PrimaryValue>9.0</PrimaryValue>
+			<PrimaryValue>18.0</PrimaryValue>
+			<PrimaryValue>31.0</PrimaryValue>
+			<PrimaryValue>48.0</PrimaryValue>
+			<PrimaryValue>62.0</PrimaryValue>
+			<PrimaryValue>33.0</PrimaryValue>
+			<PrimaryValue>27.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="VisitsSummary">
+			<Active>true</Active>
+			<Message>Visits</Message>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>228</SummaryValue>
+		</ItemSummary>
+		<Sparkline id="VisitorsSparkline">
+			<PrimaryValue>67.0</PrimaryValue>
+			<PrimaryValue>12.0</PrimaryValue>
+			<PrimaryValue>31.0</PrimaryValue>
+			<PrimaryValue>223.0</PrimaryValue>
+			<PrimaryValue>57.0</PrimaryValue>
+			<PrimaryValue>58.0</PrimaryValue>
+			<PrimaryValue>58.0</PrimaryValue>
+			<PrimaryValue>47.0</PrimaryValue>
+			<PrimaryValue>17.0</PrimaryValue>
+			<PrimaryValue>17.0</PrimaryValue>
+			<PrimaryValue>41.0</PrimaryValue>
+			<PrimaryValue>54.0</PrimaryValue>
+			<PrimaryValue>28.0</PrimaryValue>
+			<PrimaryValue>28.0</PrimaryValue>
+			<PrimaryValue>24.0</PrimaryValue>
+			<PrimaryValue>18.0</PrimaryValue>
+			<PrimaryValue>26.0</PrimaryValue>
+			<PrimaryValue>37.0</PrimaryValue>
+			<PrimaryValue>34.0</PrimaryValue>
+			<PrimaryValue>33.0</PrimaryValue>
+			<PrimaryValue>51.0</PrimaryValue>
+			<PrimaryValue>24.0</PrimaryValue>
+			<PrimaryValue>7.0</PrimaryValue>
+			<PrimaryValue>18.0</PrimaryValue>
+			<PrimaryValue>30.0</PrimaryValue>
+			<PrimaryValue>48.0</PrimaryValue>
+			<PrimaryValue>60.0</PrimaryValue>
+			<PrimaryValue>30.0</PrimaryValue>
+			<PrimaryValue>25.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="VisitorsSummary">
+			<Active>true</Active>
+			<Message>Absolute Unique Visitors</Message>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>212</SummaryValue>
+		</ItemSummary>
+		<Sparkline id="PageviewsSparkline">
+			<PrimaryValue>72.0</PrimaryValue>
+			<PrimaryValue>21.0</PrimaryValue>
+			<PrimaryValue>50.0</PrimaryValue>
+			<PrimaryValue>541.0</PrimaryValue>
+			<PrimaryValue>92.0</PrimaryValue>
+			<PrimaryValue>62.0</PrimaryValue>
+			<PrimaryValue>77.0</PrimaryValue>
+			<PrimaryValue>61.0</PrimaryValue>
+			<PrimaryValue>19.0</PrimaryValue>
+			<PrimaryValue>21.0</PrimaryValue>
+			<PrimaryValue>64.0</PrimaryValue>
+			<PrimaryValue>102.0</PrimaryValue>
+			<PrimaryValue>44.0</PrimaryValue>
+			<PrimaryValue>40.0</PrimaryValue>
+			<PrimaryValue>35.0</PrimaryValue>
+			<PrimaryValue>20.0</PrimaryValue>
+			<PrimaryValue>29.0</PrimaryValue>
+			<PrimaryValue>61.0</PrimaryValue>
+			<PrimaryValue>35.0</PrimaryValue>
+			<PrimaryValue>35.0</PrimaryValue>
+			<PrimaryValue>70.0</PrimaryValue>
+			<PrimaryValue>25.0</PrimaryValue>
+			<PrimaryValue>9.0</PrimaryValue>
+			<PrimaryValue>18.0</PrimaryValue>
+			<PrimaryValue>48.0</PrimaryValue>
+			<PrimaryValue>64.0</PrimaryValue>
+			<PrimaryValue>79.0</PrimaryValue>
+			<PrimaryValue>33.0</PrimaryValue>
+			<PrimaryValue>32.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="PageviewsSummary">
+			<Active>true</Active>
+			<Message>Pageviews</Message>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>283</SummaryValue>
+		</ItemSummary>
+		<Sparkline id="AvgPageviewsSparkline">
+			<PrimaryValue>1.0746268656716418</PrimaryValue>
+			<PrimaryValue>1.75</PrimaryValue>
+			<PrimaryValue>1.6129032258064515</PrimaryValue>
+			<PrimaryValue>2.4044444444444446</PrimaryValue>
+			<PrimaryValue>1.5862068965517242</PrimaryValue>
+			<PrimaryValue>1.0508474576271187</PrimaryValue>
+			<PrimaryValue>1.305084745762712</PrimaryValue>
+			<PrimaryValue>1.297872340425532</PrimaryValue>
+			<PrimaryValue>1.1176470588235294</PrimaryValue>
+			<PrimaryValue>1.2352941176470589</PrimaryValue>
+			<PrimaryValue>1.4883720930232558</PrimaryValue>
+			<PrimaryValue>1.7586206896551724</PrimaryValue>
+			<PrimaryValue>1.5714285714285714</PrimaryValue>
+			<PrimaryValue>1.4285714285714286</PrimaryValue>
+			<PrimaryValue>1.4</PrimaryValue>
+			<PrimaryValue>1.1111111111111112</PrimaryValue>
+			<PrimaryValue>1.1153846153846154</PrimaryValue>
+			<PrimaryValue>1.564102564102564</PrimaryValue>
+			<PrimaryValue>1.0294117647058822</PrimaryValue>
+			<PrimaryValue>1.0606060606060606</PrimaryValue>
+			<PrimaryValue>1.3725490196078431</PrimaryValue>
+			<PrimaryValue>1.0416666666666667</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>1.5483870967741935</PrimaryValue>
+			<PrimaryValue>1.3333333333333333</PrimaryValue>
+			<PrimaryValue>1.2741935483870968</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>1.1851851851851851</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="AvgPageviewsSummary">
+			<Active>true</Active>
+			<Message>Average Pageviews</Message>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>1.24</SummaryValue>
+		</ItemSummary>
+		<Sparkline id="TimeOnSiteSparkline">
+			<PrimaryValue>1.4776119402985075</PrimaryValue>
+			<PrimaryValue>47.916666666666664</PrimaryValue>
+			<PrimaryValue>47.16129032258065</PrimaryValue>
+			<PrimaryValue>41.98222222222222</PrimaryValue>
+			<PrimaryValue>55.05172413793103</PrimaryValue>
+			<PrimaryValue>1.4915254237288136</PrimaryValue>
+			<PrimaryValue>10.305084745762711</PrimaryValue>
+			<PrimaryValue>2.276595744680851</PrimaryValue>
+			<PrimaryValue>1.588235294117647</PrimaryValue>
+			<PrimaryValue>1.411764705882353</PrimaryValue>
+			<PrimaryValue>46.13953488372093</PrimaryValue>
+			<PrimaryValue>32.827586206896555</PrimaryValue>
+			<PrimaryValue>85.57142857142857</PrimaryValue>
+			<PrimaryValue>45.82142857142857</PrimaryValue>
+			<PrimaryValue>1.36</PrimaryValue>
+			<PrimaryValue>1.3333333333333333</PrimaryValue>
+			<PrimaryValue>15.653846153846153</PrimaryValue>
+			<PrimaryValue>28.794871794871796</PrimaryValue>
+			<PrimaryValue>0.11764705882352941</PrimaryValue>
+			<PrimaryValue>2.0303030303030303</PrimaryValue>
+			<PrimaryValue>19.568627450980394</PrimaryValue>
+			<PrimaryValue>0.125</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>24.322580645161292</PrimaryValue>
+			<PrimaryValue>19.416666666666668</PrimaryValue>
+			<PrimaryValue>23.161290322580644</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>3.888888888888889</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="TimeOnSiteSummary">
+			<Active>true</Active>
+			<Message>Time on Site</Message>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>00:00:14</SummaryValue>
+		</ItemSummary>
+		<Sparkline id="BounceRateSparkline">
+			<PrimaryValue>0.9701492537313433</PrimaryValue>
+			<PrimaryValue>0.75</PrimaryValue>
+			<PrimaryValue>0.9032258064516129</PrimaryValue>
+			<PrimaryValue>0.92</PrimaryValue>
+			<PrimaryValue>0.8620689655172413</PrimaryValue>
+			<PrimaryValue>0.9491525423728814</PrimaryValue>
+			<PrimaryValue>0.864406779661017</PrimaryValue>
+			<PrimaryValue>0.8936170212765957</PrimaryValue>
+			<PrimaryValue>0.8823529411764706</PrimaryValue>
+			<PrimaryValue>0.8235294117647058</PrimaryValue>
+			<PrimaryValue>0.9069767441860465</PrimaryValue>
+			<PrimaryValue>0.8448275862068966</PrimaryValue>
+			<PrimaryValue>0.8571428571428571</PrimaryValue>
+			<PrimaryValue>0.7857142857142857</PrimaryValue>
+			<PrimaryValue>0.88</PrimaryValue>
+			<PrimaryValue>0.8888888888888888</PrimaryValue>
+			<PrimaryValue>0.8846153846153846</PrimaryValue>
+			<PrimaryValue>0.8717948717948718</PrimaryValue>
+			<PrimaryValue>0.9705882352941176</PrimaryValue>
+			<PrimaryValue>0.9393939393939394</PrimaryValue>
+			<PrimaryValue>0.9411764705882353</PrimaryValue>
+			<PrimaryValue>0.9583333333333334</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>0.8387096774193549</PrimaryValue>
+			<PrimaryValue>0.875</PrimaryValue>
+			<PrimaryValue>0.9193548387096774</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>0.9629629629629629</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="BounceRateSummary">
+			<Active>true</Active>
+			<Message>Bounce Rate</Message>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>92.54%</SummaryValue>
+		</ItemSummary>
+		<Sparkline id="NewVisitorsSparkline">
+			<PrimaryValue>0.9552238805970149</PrimaryValue>
+			<PrimaryValue>0.9166666666666666</PrimaryValue>
+			<PrimaryValue>0.967741935483871</PrimaryValue>
+			<PrimaryValue>0.96</PrimaryValue>
+			<PrimaryValue>0.8103448275862069</PrimaryValue>
+			<PrimaryValue>0.864406779661017</PrimaryValue>
+			<PrimaryValue>0.9152542372881356</PrimaryValue>
+			<PrimaryValue>0.9574468085106383</PrimaryValue>
+			<PrimaryValue>0.8823529411764706</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>0.8372093023255814</PrimaryValue>
+			<PrimaryValue>0.8620689655172413</PrimaryValue>
+			<PrimaryValue>0.8571428571428571</PrimaryValue>
+			<PrimaryValue>0.8571428571428571</PrimaryValue>
+			<PrimaryValue>0.76</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>0.9615384615384616</PrimaryValue>
+			<PrimaryValue>0.8461538461538461</PrimaryValue>
+			<PrimaryValue>0.9411764705882353</PrimaryValue>
+			<PrimaryValue>0.9393939393939394</PrimaryValue>
+			<PrimaryValue>0.8431372549019608</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>0.7777777777777778</PrimaryValue>
+			<PrimaryValue>0.9444444444444444</PrimaryValue>
+			<PrimaryValue>0.9032258064516129</PrimaryValue>
+			<PrimaryValue>0.9375</PrimaryValue>
+			<PrimaryValue>0.9516129032258065</PrimaryValue>
+			<PrimaryValue>0.7575757575757576</PrimaryValue>
+			<PrimaryValue>0.8518518518518519</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="NewVisitorsSummary">
+			<Active>true</Active>
+			<Message>New Visits</Message>
+			<LinkParams>view=1</LinkParams>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>89.47%</SummaryValue>
+		</ItemSummary>
+		<Narrative id="Narrative">
+			<Message>Technical Profile</Message>
+			<Type>NORMAL</Type>
+			<Compare>false</Compare>
+		</Narrative>
+		<MiniTable id="BrowserMiniTable">
+			<Row>
+				<Value>105</Value>
+				<Value>46.05%</Value>
+				<Key>Internet Explorer</Key>
+			</Row>
+			<Row>
+				<Value>101</Value>
+				<Value>44.30%</Value>
+				<Key>Firefox</Key>
+			</Row>
+			<Row>
+				<Value>10</Value>
+				<Value>4.39%</Value>
+				<Key>Safari</Key>
+			</Row>
+			<Row>
+				<Value>6</Value>
+				<Value>2.63%</Value>
+				<Key>Opera</Key>
+			</Row>
+			<Row>
+				<Value>5</Value>
+				<Value>2.19%</Value>
+				<Key>Mozilla</Key>
+			</Row>
+			<KeyColumnName>Browser</KeyColumnName>
+			<Dashboard>false</Dashboard>
+			<LinkParams>view=1</LinkParams>
+			<Compare>false</Compare>
+			<NextLink>browser_detail</NextLink>
+			<LinkKeys>true</LinkKeys>
+			<ColumnName>Visits</ColumnName>
+			<ColumnName>% visits</ColumnName>
+		</MiniTable>
+		<MiniTable id="ConnectionSpeedMiniTable">
+			<Row>
+				<Value>121</Value>
+				<Value>53.07%</Value>
+				<Key>T1</Key>
+			</Row>
+			<Row>
+				<Value>39</Value>
+				<Value>17.11%</Value>
+				<Key>DSL</Key>
+			</Row>
+			<Row>
+				<Value>35</Value>
+				<Value>15.35%</Value>
+				<Key>Unknown</Key>
+			</Row>
+			<Row>
+				<Value>31</Value>
+				<Value>13.60%</Value>
+				<Key>Cable</Key>
+			</Row>
+			<Row>
+				<Value>1</Value>
+				<Value>0.44%</Value>
+				<Key>Dialup</Key>
+			</Row>
+			<KeyColumnName>Connection Speed</KeyColumnName>
+			<Dashboard>false</Dashboard>
+			<Compare>false</Compare>
+			<NextLink>speed_detail</NextLink>
+			<LinkKeys>true</LinkKeys>
+			<ColumnName>Visits</ColumnName>
+			<ColumnName>% visits</ColumnName>
+		</MiniTable>
+		<Title id="Title">
+			<CompareStateHelp>Compare report data to overall site performance and include report data when calculating site performance (% of Site Total or Site Avg.).</CompareStateHelp>
+			<PrimaryDateRange>March 1, 2008 - March 8, 2008</PrimaryDateRange>
+			<Compare>false</Compare>
+			<Sampled>false</Sampled>
+			<CompareStateMsg>Site</CompareStateMsg>
+			<Name>Traffic Sources Overview</Name>
+			<Detail>
+			</Detail>
+			<CompareMsg>Comparing to:</CompareMsg>
+			<ProfileName>webgroup.nd.edu</ProfileName>
+			<ShowCompare>true</ShowCompare>
+			<DetailSeparator> | </DetailSeparator>
+		</Title>
+		<Graph id="Graph">
+			<ShowHover>true</ShowHover>
+			<Format>NORMAL</Format>
+			<Compare>false</Compare>
+			<XAxisLabel>February 11, 2008</XAxisLabel>
+			<XAxisLabel>February 18, 2008</XAxisLabel>
+			<XAxisLabel>February 25, 2008</XAxisLabel>
+			<XAxisLabel>March 3, 2008</XAxisLabel>
+			<SelectedSerie>primary</SelectedSerie>
+			<SelectedSerie>compare</SelectedSerie>
+			<Serie>
+				<SelectionStartIndex>22</SelectionStartIndex>
+				<SelectionEndIndex>29</SelectionEndIndex>
+				<Style>
+					<PointShape>CIRCLE</PointShape>
+					<PointRadius>9</PointRadius>
+					<FillColor>30668</FillColor>
+					<FillAlpha>10</FillAlpha>
+					<LineThickness>4</LineThickness>
+					<ActiveColor>30668</ActiveColor>
+					<InactiveColor>11654895</InactiveColor>
+				</Style>
+				<Id>primary</Id>
+				<Label>Visits</Label>
+				<YLabel>150</YLabel>
+				<YLabel>300</YLabel>
+				<ValueCategory>visits</ValueCategory>
+				<Point>
+					<Value>67</Value>
+					<Label>February 8, 2008</Label>
+				</Point>
+				<Point>
+					<Value>12</Value>
+					<Label>February 9, 2008</Label>
+				</Point>
+				<Point>
+					<Value>31</Value>
+					<Label>February 10, 2008</Label>
+				</Point>
+				<Point>
+					<Value>225</Value>
+					<Label>February 11, 2008</Label>
+				</Point>
+				<Point>
+					<Value>58</Value>
+					<Label>February 12, 2008</Label>
+				</Point>
+				<Point>
+					<Value>59</Value>
+					<Label>February 13, 2008</Label>
+				</Point>
+				<Point>
+					<Value>59</Value>
+					<Label>February 14, 2008</Label>
+				</Point>
+				<Point>
+					<Value>47</Value>
+					<Label>February 15, 2008</Label>
+				</Point>
+				<Point>
+					<Value>17</Value>
+					<Label>February 16, 2008</Label>
+				</Point>
+				<Point>
+					<Value>17</Value>
+					<Label>February 17, 2008</Label>
+				</Point>
+				<Point>
+					<Value>43</Value>
+					<Label>February 18, 2008</Label>
+				</Point>
+				<Point>
+					<Value>58</Value>
+					<Label>February 19, 2008</Label>
+				</Point>
+				<Point>
+					<Value>28</Value>
+					<Label>February 20, 2008</Label>
+				</Point>
+				<Point>
+					<Value>28</Value>
+					<Label>February 21, 2008</Label>
+				</Point>
+				<Point>
+					<Value>25</Value>
+					<Label>February 22, 2008</Label>
+				</Point>
+				<Point>
+					<Value>18</Value>
+					<Label>February 23, 2008</Label>
+				</Point>
+				<Point>
+					<Value>26</Value>
+					<Label>February 24, 2008</Label>
+				</Point>
+				<Point>
+					<Value>39</Value>
+					<Label>February 25, 2008</Label>
+				</Point>
+				<Point>
+					<Value>34</Value>
+					<Label>February 26, 2008</Label>
+				</Point>
+				<Point>
+					<Value>33</Value>
+					<Label>February 27, 2008</Label>
+				</Point>
+				<Point>
+					<Value>51</Value>
+					<Label>February 28, 2008</Label>
+				</Point>
+				<Point>
+					<Value>24</Value>
+					<Label>February 29, 2008</Label>
+				</Point>
+				<Point>
+					<Value>9</Value>
+					<Label>March 1, 2008</Label>
+				</Point>
+				<Point>
+					<Value>18</Value>
+					<Label>March 2, 2008</Label>
+				</Point>
+				<Point>
+					<Value>31</Value>
+					<Label>March 3, 2008</Label>
+				</Point>
+				<Point>
+					<Value>48</Value>
+					<Label>March 4, 2008</Label>
+				</Point>
+				<Point>
+					<Value>62</Value>
+					<Label>March 5, 2008</Label>
+				</Point>
+				<Point>
+					<Value>33</Value>
+					<Label>March 6, 2008</Label>
+				</Point>
+				<Point>
+					<Value>27</Value>
+					<Label>March 7, 2008</Label>
+				</Point>
+				<Point>
+					<Value>0</Value>
+					<Label>March 8, 2008</Label>
+				</Point>
+				<Point>
+					<Value>0</Value>
+					<Label>March 9, 2008</Label>
+				</Point>
+			</Serie>
+		</Graph>
+		<Narrative id="NarrativeTitle">
+			<Message>All traffic sources sent a total of 228 visits</Message>
+			<Type>NORMAL</Type>
+			<Compare>false</Compare>
+		</Narrative>
+		<Sparkline id="DirectSparkline">
+			<PrimaryValue>10.0</PrimaryValue>
+			<PrimaryValue>2.0</PrimaryValue>
+			<PrimaryValue>3.0</PrimaryValue>
+			<PrimaryValue>91.0</PrimaryValue>
+			<PrimaryValue>14.0</PrimaryValue>
+			<PrimaryValue>9.0</PrimaryValue>
+			<PrimaryValue>4.0</PrimaryValue>
+			<PrimaryValue>15.0</PrimaryValue>
+			<PrimaryValue>3.0</PrimaryValue>
+			<PrimaryValue>7.0</PrimaryValue>
+			<PrimaryValue>13.0</PrimaryValue>
+			<PrimaryValue>21.0</PrimaryValue>
+			<PrimaryValue>5.0</PrimaryValue>
+			<PrimaryValue>5.0</PrimaryValue>
+			<PrimaryValue>14.0</PrimaryValue>
+			<PrimaryValue>4.0</PrimaryValue>
+			<PrimaryValue>9.0</PrimaryValue>
+			<PrimaryValue>16.0</PrimaryValue>
+			<PrimaryValue>11.0</PrimaryValue>
+			<PrimaryValue>7.0</PrimaryValue>
+			<PrimaryValue>13.0</PrimaryValue>
+			<PrimaryValue>4.0</PrimaryValue>
+			<PrimaryValue>7.0</PrimaryValue>
+			<PrimaryValue>3.0</PrimaryValue>
+			<PrimaryValue>5.0</PrimaryValue>
+			<PrimaryValue>9.0</PrimaryValue>
+			<PrimaryValue>10.0</PrimaryValue>
+			<PrimaryValue>9.0</PrimaryValue>
+			<PrimaryValue>7.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="DirectSummary">
+			<Active>true</Active>
+			<Message>Direct Traffic</Message>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>21.93%</SummaryValue>
+		</ItemSummary>
+		<Sparkline id="ReferralSparkline">
+			<PrimaryValue>22.0</PrimaryValue>
+			<PrimaryValue>3.0</PrimaryValue>
+			<PrimaryValue>12.0</PrimaryValue>
+			<PrimaryValue>114.0</PrimaryValue>
+			<PrimaryValue>21.0</PrimaryValue>
+			<PrimaryValue>24.0</PrimaryValue>
+			<PrimaryValue>31.0</PrimaryValue>
+			<PrimaryValue>14.0</PrimaryValue>
+			<PrimaryValue>8.0</PrimaryValue>
+			<PrimaryValue>4.0</PrimaryValue>
+			<PrimaryValue>9.0</PrimaryValue>
+			<PrimaryValue>12.0</PrimaryValue>
+			<PrimaryValue>10.0</PrimaryValue>
+			<PrimaryValue>13.0</PrimaryValue>
+			<PrimaryValue>10.0</PrimaryValue>
+			<PrimaryValue>2.0</PrimaryValue>
+			<PrimaryValue>5.0</PrimaryValue>
+			<PrimaryValue>13.0</PrimaryValue>
+			<PrimaryValue>10.0</PrimaryValue>
+			<PrimaryValue>11.0</PrimaryValue>
+			<PrimaryValue>19.0</PrimaryValue>
+			<PrimaryValue>6.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>7.0</PrimaryValue>
+			<PrimaryValue>10.0</PrimaryValue>
+			<PrimaryValue>19.0</PrimaryValue>
+			<PrimaryValue>20.0</PrimaryValue>
+			<PrimaryValue>7.0</PrimaryValue>
+			<PrimaryValue>18.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="ReferralSummary">
+			<Active>true</Active>
+			<Message>Referring Sites</Message>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>35.53%</SummaryValue>
+		</ItemSummary>
+		<Sparkline id="SearchSparkline">
+			<PrimaryValue>35.0</PrimaryValue>
+			<PrimaryValue>7.0</PrimaryValue>
+			<PrimaryValue>16.0</PrimaryValue>
+			<PrimaryValue>20.0</PrimaryValue>
+			<PrimaryValue>23.0</PrimaryValue>
+			<PrimaryValue>26.0</PrimaryValue>
+			<PrimaryValue>24.0</PrimaryValue>
+			<PrimaryValue>18.0</PrimaryValue>
+			<PrimaryValue>6.0</PrimaryValue>
+			<PrimaryValue>6.0</PrimaryValue>
+			<PrimaryValue>21.0</PrimaryValue>
+			<PrimaryValue>25.0</PrimaryValue>
+			<PrimaryValue>13.0</PrimaryValue>
+			<PrimaryValue>10.0</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>12.0</PrimaryValue>
+			<PrimaryValue>12.0</PrimaryValue>
+			<PrimaryValue>10.0</PrimaryValue>
+			<PrimaryValue>13.0</PrimaryValue>
+			<PrimaryValue>15.0</PrimaryValue>
+			<PrimaryValue>19.0</PrimaryValue>
+			<PrimaryValue>14.0</PrimaryValue>
+			<PrimaryValue>2.0</PrimaryValue>
+			<PrimaryValue>8.0</PrimaryValue>
+			<PrimaryValue>16.0</PrimaryValue>
+			<PrimaryValue>20.0</PrimaryValue>
+			<PrimaryValue>32.0</PrimaryValue>
+			<PrimaryValue>17.0</PrimaryValue>
+			<PrimaryValue>2.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="SearchSummary">
+			<Active>true</Active>
+			<Message>Search Engines</Message>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>42.54%</SummaryValue>
+		</ItemSummary>
+		<Pie id="Pie">
+			<Format>OVERVIEW</Format>
+			<Label>Search Engines</Label>
+			<Label>Referring Sites</Label>
+			<Label>Direct Traffic</Label>
+			<PercentValue>42.54%</PercentValue>
+			<PercentValue>35.53%</PercentValue>
+			<PercentValue>21.93%</PercentValue>
+			<Compare>false</Compare>
+			<RawValue>97</RawValue>
+			<RawValue>81</RawValue>
+			<RawValue>50</RawValue>
+			<HasOtherSlice>false</HasOtherSlice>
+		</Pie>
+		<Narrative id="Narrative">
+			<Message>Top Traffic Sources</Message>
+			<Type>NORMAL</Type>
+			<Compare>false</Compare>
+		</Narrative>
+		<MiniTable id="SourceMiniTable">
+			<Row>
+				<Value>56</Value>
+				<Value>24.56%</Value>
+				<Key>google (organic)</Key>
+			</Row>
+			<Row>
+				<Value>50</Value>
+				<Value>21.93%</Value>
+				<Key>(direct) ((none))</Key>
+			</Row>
+			<Row>
+				<Value>40</Value>
+				<Value>17.54%</Value>
+				<Key>nd.edu (referral)</Key>
+			</Row>
+			<Row>
+				<Value>39</Value>
+				<Value>17.11%</Value>
+				<Key>search (organic)</Key>
+			</Row>
+			<Row>
+				<Value>7</Value>
+				<Value>3.07%</Value>
+				<Key>president.nd.edu (referral)</Key>
+			</Row>
+			<KeyColumnName>Sources</KeyColumnName>
+			<Dashboard>false</Dashboard>
+			<Compare>false</Compare>
+			<NextLink>source</NextLink>
+			<LinkKeys>true</LinkKeys>
+			<ColumnName>Visits</ColumnName>
+			<ColumnName>% visits</ColumnName>
+		</MiniTable>
+		<MiniTable id="KeywordMiniTable">
+			<Row>
+				<Value>30</Value>
+				<Value>30.93%</Value>
+				<Key>coldfusion notre dame web group</Key>
+			</Row>
+			<Row>
+				<Value>15</Value>
+				<Value>15.46%</Value>
+				<Key>president</Key>
+			</Row>
+			<Row>
+				<Value>6</Value>
+				<Value>6.19%</Value>
+				<Key>conductor web group notre dame</Key>
+			</Row>
+			<Row>
+				<Value>6</Value>
+				<Value>6.19%</Value>
+				<Key>notre dame university at south bend, in</Key>
+			</Row>
+			<Row>
+				<Value>5</Value>
+				<Value>5.15%</Value>
+				<Key>web group</Key>
+			</Row>
+			<KeyColumnName>Keywords</KeyColumnName>
+			<Dashboard>false</Dashboard>
+			<Compare>false</Compare>
+			<NextLink>keyword_detail</NextLink>
+			<LinkKeys>true</LinkKeys>
+			<ColumnName>Visits</ColumnName>
+			<ColumnName>% visits</ColumnName>
+		</MiniTable>
+		<Title id="Title">
+			<CompareStateHelp>Compare report data to overall site performance and include report data when calculating site performance (% of Site Total or Site Avg.).</CompareStateHelp>
+			<PrimaryDateRange>March 1, 2008 - March 8, 2008</PrimaryDateRange>
+			<Compare>false</Compare>
+			<Sampled>false</Sampled>
+			<CompareStateMsg>Site</CompareStateMsg>
+			<Name>Map Overlay</Name>
+			<Detail>
+			</Detail>
+			<CompareMsg>Comparing to:</CompareMsg>
+			<ProfileName>webgroup.nd.edu</ProfileName>
+			<ShowCompare>true</ShowCompare>
+		</Title>
+		<GeoMap id="GeoMap">
+			<ControlLabelSet>
+				<ValueIndex>0</ValueIndex>
+				<Message>Visits</Message>
+			</ControlLabelSet>
+			<ControlLabelSet>
+				<ValueIndex>1</ValueIndex>
+				<Message>Pages/Visit</Message>
+			</ControlLabelSet>
+			<ControlLabelSet>
+				<ValueIndex>2</ValueIndex>
+				<Message>Avg. Time on Site</Message>
+			</ControlLabelSet>
+			<ControlLabelSet>
+				<ValueIndex>3</ValueIndex>
+				<Message>% New Visits</Message>
+			</ControlLabelSet>
+			<ControlLabelSet>
+				<ValueIndex>4</ValueIndex>
+				<Message>Bounce Rate</Message>
+			</ControlLabelSet>
+			<ControlLabelSet>
+				<ValueIndex>0</ValueIndex>
+				<Message>Visits</Message>
+			</ControlLabelSet>
+			<ControlLabelSet>
+				<ValueIndex>5</ValueIndex>
+				<Message>Goal1 Conversion Rate</Message>
+			</ControlLabelSet>
+			<ControlLabelSet>
+				<ValueIndex>6</ValueIndex>
+				<Message>Goal Conversion Rate</Message>
+			</ControlLabelSet>
+			<ControlLabelSet>
+				<ValueIndex>7</ValueIndex>
+				<Message>Per Visit Goal Value</Message>
+			</ControlLabelSet>
+			<Format>NORMAL</Format>
+			<SegmentBy>COUNTRY</SegmentBy>
+			<ValueLabel>Visits</ValueLabel>
+			<DataLabel>Visits</DataLabel>
+			<Region>
+				<Lng>0.0</Lng>
+				<Value>204</Value>
+				<Name>United States</Name>
+				<Lat>0.0</Lat>
+				<Id>US</Id>
+				<ColorKey>204</ColorKey>
+			</Region>
+			<Region>
+				<Lng>0.0</Lng>
+				<Value>9</Value>
+				<Name>United Kingdom</Name>
+				<Lat>0.0</Lat>
+				<Id>GB</Id>
+				<ColorKey>9</ColorKey>
+			</Region>
+			<Region>
+				<Lng>0.0</Lng>
+				<Value>2</Value>
+				<Name>Australia</Name>
+				<Lat>0.0</Lat>
+				<Id>AU</Id>
+				<ColorKey>2</ColorKey>
+			</Region>
+			<Region>
+				<Lng>0.0</Lng>
+				<Value>2</Value>
+				<Name>Botswana</Name>
+				<Lat>0.0</Lat>
+				<Id>BW</Id>
+				<ColorKey>2</ColorKey>
+			</Region>
+			<Region>
+				<Lng>0.0</Lng>
+				<Value>2</Value>
+				<Name>Ireland</Name>
+				<Lat>0.0</Lat>
+				<Id>IE</Id>
+				<ColorKey>2</ColorKey>
+			</Region>
+			<Region>
+				<Lng>0.0</Lng>
+				<Value>2</Value>
+				<Name>Italy</Name>
+				<Lat>0.0</Lat>
+				<Id>IT</Id>
+				<ColorKey>2</ColorKey>
+			</Region>
+			<Region>
+				<Lng>0.0</Lng>
+				<Value>2</Value>
+				<Name>India</Name>
+				<Lat>0.0</Lat>
+				<Id>IN</Id>
+				<ColorKey>2</ColorKey>
+			</Region>
+			<Region>
+				<Lng>0.0</Lng>
+				<Value>1</Value>
+				<Name>Netherlands</Name>
+				<Lat>0.0</Lat>
+				<Id>NL</Id>
+				<ColorKey>1</ColorKey>
+			</Region>
+			<Region>
+				<Lng>0.0</Lng>
+				<Value>1</Value>
+				<Name>Chile</Name>
+				<Lat>0.0</Lat>
+				<Id>CL</Id>
+				<ColorKey>1</ColorKey>
+			</Region>
+			<Region>
+				<Lng>0.0</Lng>
+				<Value>1</Value>
+				<Name>Spain</Name>
+				<Lat>0.0</Lat>
+				<Id>ES</Id>
+				<ColorKey>1</ColorKey>
+			</Region>
+			<Region>
+				<Lng>0.0</Lng>
+				<Value>1</Value>
+				<Name>Sweden</Name>
+				<Lat>0.0</Lat>
+				<Id>SE</Id>
+				<ColorKey>1</ColorKey>
+			</Region>
+			<Region>
+				<Lng>0.0</Lng>
+				<Value>1</Value>
+				<Name>Romania</Name>
+				<Lat>0.0</Lat>
+				<Id>RO</Id>
+				<ColorKey>1</ColorKey>
+			</Region>
+			<Minimum>1</Minimum>
+			<Compare>false</Compare>
+			<TargetId>world</TargetId>
+			<DataIndex>0</DataIndex>
+			<Maximum>204</Maximum>
+			<GeographyName>world_COUNTRIES.xml</GeographyName>
+			<ZoomLevel>WORLD</ZoomLevel>
+			<ZoomOutMessage>Zoom Out</ZoomOutMessage>
+		</GeoMap>
+		<Narrative id="Narrative">
+			<Message>228 visits came from 12 countries/territories</Message>
+			<Type>NORMAL</Type>
+			<Compare>false</Compare>
+		</Narrative>
+		<Dropdown id="ZoomControl">
+			<LabelText>Detail Level:</LabelText>
+			<Body>
+				<PropertyBinding>segment_by</PropertyBinding>
+				<Format>HORIZONTAL</Format>
+				<Compare>false</Compare>
+				<Section>
+					<Item>
+						<Text>City</Text>
+						<Key>city</Key>
+						<Selectable>true</Selectable>
+					</Item>
+					<Item>
+						<Text>Country/Territory</Text>
+						<Key>country</Key>
+						<Selectable>false</Selectable>
+					</Item>
+					<Item>
+						<Text>Sub Continent Region</Text>
+						<Key>sub_continent_region</Key>
+						<Selectable>true</Selectable>
+					</Item>
+					<Item>
+						<Text>Continent</Text>
+						<Key>continent</Key>
+						<Selectable>true</Selectable>
+					</Item>
+				</Section>
+			</Body>
+			<Format>INLINE</Format>
+			<SelectionText>Country/Territory</SelectionText>
+			<Compare>false</Compare>
+		</Dropdown>
+		<Dropdown id="SegmentControl">
+			<LabelText>Segment:</LabelText>
+			<Body>
+				<PropertyBinding>geo_segmentation</PropertyBinding>
+				<Format>VERTICAL</Format>
+				<Compare>false</Compare>
+				<Section>
+					<Item>
+						<Text>Choose...</Text>
+						<Key>none</Key>
+						<Selectable>false</Selectable>
+					</Item>
+				</Section>
+				<Section>
+					<Item>
+						<Text>Source</Text>
+						<Key>source</Key>
+						<Selectable>true</Selectable>
+					</Item>
+					<Item>
+						<Text>Medium</Text>
+						<Key>medium</Key>
+						<Selectable>true</Selectable>
+					</Item>
+					<Item>
+						<Text>Campaign</Text>
+						<Key>campaign</Key>
+						<Selectable>true</Selectable>
+					</Item>
+					<Item>
+						<Text>Keyword</Text>
+						<Key>keyword</Key>
+						<Selectable>true</Selectable>
+					</Item>
+					<Item>
+						<Text>Ad Content</Text>
+						<Key>content</Key>
+						<Selectable>true</Selectable>
+					</Item>
+					<Item>
+						<Text>Visitor Type</Text>
+						<Key>visitor_type</Key>
+						<Selectable>true</Selectable>
+					</Item>
+					<Item>
+						<Text>Landing Page</Text>
+						<Key>request_uri_1</Key>
+						<Selectable>true</Selectable>
+					</Item>
+				</Section>
+				<Section>
+					<Item>
+						<Text>Language</Text>
+						<Key>language</Key>
+						<Selectable>true</Selectable>
+					</Item>
+				</Section>
+				<Section>
+					<Item>
+						<Text>Browser</Text>
+						<Key>browser</Key>
+						<Selectable>true</Selectable>
+					</Item>
+					<Item>
+						<Text>Operating System</Text>
+						<Key>platform</Key>
+						<Selectable>true</Selectable>
+					</Item>
+					<Item>
+						<Text>Screen Colors</Text>
+						<Key>screen_colors</Key>
+						<Selectable>true</Selectable>
+					</Item>
+					<Item>
+						<Text>Screen Resolution</Text>
+						<Key>screen_resolution</Key>
+						<Selectable>true</Selectable>
+					</Item>
+					<Item>
+						<Text>Flash Version</Text>
+						<Key>flash_version</Key>
+						<Selectable>true</Selectable>
+					</Item>
+					<Item>
+						<Text>Java Support</Text>
+						<Key>java_enabled</Key>
+						<Selectable>true</Selectable>
+					</Item>
+				</Section>
+				<Section>
+					<Item>
+						<Text>Network Location</Text>
+						<Key>organization</Key>
+						<Selectable>true</Selectable>
+					</Item>
+					<Item>
+						<Text>Hostname</Text>
+						<Key>hostname</Key>
+						<Selectable>true</Selectable>
+					</Item>
+					<Item>
+						<Text>Connection Speed</Text>
+						<Key>connection_speed</Key>
+						<Selectable>true</Selectable>
+					</Item>
+				</Section>
+				<Section>
+					<Item>
+						<Text>User Defined Value</Text>
+						<Key>user_defined_value</Key>
+						<Selectable>true</Selectable>
+					</Item>
+				</Section>
+			</Body>
+			<Format>POPUP</Format>
+			<SelectionText>Choose...</SelectionText>
+			<Compare>false</Compare>
+		</Dropdown>
+		<TabView id="TabView">
+			<Tab>Site Usage</Tab>
+			<Tab>Goal Conversion</Tab>
+			<ViewSelected>0</ViewSelected>
+			<Compare>false</Compare>
+			<TabSelected>0</TabSelected>
+			<SegmentOnByDefault>true</SegmentOnByDefault>
+			<TrendingView>false</TrendingView>
+			<SegmentLocked>true</SegmentLocked>
+		</TabView>
+		<Scorecard id="Scorecard">
+			<Group>
+				<Item>
+					<Name>Visits</Name>
+					<HelpMsg>The number of visits to your site.</HelpMsg>
+					<Active>true</Active>
+					<PrimaryValue>228</PrimaryValue>
+					<ComparisonValue>100.00%</ComparisonValue>
+					<InverseCompare>false</InverseCompare>
+					<ComparisonMessage>% of Site Total:</ComparisonMessage>
+					<Goal>false</Goal>
+					<Sparkline>
+						<Compare>false</Compare>
+					</Sparkline>
+				</Item>
+				<Item>
+					<Name>Pages/Visit</Name>
+					<HelpMsg>The average number of pages viewed during a visit to your site. Repeated views of a single page are counted.</HelpMsg>
+					<Active>true</Active>
+					<PrimaryValue>1.24</PrimaryValue>
+					<ComparisonValue>1.24</ComparisonValue>
+					<InverseCompare>false</InverseCompare>
+					<ComparisonMessage>Site Avg:</ComparisonMessage>
+					<PercentChange>0.00%</PercentChange>
+					<Goal>false</Goal>
+					<Sparkline>
+						<Compare>false</Compare>
+					</Sparkline>
+				</Item>
+				<Item>
+					<Name>Avg. Time on Site</Name>
+					<HelpMsg>The average duration of a visit to your site.</HelpMsg>
+					<Active>true</Active>
+					<PrimaryValue>00:00:14</PrimaryValue>
+					<ComparisonValue>00:00:14</ComparisonValue>
+					<InverseCompare>false</InverseCompare>
+					<ComparisonMessage>Site Avg:</ComparisonMessage>
+					<PercentChange>0.00%</PercentChange>
+					<Goal>false</Goal>
+					<Sparkline>
+						<Compare>false</Compare>
+					</Sparkline>
+				</Item>
+				<Item>
+					<Name>% New Visits</Name>
+					<HelpMsg>The percentage of visits by people who had never visited your site before.</HelpMsg>
+					<Active>true</Active>
+					<PrimaryValue>89.47%</PrimaryValue>
+					<ComparisonValue>89.47%</ComparisonValue>
+					<InverseCompare>false</InverseCompare>
+					<ComparisonMessage>Site Avg:</ComparisonMessage>
+					<PercentChange>0.00%</PercentChange>
+					<Goal>false</Goal>
+					<Sparkline>
+						<Compare>false</Compare>
+					</Sparkline>
+				</Item>
+				<Item>
+					<Name>Bounce Rate</Name>
+					<HelpMsg>The percentage of single-page visits (i.e. visits in which the person left your site from the entrance page).</HelpMsg>
+					<Active>true</Active>
+					<PrimaryValue>92.54%</PrimaryValue>
+					<ComparisonValue>92.54%</ComparisonValue>
+					<InverseCompare>true</InverseCompare>
+					<ComparisonMessage>Site Avg:</ComparisonMessage>
+					<PercentChange>0.00%</PercentChange>
+					<Goal>false</Goal>
+					<Sparkline>
+						<Compare>false</Compare>
+					</Sparkline>
+				</Item>
+				<Name>Site Usage</Name>
+				<Active>true</Active>
+			</Group>
+			<Format>COMPACT</Format>
+			<Compare>false</Compare>
+		</Scorecard>
+		<Table id="Table">
+			<Column>
+				<Name>Visits</Name>
+				<Active>true</Active>
+				<Total>228</Total>
+			</Column>
+			<Column>
+				<Name>Pages/Visit</Name>
+				<Active>true</Active>
+				<Total>1.24</Total>
+			</Column>
+			<Column>
+				<Name>Avg. Time on Site</Name>
+				<Active>true</Active>
+				<Total>00:00:14</Total>
+			</Column>
+			<Column>
+				<Name>% New Visits</Name>
+				<Active>true</Active>
+				<Total>89.47%</Total>
+			</Column>
+			<Column>
+				<Name>Bounce Rate</Name>
+				<Active>true</Active>
+				<Total>92.54%</Total>
+			</Column>
+			<Column>
+				<Name>Visits</Name>
+				<Active>false</Active>
+			</Column>
+			<Column>
+				<Name>G1</Name>
+				<Active>false</Active>
+			</Column>
+			<Column>
+				<Name>Goal Conversion Rate</Name>
+				<Active>false</Active>
+			</Column>
+			<Column>
+				<Name>Per Visit Goal Value</Name>
+				<Active>false</Active>
+			</Column>
+			<DateRange>March 1, 2008 - March 8, 2008</DateRange>
+			<Row>
+				<Drilldown>true</Drilldown>
+				<Key>United States</Key>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>204</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>1.26</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>00:00:16</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>89.71%</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>true</InverseCompare>
+					<Primary>92.65%</Primary>
+				</Cell>
+				<HiddenCell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>204</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>$0.00</Primary>
+				</HiddenCell>
+				<SubKey>US</SubKey>
+				<RowLabel>1</RowLabel>
+			</Row>
+			<Row>
+				<Drilldown>true</Drilldown>
+				<Key>United Kingdom</Key>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>9</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>1.00</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>00:00:00</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>77.78%</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>true</InverseCompare>
+					<Primary>100.00%</Primary>
+				</Cell>
+				<HiddenCell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>9</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>$0.00</Primary>
+				</HiddenCell>
+				<SubKey>GB</SubKey>
+				<RowLabel>2</RowLabel>
+			</Row>
+			<Row>
+				<Drilldown>true</Drilldown>
+				<Key>Australia</Key>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>2</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>1.00</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>00:00:00</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>100.00%</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>true</InverseCompare>
+					<Primary>100.00%</Primary>
+				</Cell>
+				<HiddenCell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>2</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>$0.00</Primary>
+				</HiddenCell>
+				<SubKey>AU</SubKey>
+				<RowLabel>3</RowLabel>
+			</Row>
+			<Row>
+				<Drilldown>true</Drilldown>
+				<Key>Botswana</Key>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>2</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>1.00</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>00:00:00</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>50.00%</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>true</InverseCompare>
+					<Primary>100.00%</Primary>
+				</Cell>
+				<HiddenCell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>2</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>$0.00</Primary>
+				</HiddenCell>
+				<SubKey>BW</SubKey>
+				<RowLabel>4</RowLabel>
+			</Row>
+			<Row>
+				<Drilldown>true</Drilldown>
+				<Key>Ireland</Key>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>2</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>1.00</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>00:00:00</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>100.00%</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>true</InverseCompare>
+					<Primary>100.00%</Primary>
+				</Cell>
+				<HiddenCell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>2</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>$0.00</Primary>
+				</HiddenCell>
+				<SubKey>IE</SubKey>
+				<RowLabel>5</RowLabel>
+			</Row>
+			<Row>
+				<Drilldown>true</Drilldown>
+				<Key>Italy</Key>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>2</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>1.00</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>00:00:00</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>100.00%</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>true</InverseCompare>
+					<Primary>100.00%</Primary>
+				</Cell>
+				<HiddenCell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>2</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>$0.00</Primary>
+				</HiddenCell>
+				<SubKey>IT</SubKey>
+				<RowLabel>6</RowLabel>
+			</Row>
+			<Row>
+				<Drilldown>true</Drilldown>
+				<Key>India</Key>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>2</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>1.00</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>00:00:00</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>100.00%</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>true</InverseCompare>
+					<Primary>100.00%</Primary>
+				</Cell>
+				<HiddenCell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>2</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>$0.00</Primary>
+				</HiddenCell>
+				<SubKey>IN</SubKey>
+				<RowLabel>7</RowLabel>
+			</Row>
+			<Row>
+				<Drilldown>true</Drilldown>
+				<Key>Netherlands</Key>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>1</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>1.00</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>00:00:00</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>100.00%</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>true</InverseCompare>
+					<Primary>100.00%</Primary>
+				</Cell>
+				<HiddenCell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>1</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>$0.00</Primary>
+				</HiddenCell>
+				<SubKey>NL</SubKey>
+				<RowLabel>8</RowLabel>
+			</Row>
+			<Row>
+				<Drilldown>true</Drilldown>
+				<Key>Chile</Key>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>1</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>2.00</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>00:00:23</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>100.00%</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>true</InverseCompare>
+					<Primary>0.00%</Primary>
+				</Cell>
+				<HiddenCell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>1</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>$0.00</Primary>
+				</HiddenCell>
+				<SubKey>CL</SubKey>
+				<RowLabel>9</RowLabel>
+			</Row>
+			<Row>
+				<Drilldown>true</Drilldown>
+				<Key>Spain</Key>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>1</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>2.00</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>00:00:06</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>100.00%</Primary>
+				</Cell>
+				<Cell>
+					<Active>true</Active>
+					<InverseCompare>true</InverseCompare>
+					<Primary>0.00%</Primary>
+				</Cell>
+				<HiddenCell>
+					<Active>true</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>1</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>0.00%</Primary>
+				</HiddenCell>
+				<HiddenCell>
+					<Active>false</Active>
+					<InverseCompare>false</InverseCompare>
+					<Primary>$0.00</Primary>
+				</HiddenCell>
+				<SubKey>ES</SubKey>
+				<RowLabel>10</RowLabel>
+			</Row>
+			<DataRange>1 - 10 of 12</DataRange>
+			<KeyColumnName>Country/Territory</KeyColumnName>
+			<IncludeLinker>false</IncludeLinker>
+			<RowShow>10</RowShow>
+			<RowCount>12</RowCount>
+			<Compare>false</Compare>
+			<RowStart>0</RowStart>
+			<Sampled>false</Sampled>
+			<RowEnd>10</RowEnd>
+			<FilterString>
+			</FilterString>
+			<FilterType>0</FilterType>
+			<ActiveColumn>
+				<Name>Visits</Name>
+				<Active>true</Active>
+				<Total>228</Total>
+			</ActiveColumn>
+			<ActiveColumn>
+				<Name>Pages/Visit</Name>
+				<Active>true</Active>
+				<Total>1.24</Total>
+			</ActiveColumn>
+			<ActiveColumn>
+				<Name>Avg. Time on Site</Name>
+				<Active>true</Active>
+				<Total>00:00:14</Total>
+			</ActiveColumn>
+			<ActiveColumn>
+				<Name>% New Visits</Name>
+				<Active>true</Active>
+				<Total>89.47%</Total>
+			</ActiveColumn>
+			<ActiveColumn>
+				<Name>Bounce Rate</Name>
+				<Active>true</Active>
+				<Total>92.54%</Total>
+			</ActiveColumn>
+		</Table>
+		<Title id="Title">
+			<CompareStateHelp>Compare report data to overall site performance and include report data when calculating site performance (% of Site Total or Site Avg.).</CompareStateHelp>
+			<PrimaryDateRange>March 1, 2008 - March 8, 2008</PrimaryDateRange>
+			<Compare>false</Compare>
+			<Sampled>false</Sampled>
+			<CompareStateMsg>Site</CompareStateMsg>
+			<Name>Content Overview</Name>
+			<Detail>
+			</Detail>
+			<CompareMsg>Comparing to:</CompareMsg>
+			<ProfileName>webgroup.nd.edu</ProfileName>
+			<ShowCompare>true</ShowCompare>
+			<DetailSeparator> | </DetailSeparator>
+		</Title>
+		<Graph id="Graph">
+			<ShowHover>true</ShowHover>
+			<Format>NORMAL</Format>
+			<Compare>false</Compare>
+			<XAxisLabel>February 11, 2008</XAxisLabel>
+			<XAxisLabel>February 18, 2008</XAxisLabel>
+			<XAxisLabel>February 25, 2008</XAxisLabel>
+			<XAxisLabel>March 3, 2008</XAxisLabel>
+			<SelectedSerie>primary</SelectedSerie>
+			<SelectedSerie>compare</SelectedSerie>
+			<Serie>
+				<SelectionStartIndex>22</SelectionStartIndex>
+				<SelectionEndIndex>29</SelectionEndIndex>
+				<Style>
+					<PointShape>CIRCLE</PointShape>
+					<PointRadius>9</PointRadius>
+					<FillColor>30668</FillColor>
+					<FillAlpha>10</FillAlpha>
+					<LineThickness>4</LineThickness>
+					<ActiveColor>30668</ActiveColor>
+					<InactiveColor>11654895</InactiveColor>
+				</Style>
+				<Id>primary</Id>
+				<Label>Pageviews</Label>
+				<YLabel>300</YLabel>
+				<YLabel>600</YLabel>
+				<ValueCategory>pageviews</ValueCategory>
+				<Point>
+					<Value>72</Value>
+					<Label>February 8, 2008</Label>
+				</Point>
+				<Point>
+					<Value>21</Value>
+					<Label>February 9, 2008</Label>
+				</Point>
+				<Point>
+					<Value>50</Value>
+					<Label>February 10, 2008</Label>
+				</Point>
+				<Point>
+					<Value>541</Value>
+					<Label>February 11, 2008</Label>
+				</Point>
+				<Point>
+					<Value>92</Value>
+					<Label>February 12, 2008</Label>
+				</Point>
+				<Point>
+					<Value>62</Value>
+					<Label>February 13, 2008</Label>
+				</Point>
+				<Point>
+					<Value>77</Value>
+					<Label>February 14, 2008</Label>
+				</Point>
+				<Point>
+					<Value>61</Value>
+					<Label>February 15, 2008</Label>
+				</Point>
+				<Point>
+					<Value>19</Value>
+					<Label>February 16, 2008</Label>
+				</Point>
+				<Point>
+					<Value>21</Value>
+					<Label>February 17, 2008</Label>
+				</Point>
+				<Point>
+					<Value>64</Value>
+					<Label>February 18, 2008</Label>
+				</Point>
+				<Point>
+					<Value>102</Value>
+					<Label>February 19, 2008</Label>
+				</Point>
+				<Point>
+					<Value>44</Value>
+					<Label>February 20, 2008</Label>
+				</Point>
+				<Point>
+					<Value>40</Value>
+					<Label>February 21, 2008</Label>
+				</Point>
+				<Point>
+					<Value>35</Value>
+					<Label>February 22, 2008</Label>
+				</Point>
+				<Point>
+					<Value>20</Value>
+					<Label>February 23, 2008</Label>
+				</Point>
+				<Point>
+					<Value>29</Value>
+					<Label>February 24, 2008</Label>
+				</Point>
+				<Point>
+					<Value>61</Value>
+					<Label>February 25, 2008</Label>
+				</Point>
+				<Point>
+					<Value>35</Value>
+					<Label>February 26, 2008</Label>
+				</Point>
+				<Point>
+					<Value>35</Value>
+					<Label>February 27, 2008</Label>
+				</Point>
+				<Point>
+					<Value>70</Value>
+					<Label>February 28, 2008</Label>
+				</Point>
+				<Point>
+					<Value>25</Value>
+					<Label>February 29, 2008</Label>
+				</Point>
+				<Point>
+					<Value>9</Value>
+					<Label>March 1, 2008</Label>
+				</Point>
+				<Point>
+					<Value>18</Value>
+					<Label>March 2, 2008</Label>
+				</Point>
+				<Point>
+					<Value>48</Value>
+					<Label>March 3, 2008</Label>
+				</Point>
+				<Point>
+					<Value>64</Value>
+					<Label>March 4, 2008</Label>
+				</Point>
+				<Point>
+					<Value>79</Value>
+					<Label>March 5, 2008</Label>
+				</Point>
+				<Point>
+					<Value>33</Value>
+					<Label>March 6, 2008</Label>
+				</Point>
+				<Point>
+					<Value>32</Value>
+					<Label>March 7, 2008</Label>
+				</Point>
+				<Point>
+					<Value>0</Value>
+					<Label>March 8, 2008</Label>
+				</Point>
+				<Point>
+					<Value>0</Value>
+					<Label>March 9, 2008</Label>
+				</Point>
+			</Serie>
+		</Graph>
+		<Narrative id="SummaryNarrative">
+			<Message>Pages on this site were viewed a total of 283 times</Message>
+			<Type>NORMAL</Type>
+			<Compare>false</Compare>
+		</Narrative>
+		<Sparkline id="PageviewSparkline">
+			<PrimaryValue>72.0</PrimaryValue>
+			<PrimaryValue>21.0</PrimaryValue>
+			<PrimaryValue>50.0</PrimaryValue>
+			<PrimaryValue>541.0</PrimaryValue>
+			<PrimaryValue>92.0</PrimaryValue>
+			<PrimaryValue>62.0</PrimaryValue>
+			<PrimaryValue>77.0</PrimaryValue>
+			<PrimaryValue>61.0</PrimaryValue>
+			<PrimaryValue>19.0</PrimaryValue>
+			<PrimaryValue>21.0</PrimaryValue>
+			<PrimaryValue>64.0</PrimaryValue>
+			<PrimaryValue>102.0</PrimaryValue>
+			<PrimaryValue>44.0</PrimaryValue>
+			<PrimaryValue>40.0</PrimaryValue>
+			<PrimaryValue>35.0</PrimaryValue>
+			<PrimaryValue>20.0</PrimaryValue>
+			<PrimaryValue>29.0</PrimaryValue>
+			<PrimaryValue>61.0</PrimaryValue>
+			<PrimaryValue>35.0</PrimaryValue>
+			<PrimaryValue>35.0</PrimaryValue>
+			<PrimaryValue>70.0</PrimaryValue>
+			<PrimaryValue>25.0</PrimaryValue>
+			<PrimaryValue>9.0</PrimaryValue>
+			<PrimaryValue>18.0</PrimaryValue>
+			<PrimaryValue>48.0</PrimaryValue>
+			<PrimaryValue>64.0</PrimaryValue>
+			<PrimaryValue>79.0</PrimaryValue>
+			<PrimaryValue>33.0</PrimaryValue>
+			<PrimaryValue>32.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="PageviewSummary">
+			<Active>true</Active>
+			<Message>Pageviews</Message>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>283</SummaryValue>
+		</ItemSummary>
+		<Sparkline id="UniqueSparkline">
+			<PrimaryValue>69.0</PrimaryValue>
+			<PrimaryValue>16.0</PrimaryValue>
+			<PrimaryValue>40.0</PrimaryValue>
+			<PrimaryValue>287.0</PrimaryValue>
+			<PrimaryValue>70.0</PrimaryValue>
+			<PrimaryValue>62.0</PrimaryValue>
+			<PrimaryValue>71.0</PrimaryValue>
+			<PrimaryValue>53.0</PrimaryValue>
+			<PrimaryValue>19.0</PrimaryValue>
+			<PrimaryValue>19.0</PrimaryValue>
+			<PrimaryValue>51.0</PrimaryValue>
+			<PrimaryValue>74.0</PrimaryValue>
+			<PrimaryValue>32.0</PrimaryValue>
+			<PrimaryValue>38.0</PrimaryValue>
+			<PrimaryValue>30.0</PrimaryValue>
+			<PrimaryValue>20.0</PrimaryValue>
+			<PrimaryValue>28.0</PrimaryValue>
+			<PrimaryValue>44.0</PrimaryValue>
+			<PrimaryValue>35.0</PrimaryValue>
+			<PrimaryValue>35.0</PrimaryValue>
+			<PrimaryValue>59.0</PrimaryValue>
+			<PrimaryValue>25.0</PrimaryValue>
+			<PrimaryValue>9.0</PrimaryValue>
+			<PrimaryValue>18.0</PrimaryValue>
+			<PrimaryValue>40.0</PrimaryValue>
+			<PrimaryValue>53.0</PrimaryValue>
+			<PrimaryValue>72.0</PrimaryValue>
+			<PrimaryValue>33.0</PrimaryValue>
+			<PrimaryValue>31.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="UniqueSummary">
+			<Active>true</Active>
+			<Message>Unique Views</Message>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>256</SummaryValue>
+		</ItemSummary>
+		<Sparkline id="BounceSparkline">
+			<PrimaryValue>0.9701492537313433</PrimaryValue>
+			<PrimaryValue>0.75</PrimaryValue>
+			<PrimaryValue>0.9032258064516129</PrimaryValue>
+			<PrimaryValue>0.92</PrimaryValue>
+			<PrimaryValue>0.8620689655172413</PrimaryValue>
+			<PrimaryValue>0.9491525423728814</PrimaryValue>
+			<PrimaryValue>0.864406779661017</PrimaryValue>
+			<PrimaryValue>0.8936170212765957</PrimaryValue>
+			<PrimaryValue>0.8823529411764706</PrimaryValue>
+			<PrimaryValue>0.8235294117647058</PrimaryValue>
+			<PrimaryValue>0.9069767441860465</PrimaryValue>
+			<PrimaryValue>0.8448275862068966</PrimaryValue>
+			<PrimaryValue>0.8571428571428571</PrimaryValue>
+			<PrimaryValue>0.7857142857142857</PrimaryValue>
+			<PrimaryValue>0.88</PrimaryValue>
+			<PrimaryValue>0.8888888888888888</PrimaryValue>
+			<PrimaryValue>0.8846153846153846</PrimaryValue>
+			<PrimaryValue>0.8717948717948718</PrimaryValue>
+			<PrimaryValue>0.9705882352941176</PrimaryValue>
+			<PrimaryValue>0.9393939393939394</PrimaryValue>
+			<PrimaryValue>0.9411764705882353</PrimaryValue>
+			<PrimaryValue>0.9583333333333334</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>0.8387096774193549</PrimaryValue>
+			<PrimaryValue>0.875</PrimaryValue>
+			<PrimaryValue>0.9193548387096774</PrimaryValue>
+			<PrimaryValue>1.0</PrimaryValue>
+			<PrimaryValue>0.9629629629629629</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<PrimaryValue>0.0</PrimaryValue>
+			<Compare>false</Compare>
+			<PrimaryEntireDateRange>20080208-20080309</PrimaryEntireDateRange>
+			<PrimaryActiveDateRange>20080301-20080308</PrimaryActiveDateRange>
+		</Sparkline>
+		<ItemSummary id="BounceSummary">
+			<Active>true</Active>
+			<Message>Bounce Rate</Message>
+			<InverseCompare>false</InverseCompare>
+			<Compare>false</Compare>
+			<SummaryValue>92.54%</SummaryValue>
+		</ItemSummary>
+		<Narrative id="Narrative">
+			<Message>Top Content</Message>
+			<Type>NORMAL</Type>
+			<Compare>false</Compare>
+		</Narrative>
+		<MiniTable id="PageTable">
+			<Row>
+				<Value>128</Value>
+				<Value>45.23%</Value>
+				<Key>/</Key>
+			</Row>
+			<Row>
+				<Value>35</Value>
+				<Value>12.37%</Value>
+				<Key>/portfolio</Key>
+			</Row>
+			<Row>
+				<Value>26</Value>
+				<Value>9.19%</Value>
+				<Key>/team</Key>
+			</Row>
+			<Row>
+				<Value>15</Value>
+				<Value>5.30%</Value>
+				<Key>/news/</Key>
+			</Row>
+			<Row>
+				<Value>15</Value>
+				<Value>5.30%</Value>
+				<Key>/portfolio/president</Key>
+			</Row>
+			<KeyColumnName>Pages</KeyColumnName>
+			<Dashboard>false</Dashboard>
+			<Compare>false</Compare>
+			<NextLink>content_detail</NextLink>
+			<LinkKeys>true</LinkKeys>
+			<ColumnName>Pageviews</ColumnName>
+			<ColumnName>% Pageviews</ColumnName>
+		</MiniTable>
+	</Report>
+</AnalyticsReport>

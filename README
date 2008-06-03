@@ -1,0 +1,26 @@
+A Ruby API for Google Analytics.
+
+= WARNING
+
+This is unstable and will remain so for a bit. Do not use it right now unless you are hoping for things to go boom. :)
+
+Feel free however to hack at it and send me patches.
+
+
+== Authenticate
+
+Login with your Google Analytics user name and password:
+
+ Rugalytics.login 'username', 'password'
+
+
+== Obtain Profile
+
+Get profile using account name and profile name:
+
+ profile = Rugalytics.find_profile('your_site.com', 'blog.your_site.com')
+
+
+If account name and profile name are the same:
+
+ profile = Rugalytics.find_profile('your_site.com')
