@@ -6,9 +6,6 @@ module Rugalytics
     include Morph
 
     def initialize attributes, values, base_url
-      attributes = attributes.split(',')
-      values = values.split(',')
-
       attributes.each_with_index do |attribute, index|
         attribute.sub!('$','dollar')
         morph(attribute, values[index])

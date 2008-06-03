@@ -9,7 +9,7 @@ describe Rugalytics::Item, 'when creating' do
   end
 
   it "it should create fields for attributes and values" do
-    item = Rugalytics::Item.new @attributes, @values, @url
+    item = Rugalytics::Item.new @attributes.split(','), @values.split(','), @url
 
     item.url.should == 'http://theyworkforyou.co.nz/'
     item.page_views.should == '189'
