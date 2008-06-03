@@ -30,8 +30,7 @@ Top Content,
         @report.end_date.should == '31 May 2008'
       end
     end
-
-    describe "when creating items" do
+    describe "when creating items from 'Table'" do
       before :all do
         @base_url = %Q|theyworkforyou.co.nz|
         @attributes = %Q|URL,Page Views,Unique Page Views,Time on Page,Bounce Rate,% Exit,$ Index|
@@ -60,6 +59,43 @@ Top Content,
 
         report = Rugalytics::Report.new(@csv)
         report.items.should == [item1, item2]
+      end
+    end
+
+    describe "when creating items from 'Table'" do
+      before :all do
+        @base_url = %Q|theyworkforyou.co.nz|
+        @browser_attributes = %Q|Browser,Visits,% visits|
+        @browser_values = %Q|Firefox,1529,0.17185568809509277|
+        @connection_speed_attributes = %Q|Connection Speed,Visits,% visits|
+        @connection_speed_values = %Q|Unknown,3987,0.4481285810470581|
+        @csv = %Q|# ----------------------------------------
+#{@base_url}
+Visitors Overview,
+3 May 2008,2 June 2008
+# ----------------------------------------
+# ----------------------------------------
+# BrowserMiniTable
+# ----------------------------------------
+#{@browser_attributes}
+#{@browser_values}
+
+# ----------------------------------------
+# ConnectionSpeedMiniTable
+# ----------------------------------------
+#{@connection_speed_attributes}
+#{@connection_speed_values}
+# --------------------------------------------------------------------------------|
+      end
+      it 'should create item for each data row in "XxxMiniTable"' do
+        browser_item = mock('browser_item')
+        connection_item = mock('item')
+        Rugalytics::Item.should_receive(:new).with(@browser_attributes.split(','), @browser_values.split(','), @base_url).and_return browser_item
+        Rugalytics::Item.should_receive(:new).with(@connection_speed_attributes.split(','), @connection_speed_values.split(','), @base_url).and_return connection_item
+
+        report = Rugalytics::Report.new(@csv)
+        report.browser_items.should == [browser_item]
+        report.connection_speed_items.should == [connection_item]
       end
     end
   end
