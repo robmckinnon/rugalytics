@@ -69,7 +69,7 @@ module Rugalytics
     end
 
     def visits(options={})
-      get_item_summary_by_message(options.merge(:message => 'visits'))
+      load_report('Visits',options).visits_total
     end
 
     def visits_by_day(options={})

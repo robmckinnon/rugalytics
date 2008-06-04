@@ -52,6 +52,24 @@ describe Rugalytics::Profile do
     end
   end
 
+  describe 'finding visits' do
+    it 'should return total from loaded "Visits" report' do
+      profile = Rugalytics::Profile.new :profile_id=>123
+      profile.should_receive(:load_report).with('Visits',{}).and_return mock('report',:visits_total=>100)
+      profile.visits.should == 100
+    end
+    describe 'when from and to dates are specified' do
+      it 'should return total from "Visits" report for given dates' do
+        profile = Rugalytics::Profile.new :profile_id=>123
+        from = '2008-05-01'
+        to = '2008-05-03'
+        options = {:from=>from, :to=>to}
+        profile.should_receive(:load_report).with('Visits', options).and_return mock('report',:visits_total=>100)
+        profile.visits(options).should == 100
+      end
+    end
+  end
+
   it "should be able to find all profiles for an account" do
     html = fixture('analytics_profile_find_all.html')
     Rugalytics::Profile.should_receive(:get).and_return(html)
@@ -67,13 +85,6 @@ describe Rugalytics::Profile do
     dates.first.should == [Date.civil(2008, 2, 8), 72]
     dates.last.should == [Date.civil(2008, 3, 9), 0]
     dates.size.should == 31
-  end
-
-  it "should be able to get visits" do
-    profile = Rugalytics::Profile.new(:account_id => 344381, :profile_id => 543890)
-    xml = fixture('dashboard_report_webgroup.xml')
-    Rugalytics::Profile.should_receive(:get).and_return(xml)
-    profile.visits.should == 228
   end
 
   it "should be able to get visits by day" do
