@@ -27,14 +27,20 @@ module Rugalytics
       @profile_id = attrs[:profile_id]  if attrs.has_key?(:profile_id)
     end
 
+    def load_report(name, options={})
+      Rugalytics::Report.new report(options.merge({:report=>name}))
+    end
+
     def report(options={})
       options.reverse_merge!({
         :report  => 'Dashboard',
         :from    => Time.now.utc - 7.days,
         :to      => Time.now.utc,
         :tab     => 0,
-        :format  => FORMAT_XML,
+        :format  => FORMAT_CSV,
+        :rows    => 50,
         :compute => 'average',
+        :gdfmt   => 'nth_day',
         :view    => 0
       })
       options[:from] = ensure_datetime_in_google_format(options[:from])
@@ -47,6 +53,8 @@ module Rugalytics
         :fmt  => options[:format],
         :view => options[:view],
         :tab  => options[:tab],
+        :trows=> options[:rows],
+        :gdfmt=> options[:gdfmt],
         :id   => profile_id,
       }
       self.class.get("https://google.com/analytics/reporting/export", :query_hash => params)

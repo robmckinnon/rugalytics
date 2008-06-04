@@ -24,3 +24,38 @@ Get profile using account name and profile name:
 If account name and profile name are the same:
 
  profile = Rugalytics.find_profile('your_site.com')
+
+
+== Load Reports
+
+ report = profile.load_report 'TrafficSources'
+
+ report.source_items[0].sources + ': ' + report.source_items[0].percentage_visits
+ => "google (organic): 0.831123948097229"
+
+ report.keyword_items[1].keywords + ': ' + report.keyword_items[1].visits
+ => "oecd nz report summary 2007: 14"
+
+ report.start_date
+ => "28 May 2008"
+
+ report.report_name
+ => "Traffic Sources Overview"
+
+
+ report = profile.load_report 'VisitorsOverview'
+
+ report.browser_items[1]
+ => #<Rugalytics::Item @percentage_visits="0.18", @visits="314", @browser="Firefox">
+
+ report.connection_speed_items[3]
+ => #<Rugalytics::Item @connection_speed="Dialup", @percentage_visits="0.06340057402849197", @visits="110">
+
+
+ report = profile.load_report 'Networks', :rows=>100
+
+ report.items.size
+ => 100
+
+ report.items.first.network_location
+ => "telecom xtra"
