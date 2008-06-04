@@ -19,10 +19,14 @@ module Rugalytics
       if is_writer = symbol.to_s[/=$/]
         morph_method_missing(symbol, *args)
 
-      elsif graph_name = symbol.to_s[/(.*)_total/,1]
-        graph = "#{graph_name}_graph".to_sym
+      elsif symbol.to_s.match /(.*)_(total|by_day)/
+        graph = "#{$1}_graph".to_sym
 
-        respond_to?(graph) ? send(graph).sum_of_points : super
+        if respond_to?(graph)
+          $2 == 'total' ? send(graph).sum_of_points : send(graph).points_by_day
+        else
+          super
+        end
 
       else
         super

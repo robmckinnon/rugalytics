@@ -19,7 +19,13 @@ module Rugalytics
     end
 
     def points_by_day
-      date = Date.parse(start_date)
+      by_day = []
+      index = 0
+      from.upto(to) do |date|
+        by_day << [date, points[index] ]
+        index = index.next
+      end
+      by_day
     end
   end
 end

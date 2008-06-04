@@ -27,4 +27,17 @@ describe Rugalytics::Graph do
       graph.sum_of_points.should == 5360 + 3330 + 4330
     end
   end
+
+  describe 'when counting total of points' do
+    it 'should sum points in graph' do
+      graph = Rugalytics::Graph.new '','',[5360, 3330, 4330]
+      from = Date.parse('1 May 2003')
+      mid = Date.parse('2 May 2003')
+      to = Date.parse('3 May 2003')
+      graph.stub!(:from).and_return from
+      graph.stub!(:to).and_return to
+      graph.points_by_day.should == [[from,5360],[mid,3330],[to,4330]]
+    end
+  end
+
 end

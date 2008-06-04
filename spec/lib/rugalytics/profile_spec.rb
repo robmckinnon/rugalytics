@@ -77,26 +77,6 @@ describe Rugalytics::Profile do
     accounts.collect(&:name).should ==  ["blog.your_site.com"]
   end
 
-  it "should be able to get pageviews by day" do
-    profile = Rugalytics::Profile.new(:account_id => 344381, :profile_id => 543890)
-    xml = fixture('dashboard_report_webgroup.xml')
-    Rugalytics::Profile.should_receive(:get).and_return(xml)
-    dates = profile.pageviews_by_day
-    dates.first.should == [Date.civil(2008, 2, 8), 72]
-    dates.last.should == [Date.civil(2008, 3, 9), 0]
-    dates.size.should == 31
-  end
-
-  it "should be able to get visits by day" do
-    profile = Rugalytics::Profile.new(:account_id => 344381, :profile_id => 543890)
-    xml = fixture('dashboard_report_webgroup.xml')
-    Rugalytics::Profile.should_receive(:get).and_return(xml)
-    dates = profile.visits_by_day
-    dates.first.should == [Date.civil(2008, 2, 8), 67]
-    dates.last.should == [Date.civil(2008, 3, 9), 0]
-    dates.size.should == 31
-  end
-
   describe "finding by account name and profile name" do
     it 'should find account and find profile' do
       account_name = 'your_site.com'

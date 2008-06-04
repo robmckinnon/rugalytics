@@ -57,6 +57,8 @@ module Rugalytics
         :gdfmt=> options[:gdfmt],
         :id   => profile_id,
       }
+      puts params.inspect
+      # https://www.google.com/analytics/reporting/export?fmt=2&id=1712313&pdr=20080504-20080603&cmp=average&&rpt=PageviewsReport
       self.class.get("https://google.com/analytics/reporting/export", :query_hash => params)
     end
 
@@ -65,7 +67,7 @@ module Rugalytics
     end
 
     def pageviews_by_day(options={})
-      get_serie_by_label(options.merge({:label => 'pageviews'}))
+      load_report('Pageviews',options).page_views_by_day
     end
 
     def visits(options={})
@@ -73,7 +75,7 @@ module Rugalytics
     end
 
     def visits_by_day(options={})
-      get_serie_by_label(options.merge({:label => 'visits'}))
+      load_report('Visits',options).visits_by_day
     end
 
     # takes a Date, Time or String

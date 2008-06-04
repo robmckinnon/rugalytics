@@ -137,4 +137,15 @@ Top Content,
       report.method_missing(:page_views_total).should == 100
     end
   end
+
+  describe 'when retrieving list by day using method not defined on class' do
+    it 'should return by day list from graph named in method name' do
+      report = Rugalytics::Report.new
+      report.should_receive(:respond_to?).with(:page_views_graph).and_return true
+      points_by_day = mock('points_by_day')
+      report.should_receive(:page_views_graph).and_return mock('graph', :points_by_day=>points_by_day)
+      report.method_missing(:page_views_by_day).should == points_by_day
+    end
+  end
+
 end
