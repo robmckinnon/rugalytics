@@ -1,4 +1,5 @@
 require 'net/https'
+
 module Rugalytics
   class Connection
     def initialize(base_url, args = {})

@@ -11,6 +11,8 @@ Feel free however to hack at it and send me patches.
 
 Login with your Google Analytics user name and password:
 
+ require 'rugalytics'
+
  Rugalytics.login 'username', 'password'
 
 
@@ -24,6 +26,12 @@ Get profile using account name and profile name:
 If account name and profile name are the same:
 
  profile = Rugalytics.find_profile('your_site.com')
+
+
+== Get Profile Summary Statistics
+
+ profile.pageviews
+ => 16060
 
 
 == Load Reports
@@ -59,3 +67,22 @@ If account name and profile name are the same:
 
  report.items.first.network_location
  => "telecom xtra"
+
+
+
+>> require 'statwhore'
+=> true
+>> Google::Base.establish_connection('username@gmail.com', 'tehs3cr3t')
+=> #<Google::Base:0x199ae84 @password="tehs3cr3t", @email="username@gmail.com", @sid="areallylonghashofkeysthatyoucantsee">
+>> Statwhore::Google::Analytics::Account.find_all
+=> [#<Statwhore::Google::Analytics::Account:0x1943300 @account_id=85301, @name="addictedtonew.com">, #<Statwhore::Google::Analytics::Account:0x1943058 @account_id=344381, @name="webgroup.nd.edu">]
+>> Statwhore::Google::Analytics::Profile.find_all(85301)
+=> [#<Statwhore::Google::Analytics::Profile:0x12a0304 @account_id=85301, @name="addictedtonew.com", @profile_id=47912>, #<Statwhore::Google::Analytics::Profile:0x129edd8 @account_id=85301, @name="googlebase.rubyforge.org", @profile_id=5867643>, #<Statwhore::Google::Analytics::Profile:0x129e70c @account_id=85301, @name="googlereader.rubyforge.org", @profile_id=5868472>,  #<Statwhore::Google::Analytics::Profile:0x129cde4 @account_id=85301, @name="lorem.rubyforge.org", @profile_id=3027809>, #<Statwhore::Google::Analytics::Profile:0x129a080 @account_id=85301, @name="mirrored.rubyforge.org", @profile_id=5211778>, #<Statwhore::Google::Analytics::Profile:0x12999c8 @account_id=85301, @name="railstips.org", @profile_id=1897579>, #<Statwhore::Google::Analytics::Profile:0x12995b8 @account_id=85301, @name="scrobbler.rubyforge.org", @profile_id=3293580>, #<Statwhore::Google::Analytics::Profile:0x12991bc @account_id=85301, @name="snitch.rubyforge.org", @profile_id=2800544>, #<Statwhore::Google::Analytics::Profile:0x12989c4 @account_id=85301, @name="twitter.rubyforge.org", @profile_id=2865122>]
+>> profile = Statwhore::Google::Analytics::Profile.find(85301, 1897579)
+=> #<Statwhore::Google::Analytics::Profile:0x1c3af18 @account_id=85301, @name="railstips.org", @profile_id=1897579>
+>> profile.pageviews
+=> 1743
+>> profile.pageviews(:from => Time.mktime(2008, 3, 1), :to => Time.mktime(2008, 3, 10))
+=> 2416
+>> profile.visits(:from => Time.mktime(2008, 3, 1), :to => Time.mktime(2008, 3, 10))
+=> 1862

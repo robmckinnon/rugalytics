@@ -1,4 +1,3 @@
-
 module Rugalytics
   class Account < ::Google::Base
 

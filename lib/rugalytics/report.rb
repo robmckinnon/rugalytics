@@ -1,17 +1,32 @@
-require 'morph'
-
 module Rugalytics
 
   class Report
-    include Morph
+
+    include MorphLessMethodMissing
 
     attr_reader :base_url, :report_name, :start_date, :end_date
 
-    def initialize csv
+    def initialize csv=''
+      return if csv.empty?
       lines = csv.split("\n")
       set_attributes lines
       handle_graphs lines
       handle_tables lines
+    end
+
+    def method_missing symbol, *args
+
+      if is_writer = symbol.to_s[/=$/]
+        morph_method_missing(symbol, *args)
+
+      elsif graph_name = symbol.to_s[/(.*)_total/,1]
+        graph = "#{graph_name}_graph".to_sym
+
+        respond_to?(graph) ? send(graph).sum_of_points : super
+
+      else
+        super
+      end
     end
 
     private

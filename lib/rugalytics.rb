@@ -6,6 +6,7 @@ require 'rubygems'
 require 'hpricot'
 require 'activesupport'
 require 'google/base'
+require 'morph'
 
 module Rugalytics
   VERSION = "0.0.1"
@@ -16,6 +17,13 @@ module Rugalytics
   FORMAT_TAB = '3' unless defined? FORMAT_TAB
 
   VALID_REPORTS = %w[ Dashboard ] unless defined? VALID_REPORTS
+
+  module MorphLessMethodMissing
+    def self.included(base)
+      base.extend Morph::ClassMethods
+      base.send(:include, Morph::InstanceMethods)
+    end
+  end
 
   class InvalidCredentials < Exception
   end

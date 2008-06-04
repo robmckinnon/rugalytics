@@ -34,18 +34,19 @@ describe Rugalytics::Profile do
     end
   end
 
+  describe 'finding pageviews' do
+    it 'should return total from load Pageviews report' do
+      profile = Rugalytics::Profile.new :profile_id=>123
+      profile.should_receive(:load_report).with('Pageviews').and_return mock('report',:page_views_total=>100)
+      profile.pageviews.should == 100
+    end
+  end
+
   it "should be able to find all profiles for an account" do
     html = fixture('analytics_profile_find_all.html')
     Rugalytics::Profile.should_receive(:get).and_return(html)
     accounts = Rugalytics::Profile.find_all('1254221')
     accounts.collect(&:name).should ==  ["blog.your_site.com"]
-  end
-
-  it "should be able to get pageviews" do
-    profile = Rugalytics::Profile.new(:account_id => 344381, :profile_id => 543890)
-    xml = fixture('dashboard_report_webgroup.xml')
-    Rugalytics::Profile.should_receive(:get).and_return(xml)
-    profile.pageviews.should == 283
   end
 
   it "should be able to get pageviews by day" do

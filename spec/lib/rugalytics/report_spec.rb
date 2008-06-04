@@ -128,4 +128,13 @@ Top Content,
       end
     end
   end
+
+  describe 'when retrieving total using method not defined on class' do
+    it 'should return total from graph named in method name' do
+      report = Rugalytics::Report.new
+      report.should_receive(:respond_to?).with(:page_views_graph).and_return true
+      report.should_receive(:page_views_graph).and_return mock('graph', :sum_of_points=>100)
+      report.method_missing(:page_views_total).should == 100
+    end
+  end
 end

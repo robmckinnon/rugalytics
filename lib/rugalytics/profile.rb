@@ -61,7 +61,7 @@ module Rugalytics
     end
 
     def pageviews(options={})
-      get_item_summary_by_message(options.merge(:message => 'pageviews'))
+      load_report('Pageviews').page_views_total
     end
 
     def pageviews_by_day(options={})

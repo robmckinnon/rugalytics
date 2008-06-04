@@ -1,5 +1,3 @@
-require 'morph'
-
 module Rugalytics
 
   class Item
