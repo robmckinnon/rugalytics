@@ -30,8 +30,27 @@ If account name and profile name are the same:
 
 == Get Profile Summary Statistics
 
- profile.pageviews
- => 16060
+Obtaining pageviews:
+
+ profile.pageviews # defaults period one month ending today
+ => 160600
+
+ profile.pageviews :from=>'2007-01-01'
+ => 2267550
+
+ profile.pageviews :from=>'2007-01-01', :to=>'2007-01-02'
+ => 24980
+
+The longer way to get the same is:
+
+ report = profile.load_report('Pageviews', :from=>'2007-01-01', :to=>'2007-01-02')
+
+ report.page_views_total
+ => 24980
+
+ # a short hand for
+ report.page_views_graph.sum_of_points
+ => 24980
 
 
 == Load Reports

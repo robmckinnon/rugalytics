@@ -61,7 +61,7 @@ module Rugalytics
     end
 
     def pageviews(options={})
-      load_report('Pageviews').page_views_total
+      load_report('Pageviews',options).page_views_total
     end
 
     def pageviews_by_day(options={})
@@ -78,6 +78,7 @@ module Rugalytics
 
     # takes a Date, Time or String
     def ensure_datetime_in_google_format(time)
+      time = Date.parse(time) if time.is_a?(String)
       time.is_a?(Time) || time.is_a?(Date) ? time.strftime('%Y%m%d') : time
     end
 

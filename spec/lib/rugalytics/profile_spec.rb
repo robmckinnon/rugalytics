@@ -35,10 +35,20 @@ describe Rugalytics::Profile do
   end
 
   describe 'finding pageviews' do
-    it 'should return total from load Pageviews report' do
+    it 'should return total from loaded "Pageviews" report' do
       profile = Rugalytics::Profile.new :profile_id=>123
-      profile.should_receive(:load_report).with('Pageviews').and_return mock('report',:page_views_total=>100)
+      profile.should_receive(:load_report).with('Pageviews',{}).and_return mock('report',:page_views_total=>100)
       profile.pageviews.should == 100
+    end
+    describe 'when from and to dates are specified' do
+      it 'should return total from "Pageviews" report for given dates' do
+        profile = Rugalytics::Profile.new :profile_id=>123
+        from = '2008-05-01'
+        to = '2008-05-03'
+        options = {:from=>from, :to=>to}
+        profile.should_receive(:load_report).with('Pageviews', options).and_return mock('report',:page_views_total=>100)
+        profile.pageviews(options).should == 100
+      end
     end
   end
 
