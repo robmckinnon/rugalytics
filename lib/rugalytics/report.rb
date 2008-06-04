@@ -10,6 +10,7 @@ module Rugalytics
     def initialize csv
       lines = csv.split("\n")
       set_attributes lines
+      handle_graphs lines
       handle_tables lines
     end
 
@@ -23,6 +24,30 @@ module Rugalytics
       @end_date = dates[1]
     end
 
+    def handle_graphs lines
+      index = 5
+      while index < lines.size
+        while (lines[index][/^# Graph/].nil? || lines[index].strip.size == 0)
+          index = index.next
+          return if index == lines.size
+        end
+        index = index + 2
+        period = lines[index]
+        index = index.next
+        name = lines[index]
+        index = index.next
+
+        points = []
+        while (point = lines[index]) && point.strip.size > 0
+          points << point.to_i
+          index = index.next
+        end
+
+        graph = Graph.new name, period, points
+        morph("#{name} graph", graph)
+      end
+    end
+
     def handle_tables lines
       index = 5
       while index < lines.size
@@ -31,7 +56,7 @@ module Rugalytics
           return if index == lines.size
         end
         type = lines[index][/^# (.*)MiniTable/,1]
-        index = index+2
+        index = index + 2
         attributes = lines[index].split(',')
         index = index.next
 

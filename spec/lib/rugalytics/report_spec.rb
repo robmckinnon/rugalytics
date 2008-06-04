@@ -30,6 +30,7 @@ Top Content,
         @report.end_date.should == '31 May 2008'
       end
     end
+
     describe "when creating items from 'Table'" do
       before :all do
         @base_url = %Q|theyworkforyou.co.nz|
@@ -62,7 +63,7 @@ Top Content,
       end
     end
 
-    describe "when creating items from 'Table'" do
+    describe "when creating items from '.*MiniTableTable'" do
       before :all do
         @base_url = %Q|theyworkforyou.co.nz|
         @browser_attributes = %Q|Browser,Visits,% visits|
@@ -96,6 +97,34 @@ Visitors Overview,
         report = Rugalytics::Report.new(@csv)
         report.browser_items.should == [browser_item]
         report.connection_speed_items.should == [connection_item]
+      end
+    end
+
+    describe "when creating graph points from 'Graph'" do
+      before :all do
+        @period = %Q|1 May 2008 - 31 May 2008|
+        @name = %Q|Page Views|
+        @csv = %Q|# ----------------------------------------
+theyworkforyou.co.nz
+Top Content,
+26 May 2008,31 May 2008
+# ----------------------------------------
+
+# ----------------------------------------
+# Graph
+# ----------------------------------------
+#{@period}
+#{@name}
+5360
+4330|
+      end
+
+      it 'should create graph with data under "Graph"' do
+        graph = mock('graph')
+        Rugalytics::Graph.should_receive(:new).with(@name, @period, [5360, 4330]).and_return graph
+
+        report = Rugalytics::Report.new(@csv)
+        report.page_views_graph.should == graph
       end
     end
   end
