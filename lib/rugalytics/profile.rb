@@ -29,7 +29,7 @@ module Rugalytics
 
     def load_report(name, options={})
       report = Rugalytics::Report.new report(options.merge({:report=>name}))
-      puts report.attributes
+      puts report.attribute_names
       report
     end
 

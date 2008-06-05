@@ -14,7 +14,7 @@ module Rugalytics
       handle_tables lines
     end
 
-    def attributes
+    def attribute_names
       Report.morph_methods.select {|m| m[/[a-z]$/]}.select {|m| send(m.to_sym)}
     end
 

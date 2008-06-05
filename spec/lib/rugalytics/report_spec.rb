@@ -97,7 +97,7 @@ Visitors Overview,
         report = Rugalytics::Report.new(@csv)
         report.browser_items.should == [browser_item]
         report.connection_speed_items.should == [connection_item]
-        report.attributes.should == ['browser_items', 'connection_speed_items']
+        report.attribute_names.should == ['browser_items', 'connection_speed_items']
       end
     end
 
@@ -126,7 +126,7 @@ Top Content,
 
         report = Rugalytics::Report.new(@csv)
         report.page_views_graph.should == graph
-        report.attributes.should == ['page_views_graph']
+        report.attribute_names.should == ['page_views_graph']
       end
     end
   end
