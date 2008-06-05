@@ -58,7 +58,7 @@ module Rugalytics
 
         points = []
         while (point = lines[index]) && point.strip.size > 0
-          points << point.to_i
+          points << point.tr('",','').to_i
           index = index.next
         end
 

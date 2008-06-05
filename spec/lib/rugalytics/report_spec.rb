@@ -115,13 +115,13 @@ Top Content,
 # ----------------------------------------
 #{@period}
 #{@name}
-5360
-4330|
+"5,360"
+433|
       end
 
       it 'should create graph with data under "Graph"' do
         graph = mock('graph')
-        Rugalytics::Graph.should_receive(:new).with(@name, @period, [5360, 4330]).and_return graph
+        Rugalytics::Graph.should_receive(:new).with(@name, @period, [5360, 433]).and_return graph
 
         report = Rugalytics::Report.new(@csv)
         report.page_views_graph.should == graph

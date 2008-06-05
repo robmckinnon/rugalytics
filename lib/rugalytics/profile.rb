@@ -28,7 +28,9 @@ module Rugalytics
     end
 
     def load_report(name, options={})
-      Rugalytics::Report.new report(options.merge({:report=>name}))
+      report = Rugalytics::Report.new report(options.merge({:report=>name}))
+      # puts Report.morph_methods
+      report
     end
 
     def report(options={})
