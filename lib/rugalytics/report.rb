@@ -14,6 +14,10 @@ module Rugalytics
       handle_tables lines
     end
 
+    def attributes
+      Report.morph_methods.select {|m| m[/[a-z]$/]}.select {|m| send(m.to_sym)}
+    end
+
     def method_missing symbol, *args
 
       if is_writer = symbol.to_s[/=$/]
