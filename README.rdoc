@@ -1,10 +1,21 @@
-A Ruby API for Google Analytics.
+Rugalytics is a Ruby API for Google Analytics.
 
-= WARNING
+= Warning - API under development
 
-This is unstable and will remain so for a bit. Do not use it right now unless you are hoping for things to go boom. :)
+The Rugalytics API is in early development so it may change slightly over time.
+It should be in working order, so please give it a test spin!
 
-Feel free however to hack at it and send me patches.
+The source code is hosted at github. Feel free to fork the code if you have
+something to contribute:
+
+ http://github.com/robmckinnon/rugalytics
+
+
+== Install as a Gem
+
+Should be up at rubyforge, so to install:
+
+ sudo gem install rugalytics
 
 
 == Authenticate
@@ -30,7 +41,7 @@ If account name and profile name are the same:
 
 == Get Profile Summary Statistics
 
-Obtaining pageviews:
+Obtaining page views:
 
  profile.pageviews # default period is one month ending today
  => 160600
@@ -41,22 +52,29 @@ Obtaining pageviews:
  profile.pageviews :from=>'2007-01-01', :to=>'2007-01-02'
  => 24980
 
-The longer way to get the same is:
+The +pageviews+ method is doing this under the hood:
 
  report = profile.load_report('Pageviews', :from=>'2007-01-01', :to=>'2007-01-02')
 
  report.page_views_total
  => 24980
 
+And under the hood, the +page_views_total+ method is actually calling:
+
  report.page_views_graph.sum_of_points
  => 24980
 
-== Load Reports
+== Load a Report
 
 The report name, e.g. 'Pageviews' or 'TrafficSources', is the rpt parameter from
-the Google Analytics CSV export URL. If you are on a page in the Analytics web
-interface, the CSV URL can be found by clicking on the Export tab, and mousing
-over the CSV option.
+the Google Analytics URL for a CSV report export, e.g.:
+
+ https://www.google.com/analytics/reporting/export?fmt=2&...&&rpt=TrafficSourcesReport&...
+
+From a page on the Analytics website, you can find the CSV URL by clicking on
+the Export tab, and then mousing over the CSV option.
+
+Let's load the TrafficSources report:
 
  report = profile.load_report 'TrafficSources'
 
@@ -70,20 +88,22 @@ over the CSV option.
  => "4 June 2008"
 
  report.source_items.collect{|s| "#{s.sources}: #{s.visits}"}.first
- => "google (organic): 0.831123948097229"
+ => "google (organic): 15210"
 
  report.keyword_items.collect{|k| "#{k.keywords}: #{k.visits}"}[1]
  => "oecd nz report summary 2007: 14"
 
+Let's try another report, VisitorsOverview:
 
  report = profile.load_report 'VisitorsOverview'
 
  report.browser_items[1]
- => #<Rugalytics::Item @percentage_visits="0.18", @visits="314", @browser="Firefox">
+ => #<Rugalytics::Item @percentage_visits="0.18", @visits="3140", @browser="Firefox">
 
  report.connection_speed_items[3]
- => #<Rugalytics::Item @connection_speed="Dialup", @percentage_visits="0.06340057402849197", @visits="110">
+ => #<Rugalytics::Item @connection_speed="Dialup", @percentage_visits="0.06340057402849197", @visits="1100">
 
+Let's now grab 100 lines of the Networks report:
 
  report = profile.load_report 'Networks', :rows=>100
 
@@ -93,3 +113,16 @@ over the CSV option.
  report.items.first.network_location
  => "telecom xtra"
 
+
+==Acknowledgements
+
+Rugalytics started life as a fork of jnunemaker's Statwhore. As the code and
+project scope began to diverge significantly from Statwhore, a new project was
+initiated.
+
+Rugalytics makes use of the Morph gem to emerge Ruby class definitions at
+runtime based on the contents of the CSV reports from Google Analytics.
+
+==License
+
+See LICENSE for the terms of this software.

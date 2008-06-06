@@ -8,6 +8,7 @@ require 'activesupport'
 require 'google/base'
 require 'morph'
 
+# See README for usage documentation.
 module Rugalytics
   VERSION = "0.0.1"
 
