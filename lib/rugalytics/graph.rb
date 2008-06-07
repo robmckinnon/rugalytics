@@ -1,31 +1,39 @@
 module Rugalytics
   class Graph
 
-    attr_reader :name, :points, :from, :to
+    attr_reader :name, :points, :points_by_day, :from, :to
 
-    def initialize name, period, points
+    def initialize name, graph_period, points, report_start, report_end
       @name = name
-      @period = period
-      dates = @period.split('-')
-      unless dates.empty?
-        @from = Date.parse(dates[0].strip)
-        @to = Date.parse(dates[1].strip)
-      end
-      @points = points
+      @from = report_start
+      @to = report_end
+      @points_by_day = create_points_by_day points, graph_period, report_start, report_end
+      @points = points_by_day.collect{|by_day| by_day[1]}
     end
 
     def sum_of_points
       points.sum
     end
 
-    def points_by_day
-      by_day = []
+    private
+
+    def create_points_by_day points, graph_period, report_start, report_end
+      with_dates_from_period(graph_period, []) do |date, index, list|
+        list << [date, points[index] ] if date >= report_start && date <= report_end
+      end
+    end
+
+    def with_dates_from_period period, list
+      dates = period.split('-')
+      from = Date.parse(dates[0].strip)
+      to = Date.parse(dates[1].strip)
+
       index = 0
       from.upto(to) do |date|
-        by_day << [date, points[index] ]
+        yield date, index, list
         index = index.next
       end
-      by_day
+      list
     end
   end
 end

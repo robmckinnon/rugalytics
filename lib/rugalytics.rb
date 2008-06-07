@@ -10,7 +10,7 @@ require 'morph'
 
 # See README for usage documentation.
 module Rugalytics
-  VERSION = "0.0.1"
+  VERSION = "0.0.2"
 
   FORMAT_PDF = '0' unless defined? FORMAT_PDF
   FORMAT_XML = '1' unless defined? FORMAT_XML

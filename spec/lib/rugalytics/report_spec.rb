@@ -23,11 +23,11 @@ Top Content,
       end
 
       it "should set start date from fourth line of text" do
-        @report.start_date.should == '26 May 2008'
+        @report.start_date.should == Date.parse('26 May 2008')
       end
 
       it "should set end date from fourth line of text" do
-        @report.end_date.should == '31 May 2008'
+        @report.end_date.should == Date.parse('31 May 2008')
       end
     end
 
@@ -105,10 +105,12 @@ Visitors Overview,
       before :all do
         @period = %Q|1 May 2008 - 31 May 2008|
         @name = %Q|Page Views|
+        @start = %Q|26 May 2008|
+        @end = %Q|31 May 2008|
         @csv = %Q|# ----------------------------------------
 theyworkforyou.co.nz
 Top Content,
-26 May 2008,31 May 2008
+#{@start},#{@end}
 # ----------------------------------------
 
 # ----------------------------------------
@@ -122,7 +124,7 @@ Top Content,
 
       it 'should create graph with data under "Graph"' do
         graph = mock('graph')
-        Rugalytics::Graph.should_receive(:new).with(@name, @period, [5360, 433]).and_return graph
+        Rugalytics::Graph.should_receive(:new).with(@name, @period, [5360, 433], Date.parse(@start), Date.parse(@end)).and_return graph
 
         report = Rugalytics::Report.new(@csv)
         report.page_views_graph.should == graph

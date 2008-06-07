@@ -23,7 +23,7 @@ module Rugalytics
       if is_writer = symbol.to_s[/=$/]
         morph_method_missing(symbol, *args)
 
-      elsif symbol.to_s.match /(.*)_(total|by_day)/
+      elsif symbol.to_s.match(/(.*)_(total|by_day)/)
         graph = "#{$1}_graph".to_sym
 
         if respond_to?(graph)
@@ -43,8 +43,8 @@ module Rugalytics
       @base_url = lines[1]
       @report_name = lines[2].chomp(',')
       dates = lines[3].split(',')
-      @start_date = dates[0]
-      @end_date = dates[1]
+      @start_date = Date.parse(dates[0])
+      @end_date = Date.parse(dates[1])
     end
 
     def handle_graphs lines
@@ -55,7 +55,7 @@ module Rugalytics
           return if index == lines.size
         end
         index = index + 2
-        period = lines[index]
+        graph_period = lines[index]
         index = index.next
         name = lines[index]
         index = index.next
@@ -66,7 +66,7 @@ module Rugalytics
           index = index.next
         end
 
-        graph = Graph.new name, period, points
+        graph = Graph.new name, graph_period, points, start_date, end_date
         morph("#{name} graph", graph)
       end
     end
