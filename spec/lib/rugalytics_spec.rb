@@ -31,4 +31,65 @@ describe Rugalytics do
     end
   end
 
+  describe 'when RAILS_ROOT is nil' do
+    it 'should not call rails_setup method' do
+      Rugalytics.should_not_receive(:rails_setup)
+      load(File.dirname(__FILE__) + '/../../lib/rugalytics.rb')
+    end
+  end
+
+  describe 'when RAILS_ROOT is defined and not nil' do
+    # it 'should call rails_setup method' do
+      # RAILS_ROOT = '.'
+      # Rugalytics.should_receive(:rails_setup).with(RAILS_ROOT)
+      # load(File.dirname(__FILE__) + '/../../lib/rugalytics.rb')
+      # RAILS_ROOT = nil
+    # end
+
+    before do
+      @rails_root = '.'
+      @config_file = "#{@rails_root}/config/rugalytics.yml"
+    end
+
+    it 'should look for rugalytics.yml file' do
+      File.should_receive(:exist?).with(@config_file).and_return false
+      Rugalytics.rails_setup(@rails_root)
+    end
+
+    describe 'and config/rugalytics.yml is present' do
+      before do
+        File.stub!(:exist?).with(@config_file).and_return true
+      end
+
+      it 'should load config' do
+        Rugalytics.should_receive(:load_config).with(@config_file).and_return Hash.new
+        Rugalytics.rails_setup(@rails_root)
+      end
+
+      it 'should save username and password if in credentials' do
+        user = 'user'
+        password = 'password'
+        Rugalytics.stub!(:load_config).and_return :username => user, :password => password
+        Rugalytics.should_receive(:username=).with(user)
+        Rugalytics.should_receive(:password=).with(password)
+        Rugalytics.rails_setup(@rails_root)
+      end
+
+      it 'should save profile if in credentials' do
+        profile = 'profile'
+        account = 'account'
+        Rugalytics.stub!(:load_config).and_return :profile => profile, :account => account
+        Rugalytics.should_receive(:account=).with(account)
+        Rugalytics.should_receive(:profile=).with(profile)
+        Rugalytics.rails_setup(@rails_root)
+      end
+
+      it 'should load config file using Yaml' do
+        file = 'file'
+        YAML.should_receive(:load_file).with(file)
+        Rugalytics.load_config(file)
+      end
+    end
+  end
+
 end

@@ -7,6 +7,7 @@ require 'hpricot'
 require 'activesupport'
 require 'google/base'
 require 'morph'
+require 'yaml'
 
 # See README for usage documentation.
 module Rugalytics
@@ -29,15 +30,48 @@ module Rugalytics
   class InvalidCredentials < Exception
   end
 
-  def self.login username, password
-    Google::Base.establish_connection(username, password)
-  end
+  class << self
+    def login username, password
+      Google::Base.establish_connection(username, password)
+    end
 
-  def self.find_profile account_id_or_name, profile_id_or_name=nil
-    begin
-      Profile.find account_id_or_name, profile_id_or_name
-    rescue NameError => e
-      raise 'No connection - call Rugalytics.login(<username>,<password>)'
+    def find_profile account_id_or_name, profile_id_or_name=nil
+      begin
+        Profile.find account_id_or_name, profile_id_or_name
+      rescue NameError => e
+        raise 'No connection - call Rugalytics.login(<username>,<password>)'
+      end
+    end
+
+    def rails_setup rails_root
+      config_file = "#{rails_root}/config/rugalytics.yml"
+      if File.exist? config_file
+        config = load_config(config_file)
+        self.username= config[:username] if config[:username]
+        self.password= config[:password] if config[:password]
+        self.account= config[:account] if config[:account]
+        self.profile= config[:profile] if config[:profile]
+      end
+    end
+
+    def load_config filename
+      YAML.load_file(filename)
+    end
+
+    def user= name
+      @user = name
+    end
+
+    def password= name
+      @password = name
+    end
+
+    def account= name
+      @account = name
+    end
+
+    def profile= name
+      @password = name
     end
   end
 end
@@ -48,3 +82,5 @@ require File.dirname(__FILE__) + '/rugalytics/profile'
 require File.dirname(__FILE__) + '/rugalytics/report'
 require File.dirname(__FILE__) + '/rugalytics/item'
 require File.dirname(__FILE__) + '/rugalytics/graph'
+
+Rugalytics.rails_setup(RAILS_ROOT) if defined?(RAILS_ROOT) && RAILS_ROOT
