@@ -43,36 +43,35 @@ module Rugalytics
       end
     end
 
-    def rails_setup rails_root
-      config_file = "#{rails_root}/config/rugalytics.yml"
-      if File.exist? config_file
-        config = load_config(config_file)
-        self.username= config[:username] if config[:username]
-        self.password= config[:password] if config[:password]
-        self.account= config[:account] if config[:account]
-        self.profile= config[:profile] if config[:profile]
+    def default_profile
+      config_setup '.' unless config
+      if config && config.account
+        begin
+          find_profile config.account, config.profile
+        rescue Exception => e
+          if e.to_s.include? 'No connection'
+            login config.username, config.password if config.username && config.password
+            find_profile config.account, config.profile
+          end
+        end
       end
     end
 
+    def config
+      @config
+    end
+
+    def config_setup root
+      config_file = "#{root}/config/rugalytics.yml"
+      config_file = "#{root}/rugalytics.yml" unless File.exist? config_file
+      @config = load_config(config_file) if File.exist? config_file
+    end
+
     def load_config filename
-      YAML.load_file(filename)
+      hash = YAML.load_file(filename)
+      OpenStruct.new(hash)
     end
 
-    def user= name
-      @user = name
-    end
-
-    def password= name
-      @password = name
-    end
-
-    def account= name
-      @account = name
-    end
-
-    def profile= name
-      @password = name
-    end
   end
 end
 
@@ -83,4 +82,4 @@ require File.dirname(__FILE__) + '/rugalytics/report'
 require File.dirname(__FILE__) + '/rugalytics/item'
 require File.dirname(__FILE__) + '/rugalytics/graph'
 
-Rugalytics.rails_setup(RAILS_ROOT) if defined?(RAILS_ROOT) && RAILS_ROOT
+Rugalytics.config_setup(RAILS_ROOT) if defined?(RAILS_ROOT) && RAILS_ROOT
