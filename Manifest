@@ -1,6 +1,5 @@
 CHANGELOG
 lib/rugalytics/account.rb
-lib/rugalytics/analytics.rb
 lib/rugalytics/connection.rb
 lib/rugalytics/graph.rb
 lib/rugalytics/item.rb

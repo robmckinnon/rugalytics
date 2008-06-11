@@ -9,9 +9,14 @@ require 'google/base'
 require 'morph'
 require 'yaml'
 
+module Morph::ClassMethods
+end
+module Morph::InstanceMethods
+end
+
 # See README for usage documentation.
 module Rugalytics
-  VERSION = "0.0.2"
+  VERSION = "0.0.3"
 
   FORMAT_PDF = '0' unless defined? FORMAT_PDF
   FORMAT_XML = '1' unless defined? FORMAT_XML
