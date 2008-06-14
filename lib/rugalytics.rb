@@ -9,11 +9,6 @@ require 'google/base'
 require 'morph'
 require 'yaml'
 
-module Morph::ClassMethods
-end
-module Morph::InstanceMethods
-end
-
 # See README for usage documentation.
 module Rugalytics
   VERSION = "0.0.3"
@@ -87,4 +82,4 @@ require File.dirname(__FILE__) + '/rugalytics/report'
 require File.dirname(__FILE__) + '/rugalytics/item'
 require File.dirname(__FILE__) + '/rugalytics/graph'
 
-Rugalytics.config_setup(RAILS_ROOT) if defined?(RAILS_ROOT) && RAILS_ROOT
+# Rugalytics.config_setup(RAILS_ROOT) if defined?(RAILS_ROOT) && RAILS_ROOT
