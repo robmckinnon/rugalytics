@@ -12,7 +12,10 @@ module Rugalytics
         morph(attribute, value)
       end
 
-      self.url = "http://#{base_url}#{url}" if respond_to?(:url)
+      if respond_to?(:url)
+        self.path = url
+        self.url = "http://#{base_url}#{url}"
+      end
     end
   end
 

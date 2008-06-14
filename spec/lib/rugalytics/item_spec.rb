@@ -12,6 +12,7 @@ describe Rugalytics::Item, 'when creating' do
     item = Rugalytics::Item.new @attributes.split(','), @values.split(','), @url
 
     item.url.should == 'http://theyworkforyou.co.nz/'
+    item.path.should == '/'
     item.page_views.should == '189'
     item.unique_page_views.should == '157'
     item.time_on_page.should == '54.94957983193277'
