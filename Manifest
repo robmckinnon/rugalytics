@@ -10,6 +10,7 @@ LICENSE
 Manifest
 README
 README.rdoc
+rugalytics.yml.example
 spec/fixtures/analytics_account_find_all.html
 spec/fixtures/analytics_profile_find_all.html
 spec/fixtures/dashboard_report_webgroup.xml
