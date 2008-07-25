@@ -10,8 +10,14 @@ something to contribute:
 
  http://github.com/robmckinnon/rugalytics
 
-
 == Install as a Gem
+
+The gem is not working at present due to a change that
+Google has made at their end.
+
+I suspect a change might need to be
+made in the GoogleBase gem which Rugalytics uses to
+login in to a Google account.
 
 Should be up at rubyforge, so to install:
 
