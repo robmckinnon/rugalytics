@@ -3,8 +3,8 @@ module Rugalytics
 
     class << self
       def find_all
-        doc = Hpricot::XML get('https://www.google.com:443/analytics/home/')
-        (doc/'select[@name=account_list] option').inject([]) do |accounts, option|
+        doc = Hpricot::XML get('https://www.google.com:443/analytics/settings/')
+        (doc/'select[@id=account] option').inject([]) do |accounts, option|
           account_id = option['value'].to_i
           accounts << new(:account_id => account_id, :name => option.inner_html) if account_id > 0
           accounts

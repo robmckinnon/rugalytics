@@ -1,296 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-<head>
-<title>Google Analytics</title>
-<meta http-equiv="Expires" content="now" />
-<meta http-equiv="pragma" content="no-cache" />
-<meta http-equiv="cache-control" content="no-cache" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="https://ssl.google-analytics.com/ga.js" type="text/javascript">
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-10005-1");
-pageTracker._setCookiePath("/analytics/");
-pageTracker._initData();
-pageTracker._trackPageview();
-</script>
-
-<script src="ujs/ugen.js"></script>
-<script src="ujs/admin.js"></script>
-
-<body bgcolor="#FFFFFF" id="ur_body">
-
-
-<link rel="stylesheet" type="text/css" href="ucss/ugen.css" />
-<link rel="stylesheet" type="text/css" href="ucss/ureport.css" />
-<table cellpadding="0" width="100%" cellspacing="0" border="0">
-<tr valign="middle">
-  <td width="1%" class="uh_logo"><a href="http://www.google.com/analytics/"><img src="images/logo.gif" align="left" alt="Google" border="0" /></a></td>
-  <td>
-    <table cellpadding="0" width="100%" cellspacing="0" border="0">
-    <tr valign="top">
-      <td nowrap="nowrap" valign="middle"></td>
-      <td align="right" nowrap="nowrap">
-        <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-          <td align="right" valign="top" class="uh_prefs">
-            <span class="uh_user">webgroup@nd.edu </span> <span class="uh_psep">|</span>
-
-
-            <a href="admin?vid=1303&scid=1254221&rid=190283" class="uh_link">My Account&nbsp;</a> <span class="uh_psep">|</span>
-
-            <a href="http://www.google.com/support/googleanalytics/?hl=en_US" target="GoogleHelp" class="uh_link">Help</a> <span class="uh_psep">|</span>
-            <a href="http://www.google.com/support/googleanalytics/bin/request.py?hl=en_US" target="GoogleHelp" class="uh_link">Contact us</a> <span class="uh_psep">|</span>
-            <a href="https://www.google.com/accounts/Logout?hl=en-US&continue=http://www.google.com/analytics/home/%3Fet%3Dreset%26hl%3Den-US" class="uh_link">Sign Out</a>
-          </td>
-        </tr>
-        </table>
-      </td>
-    </tr>
+<head><title>Analytics Settings - Google Analytics</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="Stylesheet" type="text/css" href="/analytics/static/s/3101978544-ga-ltr.css">
+</head>
+<body>
+<div id="container" class="admin_container">
+<span class="">
+<div id="header">
+  <div id="main_header">
+    <p id="logo"><a href="/analytics/settings/home">Google Analytics</a></p>
+    <p id="skip_link"><a href="#main_content">Skip to main content</a></p>
+    <table id="global_header_nav">
+      <tr><td><span id="f_email" class="email_address">@gmail.com</span></td>
+      <td>|</td>
+      <td><a href="/analytics/settings/my_account?scid=1254221">Settings</a></td>
+      <td>|</td>
+      <td><a href="https://www.google.com/accounts/ManageAccount">My Account</a></td>
+      <td>|</td>
+      <td><a href="http://www.google.com/support/googleanalytics/" target="GoogleHelp">Help</a></td>
+      <td>|</td>
+      <td><a href="https://www.google.com/accounts/Logout?continue=https://www.google.com/analytics/settings/" id="logout">Sign Out</a></td>
+      </tr>
     </table>
-    <br/>
-  </td>
-</tr>
-</table>
-
-
-
-
-
-
-<div class="topnav_section topnav_tl">
-<div class="topnav_bl">
-<div class="topnav_tr">
-<div class="topnav_br">
-<table cellpadding="0" width="100%" cellspacing="0" border="0">
-<tr>
-  <form name="select_profile" autocomplete="off">
-  <td nowrap="nowrap" class="topnav_settings">
-
-
-
-
-
-
-    <A href="admin?scid=1254221" class="topnav_active">Analytics Home</a>
-
-
-
-
-
-
-
-
-
-
-    <span class="topnav_sep"> | </span>
-
-    <span class="topnav_item">
-
-
-
-    <A href="javascript: goToProfile(1);" class="topnav_inactive">
-
-    View Reports:</a></span>
-    <select class="topnav_select" name="profile_list" onchange="goToProfile(1)">
-      <option value="0">Click to select Website Profile</option>
-
-      <option value="2420755" >blog.your_site.com</option>
-
-    </select>
-
-
-
-  </td>
-  </form>
-  <form name="select_account" autocomplete="off">
-  <td align="right" class="topnav_options">
-
-
-
-  <span class="topnav_heading">My Analytics Accounts: </span>
-  <select class="topnav_select2" name="account_list" onchange="goToAccount()">
-
-    <option value="1254221" >your_site.com</option>
-
-    <option value="344381" >webgroup.nd.edu</option>
-
-    <option value=""> ------------------------------- </option>
-    <option value="0"> Create New Account...</option>
-  </select>
-
-
-
-
-
-  </td>
-
-  </form>
-
-
-</tr>
-</table>
+  </div>
+  <div id="subheader">
+    <div id="account_profile_nav">
+      <form id="account_profile_selector" action="/analytics/reporting/" method="get">
+        <p id="profile_nav">
+          <input type="hidden" name="reset" value="1">
+          <input type="hidden" name="scid" value="3110135">
+          <a class="settings" href="/analytics/settings/home?scid=1254221">Analytics Settings</a>
+          <a class="view_report" href="/analytics/reporting/?id=5996429"> View Reports: </a>
+          <select name="id" id="profile" onchange="this.form.submit()">
+            <option selected value="2420755">blog.your_site.com</option>
+          </select>
+        </p>
+      </form>
+      <form id="account_selector" name="account_selector" action="/analytics/settings/home" method="get">
+        <p id="account_nav">
+          <label for="account"> My Analytics Accounts: </label>
+          <select name="scid" id="account" onchange="submitAccountSelectorForm(this.value)">
+            <option selected value="1254221">your_site.com</option>
+            <option value="344381">another_site.com</option>
+            <optgroup style="font-weight: normal" label="-------------------------------"></optgroup>
+            <option value="0">Create New Account...</option>
+          </select>
+        </p>
+      </form>
+      </div>
+   </div>
 </div>
+</span>
 </div>
-</div>
-</div>
-
-
-
-<!-- Start Main Body -->
-<div class="page_body">
-
-
-
-
-<div class="page_title">Analytics Home</div>
-<br />
-<table width="100%" border="0" cellpadding="0" cellspacing="0">
-<tr>
-  <td valign="top" class="page_content">
-    <!-- Start Content -->
-    <table cellpadding="0" cellspacing="0" border="0" width="100%" class="list_table">
-    <tr class="list_title">
-      <td class="list_title">Website Profiles</td>
-    </tr>
-
-    <tr>
-      <td class="list_control">
-
-    <!-- Start Controls -->
-    <table cellpadding="0" cellspacing="0" border="0" width="100%">
-    <tr>
-       <td align="center" nowrap="nowrap">
-         <span class="list_cstrong">
-
-         <img src="images/setprev.gif" border="0"> Prev
-
-         </span>
-
-         &nbsp; 1 - 1 / 1&nbsp;
-
-         <span class="list_cstrong">
-
-         Next <img src="images/setnext.gif" border="0">
-
-         </span>
-      </td>
-
-       <td align="center" class="list_control_cell">
-         <form name="length">
-         <table cellpadding="0" cellspacing="0" border="0">
-         <tr>
-           <td align="left" class="list_control_cell2" nowrap="nowrap">
-              Show
-              <select name="number" onChange="setLengthAdmin(self); return false;" >
-              <option value="5"   >  5
-              <option value="10"  selected="selected"> 10
-              <option value="20"  > 20
-              <option value="35"  > 35
-              <option value="50"  > 50
-              <option value="100" >100
-              </select>&nbsp;
-           </td>
-           </form>
-
-           <form name="search" onsubmit="setQuery(); return false;">
-           <td class="list_control_cell2" nowrap="nowrap">
-             Search
-             <input type="text" name="uquery" value="" size="10"><input type="hidden" name="ftype" value="" /> &nbsp;
-           </td>
-           <td>
-             <a href="javascript:fToggle(0,'',1,1,4)">
-             <img src="images/fin_active.gif" name="fin" width="21" height="19" border="0"></a>
-           </td>
-           <td>
-             <a href="javascript:fToggle(1,'',1,1,4);">
-             <img src="images/fout_inactive.gif" name="fout" width="21" height="19" border="0"></a>
-           </td>
-         </tr>
-         </table>
-         </form>
-       </td>
-    </tr>
-    </table>
-
-
-      </td>
-    </tr>
-    <tr>
-      <td bgcolor="#FFFFFF">
-      <img src="images/tspace.gif" height="5" width="100">
-
-        <table border="0" cellspacing="0" cellpadding="0" width="100%">
-        <tr class="list_ctitle">
-           <td width="5%" class="list_ctitle">&nbsp;</td>
-           <td width="45%" class="list_ctitle" nowrap="nowrap">Name</td>
-           <td width="25%" class="list_ctitle" align="center" nowrap="nowrap">Settings</td>
-           <td width="25%" class="list_ctitle" nowrap="nowrap">Status</td>
-        </tr>
-
-        <tr class="ug_row1">
-          <td nowrap="nowrap" class="list_cell">1.</td>
-          <td class="list_cell">blog.your_site.com</td>
-          <td class="list_cell" align="center">
-            <a href="/analytics/reporting/dashboard?id=2420755&scid=1254221" class="normal">View Reports</a> <br />
-          </td>
-          <td class="list_cell" nowrap="nowrap">
-
-
-
-              <img src="images/check.gif"> Receiving Data
-
-
-            <br />
-
-            <img src="images/warning.gif">
-            Conversion Goals (0)
-          </td>
-        </tr>
-
-
-        </table>
-      </td>
-    </tr>
-    </table>
-
-  </td>
-
-  <td class="dotted_border">&nbsp;</td>
-
-  <!-- Start Questions -->
-  <td valign="top" width="200" class="page_question">
-    <div class="help_title">Helpful Links</div>
-    <ul>
-<!--
-      <li class="question_list"><a href="" onclick="return helpPopup(27394, 'en-US', '');" class="normal">How do I view reports?</a></li>
--->
-      <li class="question_list"><a href="" onclick="return helpPopup(69588, 'en-US', '');" class="normal">What's new with Google Analytics?</a></li>
-      <li class="question_list"><a href="" onclick="return helpPopup(57053, 'en-US', '');" class="normal">I'm not seeing any data in my reports.</a></li>
-      <li class="question_list"><a href="" onclick="return helpPopup(55595, 'en-US', '');" class="normal">What is a website profile, and what can I do with it?</a></li>
-    </ul>
-
-  </td>
-  <!-- End Questions -->
-
-</tr>
-</table>
-</div>
-
-<!-- End Main Body -->
-
-<br /><br />
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tr>
-   <td align="center" class="uf_copy">
-    <span class="copy">&copy; 2007 Google</span> |
-    <a href="http://www.google.com/analytics/" target="GoogleHome" class="normal">Analytics Home</a> |
-    <a href="http://www.google.com/analytics/tos.html" target="GoogleHome" class="normal">Terms of Service</a> |
-    <a href="http://www.google.com/intl/en/privacy.html" target="GoogleHome" class="normal">Privacy Policy</a> |
-    <a href="http://www.google.com/support/googleanalytics/bin/request.py?hl=en_US" target="GoogleHelp" class="normal">Contact us</a> |
-    <a href="http://analytics.blogspot.com/" target="GoogleBlog" class="normal">Analytics Blog&nbsp;(in English)</a>
-   </td>
-</tr>
-</table>
-
 </body>
 </html>

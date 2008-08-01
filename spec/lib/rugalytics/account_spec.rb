@@ -18,15 +18,15 @@ describe Rugalytics::Account do
     html = fixture('analytics_account_find_all.html')
     Rugalytics::Account.should_receive(:get).and_return(html)
     accounts = Rugalytics::Account.find_all
-    accounts.collect(&:name).should == %w[your_site.com webgroup.nd.edu]
+    accounts.collect(&:name).should == %w[your_site.com another_site.com]
     accounts.collect(&:account_id).should == %w[1254221 344381].map(&:to_i)
   end
 
   it "should be able to find profiles for an account" do
     html = fixture('analytics_profile_find_all.html')
     Rugalytics::Profile.should_receive(:get).and_return(html)
-    accounts = Rugalytics::Account.new(:name => 'your_site.com', :account_id => '1254221').profiles
-    accounts.collect(&:name).should == ["blog.your_site.com"]
+    profiles = Rugalytics::Account.new(:name => 'your_site.com', :account_id => '1254221').profiles
+    profiles.collect(&:name).should == ["blog.your_site.com"]
   end
 
   it "should print kind of pretty" do

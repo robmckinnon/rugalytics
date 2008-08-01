@@ -3,8 +3,8 @@ module Rugalytics
 
     class << self
       def find_all(account_id)
-        doc = Hpricot::XML get("https://www.google.com:443/analytics/home/admin?scid=#{account_id}")
-        (doc/'select[@name=profile_list] option').inject([]) do |profiles, option|
+        doc = Hpricot::XML get("https://www.google.com:443/analytics/settings/home?scid=#{account_id}")
+        (doc/'select[@id=profile] option').inject([]) do |profiles, option|
           profile_id = option['value'].to_i
           profiles << Profile.new(:account_id => account_id, :profile_id => profile_id, :name => option.inner_html) if profile_id > 0
           profiles
@@ -60,7 +60,7 @@ module Rugalytics
         :id   => profile_id,
       }
       puts params.inspect
-      # https://www.google.com/analytics/reporting/export?fmt=2&id=1712313&pdr=20080504-20080603&cmp=average&&rpt=PageviewsReport
+      # https://www.google.com/analytics/reporting/export?fmt=2&id=1712313&pdr=20080701-20080731&cmp=average&&rpt=PageviewsReport
       self.class.get("https://google.com/analytics/reporting/export", :query_hash => params)
     end
 

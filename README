@@ -22,6 +22,7 @@ Should be up at rubyforge, so to install:
 
 Login with your Google Analytics user name and password:
 
+ require 'rubygems'
  require 'rugalytics'
 
  Rugalytics.login 'username', 'password'
@@ -114,13 +115,39 @@ Let's now grab 100 lines of the Networks report:
  => "telecom xtra"
 
 
+==Use in Rails
+
+To use from Rails, make a config file rails_root/config/rugalytics.yml
+with the following contents:
+
+ ---
+ account: <account_name>
+ profile: <profile_name>
+ username: <user_name>
+ password: <pass_w>
+
+Remember to tell your source control system to ignore this file! If you're
+using git, this means adding config/rugalytics.yml to you .gitignore
+file.
+
+ vi .gitignore
+ config/rugalytics.yml
+
+You can now use Rugalytics from within Rails, and login will be done
+automatically, e.g.:
+
+ profile = Rugalytics.default_profile
+ report = profile.load_report('TopContent', :from=>(Date.today - 7) )
+ top_items_over_week = report.items.sort_by{|i| i.unique_page_views.to_i}.reverse
+
+
 ==Acknowledgements
 
 Rugalytics started life as a fork of jnunemaker's Statwhore. As the code and
 project scope began to diverge significantly from Statwhore, a new project was
-initiated.
+initiated. Rugalytics makes use of the googlebase gem to login to Google.
 
-Rugalytics makes use of the Morph gem to emerge Ruby class definitions at
+Rugalytics makes use of the morph gem to emerge Ruby class definitions at
 runtime based on the contents of the CSV reports from Google Analytics.
 
 ==License
