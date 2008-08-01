@@ -121,10 +121,10 @@ To use from Rails, make a config file rails_root/config/rugalytics.yml
 with the following contents:
 
  ---
- account: <account_name>
- profile: <profile_name>
- username: <user_name>
- password: <pass_w>
+ account: [account_name]
+ profile: [profile_name]
+ username: [user_name]
+ password: [pass_w]
 
 Remember to tell your source control system to ignore this file! If you're
 using git, this means adding config/rugalytics.yml to you .gitignore
