@@ -117,10 +117,10 @@ Let's try another report, VisitorsOverview:
  report = profile.visitors_overview_report
 
  report.browser_items[1]
- => #<Rugalytics::Item @percentage_visits="0.18", @visits="3140", @browser="Firefox">
+ => # Rugalytics::Item @percentage_visits="0.18", @visits="3140", @browser="Firefox"
 
  report.connection_speed_items[3]
- => #<Rugalytics::Item @connection_speed="Dialup", @percentage_visits="0.06340057402849197", @visits="1100">
+ => # Rugalytics::Item @connection_speed="Dialup", @percentage_visits="0.06340057402849197", @visits="1100"
 
 Let's now grab 100 lines of the Networks report:
 
