@@ -27,10 +27,22 @@ module Rugalytics
       @profile_id = attrs[:profile_id]  if attrs.has_key?(:profile_id)
     end
 
+    def method_missing symbol, *args
+      if name = symbol.to_s[/^(.+)_report$/, 1]
+        options = args && args.size == 1 ? args[0] : {}
+        create_report(name.camelize, options)
+      else
+        super
+      end
+    end
+
     def load_report(name, options={})
-      report = Rugalytics::Report.new report(options.merge({:report=>name}))
-      puts report.attribute_names
-      report
+      if options=={}
+        ActiveSupport::Deprecation.warn "Profile#load_report('#{name}') has been deprecated, use Profile##{name.tableize}_report instead"
+      else
+        ActiveSupport::Deprecation.warn "Profile#load_report('#{name}',options) has been deprecated, use Profile##{name.tableize}_report(options) instead"
+      end
+      create_report(name, options={})
     end
 
     def report(options={})
@@ -65,19 +77,19 @@ module Rugalytics
     end
 
     def pageviews(options={})
-      load_report('Pageviews',options).page_views_total
+      pageviews_report(options).page_views_total
     end
 
     def pageviews_by_day(options={})
-      load_report('Pageviews',options).page_views_by_day
+      pageviews_report(options).page_views_by_day
     end
 
     def visits(options={})
-      load_report('Visits',options).visits_total
+      visits_report(options).visits_total
     end
 
     def visits_by_day(options={})
-      load_report('Visits',options).visits_by_day
+      visits_report(options).visits_by_day
     end
 
     # takes a Date, Time or String
@@ -91,6 +103,13 @@ module Rugalytics
     end
 
     private
+
+      def create_report(name, options={})
+        report = Rugalytics::Report.new report(options.merge({:report=>name}))
+        puts report.attribute_names
+        report
+      end
+
       def get_item_summary_by_message(options={})
         raise ArgumentError unless options.has_key?(:message)
         message = options.delete(:message).to_s.capitalize

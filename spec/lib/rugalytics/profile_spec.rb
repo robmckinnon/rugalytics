@@ -3,22 +3,18 @@ require File.dirname(__FILE__) + '/../../spec_helper.rb'
 describe Rugalytics::Profile do
 
   describe "being initialized" do
-
     it "should accept :name as key" do
-      a = Rugalytics::Profile.new(:name => 'test', :profile_id => '12341234')
-      a.name.should == 'test'
+      profile = Rugalytics::Profile.new(:name => 'test', :profile_id => '12341234')
+      profile.name.should == 'test'
     end
-
     it "should accept :account_id as key" do
-      a = Rugalytics::Profile.new(:account_id => '12341234', :profile_id => '12341234')
-      a.account_id.should == '12341234'
+      profile = Rugalytics::Profile.new(:account_id => '12341234', :profile_id => '12341234')
+      profile.account_id.should == '12341234'
     end
-
     it "should accept :profile_id as key" do
-      a = Rugalytics::Profile.new(:profile_id => '12341234')
-      a.profile_id.should == '12341234'
+      profile = Rugalytics::Profile.new(:profile_id => '12341234')
+      profile.profile_id.should == '12341234'
     end
-
   end
 
   describe "finding by account id and profile id" do
@@ -35,37 +31,61 @@ describe Rugalytics::Profile do
   end
 
   describe 'finding pageviews' do
+    before do
+      @profile = Rugalytics::Profile.new :profile_id=>123
+      @report = mock('report',:page_views_total=>100)
+    end
     it 'should return total from loaded "Pageviews" report' do
-      profile = Rugalytics::Profile.new :profile_id=>123
-      profile.should_receive(:load_report).with('Pageviews',{}).and_return mock('report',:page_views_total=>100)
-      profile.pageviews.should == 100
+      @profile.should_receive(:pageviews_report).with({}).and_return @report
+      @profile.pageviews.should == @report.page_views_total
     end
     describe 'when from and to dates are specified' do
       it 'should return total from "Pageviews" report for given dates' do
-        profile = Rugalytics::Profile.new :profile_id=>123
-        from = '2008-05-01'
-        to = '2008-05-03'
-        options = {:from=>from, :to=>to}
-        profile.should_receive(:load_report).with('Pageviews', options).and_return mock('report',:page_views_total=>100)
-        profile.pageviews(options).should == 100
+        options = {:from=>'2008-05-01', :to=>'2008-05-03'}
+        @profile.should_receive(:pageviews_report).with(options).and_return @report
+        @profile.pageviews(options).should == @report.page_views_total
       end
     end
   end
 
   describe 'finding visits' do
+    before do
+      @profile = Rugalytics::Profile.new :profile_id=>123
+      @report = mock('report', :visits_total=>100)
+    end
     it 'should return total from loaded "Visits" report' do
-      profile = Rugalytics::Profile.new :profile_id=>123
-      profile.should_receive(:load_report).with('Visits',{}).and_return mock('report',:visits_total=>100)
-      profile.visits.should == 100
+      @profile.should_receive(:visits_report).with({}).and_return @report
+      @profile.visits.should == @report.visits_total
     end
     describe 'when from and to dates are specified' do
       it 'should return total from "Visits" report for given dates' do
-        profile = Rugalytics::Profile.new :profile_id=>123
-        from = '2008-05-01'
-        to = '2008-05-03'
-        options = {:from=>from, :to=>to}
-        profile.should_receive(:load_report).with('Visits', options).and_return mock('report',:visits_total=>100)
-        profile.visits(options).should == 100
+        options = {:from=>'2008-05-01', :to=>'2008-05-03'}
+        @profile.should_receive(:visits_report).with(options).and_return @report
+        @profile.visits(options).should == @report.visits_total
+      end
+    end
+  end
+
+  describe 'finding report when called with method ending in _report' do
+    before do
+      @profile = Rugalytics::Profile.new :profile_id=>123
+      @report = mock('report', :visits_total=>100)
+    end
+    it 'should find report using create_report method' do
+      @profile.should_receive(:create_report).with('Visits',{}).and_return @report
+      @profile.visits_report.should == @report
+    end
+    describe 'when report name is two words' do
+      it 'should find report using create_report method' do
+        @profile.should_receive(:create_report).with('VisitorsOverview',{}).and_return @report
+        @profile.visitors_overview_report.should == @report
+      end
+    end
+    describe 'when dates are given' do
+      it 'should find report using create_report method passing date options' do
+        options = {:from=>'2008-05-01', :to=>'2008-05-03'}
+        @profile.should_receive(:create_report).with('Visits', options).and_return @report
+        @profile.visits_report(options).should == @report
       end
     end
   end

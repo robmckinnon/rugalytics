@@ -7,3 +7,6 @@ doc
 .autotest
 junk
 rugalytics.yml
+coverage
+spec/rcov.opts
+spec/rcov_spec.opts

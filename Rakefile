@@ -21,3 +21,8 @@ desc "Open an irb session preloaded with this library"
 task :console do
   sh "irb -rubygems -r ./lib/rugalytics.rb"
 end
+
+desc "Run all examples with RCov"
+task :rcov do
+  sh '/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby -Ilib -S rcov --text-report  -o "coverage" -x "Library" spec/lib/**/*'
+end

@@ -18,6 +18,24 @@ Should be up at rubyforge, so to install:
  sudo gem install rugalytics
 
 
+== Changes in v0.0.5
+
+The load_report method has been deprecated, instead call the report name as
+a method, for example:
+
+ # Instead of this
+ report = profile.load_report('Pageviews', :from => '2007-01-01')
+
+ # Do this
+ report = profile.pageviews_report(:from => '2007-01-01')
+
+ # Instead of this
+ report = profile.load_report('TrafficSources')
+
+ # Do this
+ report = profile.traffic_sources_report
+
+
 == Authenticate
 
 Login with your Google Analytics user name and password:
@@ -55,7 +73,7 @@ Obtaining page views:
 
 The +pageviews+ method is doing this under the hood:
 
- report = profile.load_report('Pageviews', :from=>'2007-01-01', :to=>'2007-01-02')
+ report = profile.pageviews_report(:from=>'2007-01-01', :to=>'2007-01-02')
 
  report.page_views_total
  => 24980
@@ -77,7 +95,7 @@ the Export tab, and then mousing over the CSV option.
 
 Let's load the TrafficSources report:
 
- report = profile.load_report 'TrafficSources'
+ report = profile.traffic_sources_report
 
  report.report_name
  => "Traffic Sources Overview"
@@ -96,7 +114,7 @@ Let's load the TrafficSources report:
 
 Let's try another report, VisitorsOverview:
 
- report = profile.load_report 'VisitorsOverview'
+ report = profile.visitors_overview_report
 
  report.browser_items[1]
  => #<Rugalytics::Item @percentage_visits="0.18", @visits="3140", @browser="Firefox">
@@ -106,7 +124,7 @@ Let's try another report, VisitorsOverview:
 
 Let's now grab 100 lines of the Networks report:
 
- report = profile.load_report 'Networks', :rows=>100
+ report = profile.networks_report :rows=>100
 
  report.items.size
  => 100
@@ -127,7 +145,7 @@ with the following contents:
  password: [pass_w]
 
 Remember to tell your source control system to ignore this file! If you're
-using git, this means adding config/rugalytics.yml to you .gitignore
+using git, this means adding config/rugalytics.yml to your .gitignore
 file.
 
  vi .gitignore
@@ -137,7 +155,7 @@ You can now use Rugalytics from within Rails, and login will be done
 automatically, e.g.:
 
  profile = Rugalytics.default_profile
- report = profile.load_report('TopContent', :from=>(Date.today - 7) )
+ report = profile.top_content_report(:from=>(Date.today - 7) )
  top_items_over_week = report.items.sort_by{|i| i.unique_page_views.to_i}.reverse
 
 
