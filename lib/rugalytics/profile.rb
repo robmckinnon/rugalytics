@@ -45,7 +45,7 @@ module Rugalytics
       create_report(name, options={})
     end
 
-    def report(options={})
+    def get_report_csv(options={})
       options.reverse_merge!({
         :report  => 'Dashboard',
         :from    => Time.now.utc - 7.days,
@@ -105,31 +105,9 @@ module Rugalytics
     private
 
       def create_report(name, options={})
-        report = Rugalytics::Report.new report(options.merge({:report=>name}))
+        report = Rugalytics::Report.new get_report_csv(options.merge({:report=>name}))
         puts report.attribute_names
         report
-      end
-
-      def get_item_summary_by_message(options={})
-        raise ArgumentError unless options.has_key?(:message)
-        message = options.delete(:message).to_s.capitalize
-        response = report(options.merge({:report => 'Dashboard'}))
-        doc = Hpricot::XML(response)
-        pageviews = (doc/:ItemSummary).detect { |summary| summary.at('Message').inner_html == message }
-        pageviews && pageviews.at('SummaryValue') ? pageviews.at('SummaryValue').inner_html.gsub(/\D/, '').to_i : 0
-      end
-
-      def get_serie_by_label(options={})
-        raise ArgumentError unless options.has_key?(:label)
-        label = options.delete(:label).to_s.capitalize
-        response = report(options.merge({:report => 'Dashboard'}))
-        doc = Hpricot::XML(response)
-        serie = (doc/:Serie).detect { |serie| serie.at('Label').inner_html == label }
-        if serie
-          (serie/:Point).inject([]) { |collection, point| collection << [Date.parse(point.at('Label').inner_html), point.at('Value').inner_html.to_i] }
-        else
-          []
-        end
       end
   end
 end

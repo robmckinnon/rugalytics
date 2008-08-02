@@ -75,6 +75,13 @@ describe Rugalytics::Profile do
       @profile.should_receive(:create_report).with('Visits',{}).and_return @report
       @profile.visits_report.should == @report
     end
+    it 'should find instantiate report with report csv' do
+      csv = 'csv'
+      @profile.should_receive(:get_report_csv).with({:report=>'Visits'}).and_return csv
+      @report.stub!(:attribute_names).and_return ''
+      Rugalytics::Report.should_receive(:new).with(csv).and_return @report
+      @profile.visits_report.should == @report
+    end
     describe 'when report name is two words' do
       it 'should find report using create_report method' do
         @profile.should_receive(:create_report).with('VisitorsOverview',{}).and_return @report
