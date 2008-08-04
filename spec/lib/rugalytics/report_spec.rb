@@ -7,7 +7,7 @@ describe Rugalytics::Report do
     describe "when setting report attributes" do
       before :all do
         csv = %Q|# ----------------------------------------
-theyworkforyou.co.nz
+your_site.com
 Top Content,
 26 May 2008,31 May 2008
 # ----------------------------------------|
@@ -15,7 +15,7 @@ Top Content,
       end
 
       it "should set base url from second line of text" do
-        @report.base_url.should == 'theyworkforyou.co.nz'
+        @report.base_url.should == 'your_site.com'
       end
 
       it "should set report name from third line of text" do
@@ -31,9 +31,38 @@ Top Content,
       end
     end
 
+    describe "when setting report dates" do
+      describe "with source date format 'Month Day, Year'" do
+        before :all do
+          csv = %Q|# ----------------------------------------
+your_site.com
+Top Content,
+"July 28, 2008","August 4, 2008"
+# ----------------------------------------|
+          @report = Rugalytics::Report.new(csv)
+        end
+        it "should set start date from fourth line of text" do
+          @report.start_date.should == Date.parse('28 July 2008')
+        end
+        it "should set end date from fourth line of text" do
+          @report.end_date.should == Date.parse('4 August 2008')
+        end
+      end
+      describe "with dates badly formatted" do
+        it 'should raise an exception' do
+          csv = %Q|# ----------------------------------------
+your_site.com
+Top Content,
+random something
+# ----------------------------------------|
+          lambda { Rugalytics::Report.new(csv) }.should raise_error(Exception, 'invalid date: random something')
+        end
+      end
+    end
+
     describe "when creating items from 'Table'" do
       before :all do
-        @base_url = %Q|theyworkforyou.co.nz|
+        @base_url = %Q|your_site.com|
         @attributes = %Q|URL,Page Views,Unique Page Views,Time on Page,Bounce Rate,% Exit,$ Index|
         @values1 = %Q|/,189,157,54.94957983193277,0.4862385392189026,0.37037035822868347,0.0|
         @values2 = %Q|/bills,60,38,54.17307692307692,0.0,0.13333334028720856,0.0|
@@ -65,7 +94,7 @@ Top Content,
 
     describe "when creating items from '.*MiniTableTable'" do
       before :all do
-        @base_url = %Q|theyworkforyou.co.nz|
+        @base_url = %Q|your_site.com|
         @browser_attributes = %Q|Browser,Visits,% visits|
         @browser_values = %Q|Firefox,1529,0.17185568809509277|
         @connection_speed_attributes = %Q|Connection Speed,Visits,% visits|
@@ -108,7 +137,7 @@ Visitors Overview,
         @start = %Q|26 May 2008|
         @end = %Q|31 May 2008|
         @csv = %Q|# ----------------------------------------
-theyworkforyou.co.nz
+your_site.com
 Top Content,
 #{@start},#{@end}
 # ----------------------------------------

@@ -1,3 +1,5 @@
+v0.0.6. fixed report date parsing bug reported by masolino
+
 v0.0.5. report names are now methods that can be called on profile, load_report is deprecated
 
 v0.0.4. fix for HTML and URL changes at Google Analytics site
