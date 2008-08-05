@@ -42,8 +42,8 @@ If account name and profile name are the same:
 
 == Change Language Settings to English
 
-At present, for Rugalytics to work, your Google language setting for the
-Google Analytics accound must be set to English.
+At present your language setting for your Google Analytics account
+must be set to English for Rugalytics to work.
 
  Google: Settings -> Language: choose UK English or US English
 
