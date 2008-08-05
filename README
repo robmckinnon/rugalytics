@@ -18,24 +18,6 @@ Should be up at rubyforge, so to install:
  sudo gem install rugalytics
 
 
-== Changes in v0.0.5
-
-The load_report method has been deprecated, instead call the report name as
-a method, for example:
-
- # Instead of this
- report = profile.load_report('Pageviews', :from => '2007-01-01')
-
- # Do this
- report = profile.pageviews_report(:from => '2007-01-01')
-
- # Instead of this
- report = profile.load_report('TrafficSources')
-
- # Do this
- report = profile.traffic_sources_report
-
-
 == Authenticate
 
 Login with your Google Analytics user name and password:
