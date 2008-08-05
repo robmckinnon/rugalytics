@@ -66,7 +66,7 @@ module Rugalytics
         end
 
         graph = Graph.new name, graph_period, points, start_date, end_date
-        morph("#{name} graph", graph)
+        morph("#{name.sub(/page views/i,'pageviews')} graph", graph)
       end
     end
 

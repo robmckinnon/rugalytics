@@ -151,8 +151,8 @@ describe Report do
         Graph.should_receive(:new).with(@name, @period, [5360, 433], expected_start, expected_end).and_return graph
 
         report = Report.new(@csv.join("\n"))
-        report.page_views_graph.should == graph
-        report.attribute_names.should == ['page_views_graph']
+        report.pageviews_graph.should == graph
+        report.attribute_names.should == ['pageviews_graph']
       end
 
       describe 'with source date format "Month Day, Year"' do

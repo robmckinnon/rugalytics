@@ -75,10 +75,10 @@ The +pageviews+ method is doing this under the hood:
 
  report = profile.pageviews_report(:from=>'2007-01-01', :to=>'2007-01-02')
 
- report.page_views_total
+ report.pageviews_total
  => 24980
 
-And under the hood, the +page_views_total+ method is actually calling:
+And under the hood, the +pageviews_total+ method is actually calling:
 
  report.pageviews_graph.sum_of_points
  => 24980
