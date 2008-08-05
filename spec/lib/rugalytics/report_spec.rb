@@ -7,12 +7,12 @@ describe Report do
 
     describe "when setting report attributes" do
       before :all do
-        csv = %Q|# ----------------------------------------
-your_site.com
-Top Content,
-26 May 2008,31 May 2008
-# ----------------------------------------|
-        @report = Report.new(csv)
+        csv = ['# ----------------------------------------',
+                'your_site.com',
+                'Top Content,',
+                '26 May 2008,31 May 2008',
+                '# ----------------------------------------']
+        @report = Report.new(csv.join("\n"))
       end
 
       it "should set base url from second line of text" do
@@ -35,12 +35,12 @@ Top Content,
     describe "when setting report dates" do
       describe "with source date format 'Month Day, Year'" do
         before :all do
-          csv = %Q|# ----------------------------------------
-your_site.com
-Top Content,
-"July 28, 2008","August 4, 2008"
-# ----------------------------------------|
-          @report = Report.new(csv)
+          csv = ['# ----------------------------------------',
+                'your_site.com',
+                'Top Content,',
+                '"July 28, 2008","August 4, 2008"',
+                '# ----------------------------------------']
+          @report = Report.new(csv.join("\n"))
         end
         it "should set start date from fourth line of text" do
           @report.start_date.should == Date.parse('28 July 2008')
@@ -51,12 +51,12 @@ Top Content,
       end
       describe "with dates badly formatted" do
         it 'should raise an exception' do
-          csv = %Q|# ----------------------------------------
-your_site.com
-Top Content,
-random something
-# ----------------------------------------|
-          lambda { Report.new(csv) }.should raise_error(Exception, 'invalid date: random something')
+          csv = ['# ----------------------------------------',
+                'your_site.com',
+                'Top Content,',
+                'random something',
+                '# ----------------------------------------']
+          lambda { Report.new(csv.join("\n")) }.should raise_error(Exception, 'invalid date: random something')
         end
       end
     end
@@ -67,19 +67,18 @@ random something
         @attributes = %Q|URL,Page Views,Unique Page Views,Time on Page,Bounce Rate,% Exit,$ Index|
         @values1 = %Q|/,189,157,54.94957983193277,0.4862385392189026,0.37037035822868347,0.0|
         @values2 = %Q|/bills,60,38,54.17307692307692,0.0,0.13333334028720856,0.0|
-        @csv = %Q|# ----------------------------------------
-#{@base_url}
-Top Content,
-26 May 2008,31 May 2008
-# ----------------------------------------
-# ----------------------------------------
-# Table
-# ----------------------------------------
-#{@attributes}
-#{@values1}
-#{@values2}
-# --------------------------------------------------------------------------------
-|
+        @csv = ['# ----------------------------------------',
+                @base_url,
+                'Top Content,',
+                '26 May 2008,31 May 2008',
+                '# ----------------------------------------',
+                '# ----------------------------------------',
+                '# Table',
+                '# ----------------------------------------',
+                @attributes,
+                @values1,
+                @values2,
+                '# --------------------------------------------------------------------------------']
       end
 
       it 'should create item for each data row in "Table"' do
@@ -88,7 +87,7 @@ Top Content,
         Item.should_receive(:new).with(@attributes.split(','), @values1.split(','), @base_url).and_return item1
         Item.should_receive(:new).with(@attributes.split(','), @values2.split(','), @base_url).and_return item2
 
-        report = Report.new(@csv)
+        report = Report.new(@csv.join("\n"))
         report.items.should == [item1, item2]
       end
     end
@@ -100,23 +99,23 @@ Top Content,
         @browser_values = %Q|Firefox,1529,0.17185568809509277|
         @connection_speed_attributes = %Q|Connection Speed,Visits,% visits|
         @connection_speed_values = %Q|Unknown,3987,0.4481285810470581|
-        @csv = %Q|# ----------------------------------------
-#{@base_url}
-Visitors Overview,
-3 May 2008,2 June 2008
-# ----------------------------------------
-# ----------------------------------------
-# BrowserMiniTable
-# ----------------------------------------
-#{@browser_attributes}
-#{@browser_values}
-
-# ----------------------------------------
-# ConnectionSpeedMiniTable
-# ----------------------------------------
-#{@connection_speed_attributes}
-#{@connection_speed_values}
-# --------------------------------------------------------------------------------|
+        @csv = ['# ----------------------------------------',
+                @base_url,
+                'Visitors Overview',
+                '3 May 2008,2 June 2008',
+                '# ----------------------------------------',
+                '# ----------------------------------------',
+                '# BrowserMiniTable',
+                '# ----------------------------------------',
+                @browser_attributes,
+                @browser_values,
+                '',
+                '# ----------------------------------------',
+                '# ConnectionSpeedMiniTable',
+                '# ----------------------------------------',
+                @connection_speed_attributes,
+                @connection_speed_values,
+                '# --------------------------------------------------------------------------------']
       end
       it 'should create item for each data row in "XxxMiniTable"' do
         browser_item = mock('browser_item')
@@ -124,7 +123,7 @@ Visitors Overview,
         Item.should_receive(:new).with(@browser_attributes.split(','), @browser_values.split(','), @base_url).and_return browser_item
         Item.should_receive(:new).with(@connection_speed_attributes.split(','), @connection_speed_values.split(','), @base_url).and_return connection_item
 
-        report = Report.new(@csv)
+        report = Report.new(@csv.join("\n"))
         report.browser_items.should == [browser_item]
         report.connection_speed_items.should == [connection_item]
         report.attribute_names.should == ['browser_items', 'connection_speed_items']
@@ -135,23 +134,23 @@ Visitors Overview,
       def graph_correct expected_start, expected_end
         @start_end_dates = "#{@start},#{@end}"
         @name = %Q|Page Views|
-        @csv = %Q|# ----------------------------------------
-your_site.com
-Top Content,
-#{@start_end_dates}
-# ----------------------------------------
-
-# ----------------------------------------
-# Graph
-# ----------------------------------------
-#{@period}
-#{@name}
-"5,360"
-433|
+        @csv = ['# ----------------------------------------',
+                'your_site.com',
+                'Top Content,',
+                @start_end_dates,
+                '# ----------------------------------------',
+                '',
+                '# ----------------------------------------',
+                '# Graph',
+                '# ----------------------------------------',
+                @period,
+                @name,
+                '"5,360"',
+                '433']
         graph = mock('graph')
         Graph.should_receive(:new).with(@name, @period, [5360, 433], expected_start, expected_end).and_return graph
 
-        report = Report.new(@csv)
+        report = Report.new(@csv.join("\n"))
         report.page_views_graph.should == graph
         report.attribute_names.should == ['page_views_graph']
       end

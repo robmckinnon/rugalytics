@@ -19,7 +19,6 @@ module Rugalytics
     end
 
     def method_missing symbol, *args
-
       if is_writer = symbol.to_s[/=$/]
         morph_method_missing(symbol, *args)
 
