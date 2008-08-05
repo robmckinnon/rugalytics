@@ -1,18 +1,19 @@
 require File.dirname(__FILE__) + '/../../spec_helper.rb'
+include Rugalytics
 
-describe Rugalytics::Profile do
+describe Profile do
 
   describe "being initialized" do
     it "should accept :name as key" do
-      profile = Rugalytics::Profile.new(:name => 'test', :profile_id => '12341234')
+      profile = Profile.new(:name => 'test', :profile_id => '12341234')
       profile.name.should == 'test'
     end
     it "should accept :account_id as key" do
-      profile = Rugalytics::Profile.new(:account_id => '12341234', :profile_id => '12341234')
+      profile = Profile.new(:account_id => '12341234', :profile_id => '12341234')
       profile.account_id.should == '12341234'
     end
     it "should accept :profile_id as key" do
-      profile = Rugalytics::Profile.new(:profile_id => '12341234')
+      profile = Profile.new(:profile_id => '12341234')
       profile.profile_id.should == '12341234'
     end
   end
@@ -24,15 +25,15 @@ describe Rugalytics::Profile do
       account = mock('account')
       profile = mock('profile')
 
-      Rugalytics::Account.should_receive(:find).with(1254221).and_return account
+      Account.should_receive(:find).with(1254221).and_return account
       account.should_receive(:find_profile).with(profile_id).and_return profile
-      Rugalytics::Profile.find(account_id, profile_id).should == profile
+      Profile.find(account_id, profile_id).should == profile
     end
   end
 
   describe 'finding pageviews' do
     before do
-      @profile = Rugalytics::Profile.new :profile_id=>123
+      @profile = Profile.new :profile_id=>123
       @report = mock('report',:page_views_total=>100)
     end
     it 'should return total from loaded "Pageviews" report' do
@@ -50,7 +51,7 @@ describe Rugalytics::Profile do
 
   describe 'finding visits' do
     before do
-      @profile = Rugalytics::Profile.new :profile_id=>123
+      @profile = Profile.new :profile_id=>123
       @report = mock('report', :visits_total=>100)
     end
     it 'should return total from loaded "Visits" report' do
@@ -68,7 +69,7 @@ describe Rugalytics::Profile do
 
   describe 'finding report when called with method ending in _report' do
     before do
-      @profile = Rugalytics::Profile.new :profile_id=>123
+      @profile = Profile.new :profile_id=>123
       @report = mock('report', :visits_total=>100)
     end
     it 'should find report using create_report method' do
@@ -79,7 +80,7 @@ describe Rugalytics::Profile do
       csv = 'csv'
       @profile.should_receive(:get_report_csv).with({:report=>'Visits'}).and_return csv
       @report.stub!(:attribute_names).and_return ''
-      Rugalytics::Report.should_receive(:new).with(csv).and_return @report
+      Report.should_receive(:new).with(csv).and_return @report
       @profile.visits_report.should == @report
     end
     describe 'when report name is two words' do
@@ -99,8 +100,8 @@ describe Rugalytics::Profile do
 
   it "should be able to find all profiles for an account" do
     html = fixture('analytics_profile_find_all.html')
-    Rugalytics::Profile.should_receive(:get).and_return(html)
-    accounts = Rugalytics::Profile.find_all('1254221')
+    Profile.should_receive(:get).and_return(html)
+    accounts = Profile.find_all('1254221')
     accounts.collect(&:name).should ==  ["blog.your_site.com"]
   end
 
@@ -111,9 +112,9 @@ describe Rugalytics::Profile do
       account = mock('account')
       profile = mock('profile')
 
-      Rugalytics::Account.should_receive(:find).with(account_name).and_return account
+      Account.should_receive(:find).with(account_name).and_return account
       account.should_receive(:find_profile).with(profile_name).and_return profile
-      Rugalytics::Profile.find(account_name, profile_name).should == profile
+      Profile.find(account_name, profile_name).should == profile
     end
   end
 
@@ -123,9 +124,9 @@ describe Rugalytics::Profile do
       account = mock('account')
       profile = mock('profile')
 
-      Rugalytics::Account.should_receive(:find).with(name).and_return account
+      Account.should_receive(:find).with(name).and_return account
       account.should_receive(:find_profile).with(name).and_return profile
-      Rugalytics::Profile.find(name).should == profile
+      Profile.find(name).should == profile
     end
   end
 end

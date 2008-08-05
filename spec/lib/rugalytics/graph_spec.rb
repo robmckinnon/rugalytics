@@ -1,6 +1,7 @@
 require File.dirname(__FILE__) + '/../../spec_helper.rb'
+include Rugalytics
 
-describe Rugalytics::Graph do
+describe Graph do
 
   describe 'when creating' do
 
@@ -11,7 +12,7 @@ describe Rugalytics::Graph do
     end
 
     def graph_correct_for report_start, report_end, expected_points
-      graph = Rugalytics::Graph.new @name, @period, @points, report_start, report_end
+      graph = Graph.new @name, @period, @points, report_start, report_end
       graph.from.should == report_start
       graph.to.should == report_end
       graph.points.should == expected_points
