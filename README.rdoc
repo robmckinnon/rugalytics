@@ -80,7 +80,7 @@ The +pageviews+ method is doing this under the hood:
 
 And under the hood, the +page_views_total+ method is actually calling:
 
- report.page_views_graph.sum_of_points
+ report.pageviews_graph.sum_of_points
  => 24980
 
 == Load a Report

@@ -43,16 +43,8 @@ module Rugalytics
       @base_url = lines[1]
       @report_name = lines[2].chomp(',')
       dates = lines[3].include?('","') ? lines[3].split('","') : lines[3].split(',')
-      @start_date = parse_date(dates[0])
-      @end_date = parse_date(dates[1])
-    end
-
-    def parse_date text
-      begin
-        Date.parse(text)
-      rescue Exception => e
-        raise "#{e}: #{text}"
-      end
+      @start_date = Date.i18n_parse(dates[0])
+      @end_date = Date.i18n_parse(dates[1])
     end
 
     def handle_graphs lines
