@@ -13,8 +13,8 @@ describe Rugalytics::Item, 'when creating' do
 
     item.url.should == 'http://theyworkforyou.co.nz/'
     item.path.should == '/'
-    item.page_views.should == '189'
-    item.unique_page_views.should == '157'
+    item.pageviews.should == '189'
+    item.unique_pageviews.should == '157'
     item.time_on_page.should == '54.94957983193277'
     item.bounce_rate.should == '0.4862385392189026'
     item.percentage_exit.should == '0.37037035822868347'

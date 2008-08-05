@@ -8,6 +8,7 @@ module Rugalytics
         attribute.sub!('$','dollar')
         attribute.sub!('/',' per ')
         attribute.sub!('.',' ')
+        attribute.sub!(/page views/i,'pageviews')
         value = values[index]
         morph(attribute, value)
       end

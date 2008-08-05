@@ -40,6 +40,14 @@ If account name and profile name are the same:
  profile = Rugalytics.find_profile('your_site.com')
 
 
+== Change Language Settings to English
+
+At present, for Rugalytics to work, your Google language setting for the
+Google Analytics accound must be set to English.
+
+ Google: Settings -> Language: choose UK English or US English
+
+
 == Get Profile Summary Statistics
 
 Obtaining page views:
@@ -55,15 +63,24 @@ Obtaining page views:
 
 The +pageviews+ method is doing this under the hood:
 
- report = profile.pageviews_report(:from=>'2007-01-01', :to=>'2007-01-02')
+ report = profile.pageviews_report :from=>'2007-01-01', :to=>'2007-01-02'
 
  report.pageviews_total
- => 24980
+ => 16600
 
-And under the hood, the +pageviews_total+ method is actually calling:
+Using the report you can get +pageviews_by_day+:
+
+ report.pageviews_by_day
+ => [[Mon, 01 Jan 2007, 8200], [Tue, 02 Jan 2007, 8400]]
+
+In the report, there is a +pageviews_graph+ containing the points:
 
  report.pageviews_graph.sum_of_points
- => 24980
+ => 16600
+
+ report.pageviews_graph.points_by_day
+ => [[Mon, 01 Jan 2007, 8200], [Tue, 02 Jan 2007, 8400]]
+
 
 == Load a Report
 
@@ -138,7 +155,7 @@ automatically, e.g.:
 
  profile = Rugalytics.default_profile
  report = profile.top_content_report(:from=>(Date.today - 7) )
- top_items_over_week = report.items.sort_by{|i| i.unique_page_views.to_i}.reverse
+ top_items_over_week = report.items.sort_by{|i| i.unique_pageviews.to_i}.reverse
 
 
 ==Acknowledgements
