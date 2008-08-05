@@ -34,17 +34,17 @@ describe Profile do
   describe 'finding pageviews' do
     before do
       @profile = Profile.new :profile_id=>123
-      @report = mock('report',:page_views_total=>100)
+      @report = mock('report',:pageviews_total=>100)
     end
     it 'should return total from loaded "Pageviews" report' do
       @profile.should_receive(:pageviews_report).with({}).and_return @report
-      @profile.pageviews.should == @report.page_views_total
+      @profile.pageviews.should == @report.pageviews_total
     end
     describe 'when from and to dates are specified' do
       it 'should return total from "Pageviews" report for given dates' do
         options = {:from=>'2008-05-01', :to=>'2008-05-03'}
         @profile.should_receive(:pageviews_report).with(options).and_return @report
-        @profile.pageviews(options).should == @report.page_views_total
+        @profile.pageviews(options).should == @report.pageviews_total
       end
     end
   end

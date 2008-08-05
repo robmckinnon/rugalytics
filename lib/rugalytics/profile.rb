@@ -77,11 +77,11 @@ module Rugalytics
     end
 
     def pageviews(options={})
-      pageviews_report(options).page_views_total
+      pageviews_report(options).pageviews_total
     end
 
     def pageviews_by_day(options={})
-      pageviews_report(options).page_views_by_day
+      pageviews_report(options).pageviews_by_day
     end
 
     def visits(options={})
