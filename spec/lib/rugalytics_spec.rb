@@ -112,5 +112,9 @@ describe Rugalytics do
       Rugalytics.default_profile.should == profile
     end
   end
-
+  describe 'when parsing Japanese formatted date' do
+    it 'should parse correctly' do
+      Rugalytics.i18n_date_parse('2008年7月29日').should == Date.new(2008,7,29)
+    end
+  end
 end

@@ -25,8 +25,8 @@ module Rugalytics
 
     def with_dates_from_period period, list
       dates = period.split('-')
-      from = Date.i18n_parse(dates[0].strip)
-      to = Date.i18n_parse(dates[1].strip)
+      from = Rugalytics.i18n_date_parse(dates[0].strip)
+      to = Rugalytics.i18n_date_parse(dates[1].strip)
 
       index = 0
       from.upto(to) do |date|

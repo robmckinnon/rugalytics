@@ -11,7 +11,7 @@ require 'yaml'
 
 # See README for usage documentation.
 module Rugalytics
-  VERSION = "0.0.7"
+  VERSION = "0.0.8"
 
   FORMAT_PDF = '0' unless defined? FORMAT_PDF
   FORMAT_XML = '1' unless defined? FORMAT_XML
@@ -72,6 +72,18 @@ module Rugalytics
       OpenStruct.new(hash)
     end
 
+    def i18n_date_parse text
+      if text.include? '年'
+        text = text.sub('年','-')
+        text = text.sub('月','-')
+        text = text.sub('日','')
+      end
+      begin
+        Date.parse(text)
+      rescue Exception => e
+        raise "#{e}: #{text}"
+      end
+    end
   end
 end
 
@@ -81,6 +93,5 @@ require File.dirname(__FILE__) + '/rugalytics/profile'
 require File.dirname(__FILE__) + '/rugalytics/report'
 require File.dirname(__FILE__) + '/rugalytics/item'
 require File.dirname(__FILE__) + '/rugalytics/graph'
-require File.dirname(__FILE__) + '/rugalytics/date_extension'
 
 # Rugalytics.config_setup(RAILS_ROOT) if defined?(RAILS_ROOT) && RAILS_ROOT

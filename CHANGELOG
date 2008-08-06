@@ -1,3 +1,5 @@
+v0.0.8. moved i18n date parse method to Rugalytics module
+
 v0.0.7. consolidated on US English spelling of pageviews for method names
 
 v0.0.6. fixed report date parsing bug reported by masolino
