@@ -1,3 +1,5 @@
+v0.0.9. allowed setting of :url option for content drilldown and top content reports; merged masolino's changes
+
 v0.0.8. moved i18n date parse method to Rugalytics module
 
 v0.0.7. consolidated on US English spelling of pageviews for method names
