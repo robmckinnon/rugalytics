@@ -77,7 +77,7 @@ module Rugalytics
       # https://www.google.com/analytics/reporting/export?fmt=2&id=1712313&pdr=20080701-20080731&cmp=average&&rpt=PageviewsReport
       self.class.get("https://google.com/analytics/reporting/export", :query_hash => params)
     end
-    
+
     # Extract Page Views from Content Drilldown Report URLs.
     # Use with :d1 => "/projects/68263/" to options hash
     # 
@@ -85,7 +85,7 @@ module Rugalytics
     def drilldown(options={})
       content_drilldown_report(options).pageviews_graph.points.sum
     end
-    
+
     def pageviews(options={})
       pageviews_report(options).pageviews_total
     end
