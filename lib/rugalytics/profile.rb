@@ -55,7 +55,8 @@ module Rugalytics
         :rows    => 50,
         :compute => 'average',
         :gdfmt   => 'nth_day',
-        :view    => 0
+        :view    => 0,
+        :d1      => ''
       })
       options[:from] = ensure_datetime_in_google_format(options[:from])
       options[:to]   = ensure_datetime_in_google_format(options[:to])
@@ -70,12 +71,21 @@ module Rugalytics
         :trows=> options[:rows],
         :gdfmt=> options[:gdfmt],
         :id   => profile_id,
+        :d1   => options[:d1]
       }
       puts params.inspect
       # https://www.google.com/analytics/reporting/export?fmt=2&id=1712313&pdr=20080701-20080731&cmp=average&&rpt=PageviewsReport
       self.class.get("https://google.com/analytics/reporting/export", :query_hash => params)
     end
-
+    
+    # Extract Page Views from Content Drilldown Report URLs.
+    # Use with :d1 => "/projects/68263/" to options hash
+    # 
+    # TODO: add results from Unique Page Views, Time on Page, Bounce Rate, % Exit
+    def drilldown(options={})
+      content_drilldown_report(options).pageviews_graph.points.sum
+    end
+    
     def pageviews(options={})
       pageviews_report(options).pageviews_total
     end
