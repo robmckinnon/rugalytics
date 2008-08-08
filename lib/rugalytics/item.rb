@@ -15,6 +15,7 @@ module Rugalytics
 
       if respond_to?(:url)
         self.path = url
+        # todo: For drilldown report, URLs need to be cumulatively created e.g. /health/ -> http://theyworkforyou.co.nz/portfolios/health/
         self.url = "http://#{base_url}#{url}"
       end
     end

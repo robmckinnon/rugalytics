@@ -101,8 +101,7 @@ module Rugalytics
     # end
     #
     # instead do
-    # report = profile.content_drilldown_report(:url => '/portfolios/')
-    # report.pageviews_total
+    # profile.content_drilldown_report(:url => '/projects/68263/').pageviews_total
 
     def pageviews(options={})
       pageviews_report(options).pageviews_total
