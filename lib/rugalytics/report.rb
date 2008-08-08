@@ -4,7 +4,7 @@ module Rugalytics
 
     include MorphLessMethodMissing
 
-    attr_reader :base_url, :report_name, :start_date, :end_date
+    attr_reader :base_url, :start_date, :end_date, :name
 
     def initialize csv=''
       return if csv.empty?
@@ -36,11 +36,18 @@ module Rugalytics
       end
     end
 
+    def report_name
+      ActiveSupport::Deprecation.warn "Report#report_name has been deprecated, use Report#name instead"
+      name
+    end
+
     private
 
     def set_attributes lines
       @base_url = lines[1]
-      @report_name = lines[2].chomp(',')
+      names = lines[2].split(',')
+      @base_url = "#{@base_url}#{names[1].chomp('/')}" if names.size > 1 && names[1][/^\/.+$/]
+      @name = lines[2].chomp(',')
       dates = lines[3].include?('","') ? lines[3].split('","') : lines[3].split(',')
       @start_date = Rugalytics.i18n_date_parse(dates[0])
       @end_date = Rugalytics.i18n_date_parse(dates[1])
@@ -73,7 +80,7 @@ module Rugalytics
     def handle_tables lines
       index = 5
       while index < lines.size
-        while (lines[index][/^# .*Table/].nil? || lines[index].strip.size == 0)
+        while (lines[index][/^# .*Table/].nil? || lines[index].blank?)
           index = index.next
           return if index == lines.size
         end

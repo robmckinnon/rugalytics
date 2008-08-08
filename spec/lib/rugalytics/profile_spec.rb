@@ -98,7 +98,7 @@ describe Profile do
     end
   end
 
-  describe 'setting default options when no options specified' do
+  describe 'when asked to set default options when no options specified' do
     before do
       @profile = Profile.new :profile_id=>123
     end
@@ -114,16 +114,46 @@ describe Profile do
     it_should_default :compute, '"average"'
     it_should_default :gdfmt, '"nth_day"'
     it_should_default :view, '0'
-    it 'should default :from to a week ago, and :to to today' do
-      @week_ago = mock('week_ago')
+    it 'should default :from to a month ago, and :to to today' do
+      @month_ago = mock('month_ago')
       @today = mock('today')
-      @profile.should_receive(:a_week_ago).and_return @week_ago
+      @profile.should_receive(:a_month_ago).and_return @month_ago
       @profile.should_receive(:today).and_return @today
-      @profile.should_receive(:ensure_datetime_in_google_format).with(@week_ago).and_return @week_ago
+      @profile.should_receive(:ensure_datetime_in_google_format).with(@month_ago).and_return @month_ago
       @profile.should_receive(:ensure_datetime_in_google_format).with(@today).and_return @today
       options = @profile.set_default_options({})
-      options[:from].should == @week_ago
+      options[:from].should == @month_ago
       options[:to].should == @today
+    end
+  end
+
+  describe 'when asked to convert option keys to uri parameter keys' do
+    before do
+      @profile = Profile.new :profile_id=>123
+    end
+    def self.it_should_convert option_key, param_key, value_addition=''
+      eval %Q|it 'should convert :#{option_key} to :#{param_key}' do
+                params = @profile.convert_options_to_uri_params({:#{option_key} => 'value'})
+                params[:#{param_key}].should == 'value#{value_addition}'
+              end|
+    end
+    it_should_convert :report,  :rpt, 'Report'
+    it_should_convert :compute, :cmp
+    it_should_convert :format,  :fmt
+    it_should_convert :view,    :view
+    it_should_convert :rows,    :trows
+    it_should_convert :gdfmt,   :gdfmt
+    it_should_convert :url,     :d1
+    it_should_convert :page_title,:d1
+
+    it 'should convert from and to dates into the period param' do
+      from = '20080801'
+      to = '20080808'
+      params = @profile.convert_options_to_uri_params :from=>from, :to=>to
+      params[:pdr].should == "#{from}-#{to}"
+    end
+    it 'should set param id to be the profile id' do
+      @profile.convert_options_to_uri_params({})[:id].should == 123
     end
   end
 

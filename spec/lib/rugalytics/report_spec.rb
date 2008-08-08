@@ -21,6 +21,7 @@ describe Report do
 
       it "should set report name from third line of text" do
         @report.report_name.should == 'Top Content'
+        @report.name.should == 'Top Content'
       end
 
       it "should set start date from fourth line of text" do
@@ -29,6 +30,41 @@ describe Report do
 
       it "should set end date from fourth line of text" do
         @report.end_date.should == Date.parse('31 May 2008')
+      end
+
+      describe "for a Content Drilldown report and a path is in report name" do
+        before :all do
+          csv = ['# ----------------------------------------',
+                  'your_site.com',
+                  'Content Drilldown,/portfolios/health/',
+                  '26 May 2008,31 May 2008',
+                  '# ----------------------------------------']
+          @report = Report.new(csv.join("\n"))
+        end
+        it 'should append path at end of base_url' do
+          @report.base_url.should == 'your_site.com/portfolios/health'
+        end
+        it 'should set report name including path' do
+          @report.report_name.should == 'Content Drilldown,/portfolios/health/'
+          @report.name.should == 'Content Drilldown,/portfolios/health/'
+        end
+      end
+
+      describe "for a Top Content by title report and page title is in report name" do
+        before :all do
+          csv = ['# ----------------------------------------',
+                  'your_site.com',
+                  'Content by Title Detail:,Project ABC | Company XZY',
+                  '26 May 2008,31 May 2008',
+                  '# ----------------------------------------']
+          @report = Report.new(csv.join("\n"))
+        end
+        it 'should not append title to end of base_url' do
+          @report.base_url.should == 'your_site.com'
+        end
+        it 'should set report name including page title' do
+          @report.name.should == 'Content by Title Detail:,Project ABC | Company XZY'
+        end
       end
     end
 

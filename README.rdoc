@@ -96,7 +96,7 @@ Let's load the TrafficSources report:
 
  report = profile.traffic_sources_report
 
- report.report_name
+ report.name
  => "Traffic Sources Overview"
 
  report.start_date
@@ -130,6 +130,42 @@ Let's now grab 100 lines of the Networks report:
 
  report.items.first.network_location
  => "telecom xtra"
+
+
+== Report by URL
+
+You can get a content drilldown report:
+
+ report = profile.content_drilldown_report(:url => "/project/abc/")
+ report.name
+ => "Content Drilldown,/project/abc/"
+
+ report.items.first
+ => # Rugalytics::Item @bounce_rate="0.85", @unique_pageviews="155",
+          @percentage_exit="0.776536312849162", @time_on_page="165.75",
+          @pageviews="179", @path="/health/", @dollar_index="0.0",
+          @url="http://your_site.com/project/abc/reports/"
+
+Pageviews by URL:
+
+ report = profile.top_content_detail_report(:url => "/project/abc")
+ report.name
+ => "Content Detail:,/project/abc"
+
+ report.pageviews_total
+ => 179
+
+Pageviews by page title:
+
+ report = profile.content_by_title_detail_report(:page_title => "Project ABC | Company XYZ")
+ report.name
+ => "Content by Title Detail:,Project ABC | Company XYZ"
+
+ report.items.first
+ => # Rugalytics::Item @bounce_rate="0.85", @unique_pageviews="1550",
+          @percentage_exit="0.776536312849162", @time_on_page="165.75",
+          @pageviews="179", @path="/health/", @dollar_index="0.0",
+          @url="http://your_site.com/project/abc"
 
 
 ==Use in Rails

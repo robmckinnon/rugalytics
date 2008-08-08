@@ -64,12 +64,12 @@ module Rugalytics
         :id   => profile_id
       }
       params[:d1] = options[:url] if options[:url]
-      puts params.inspect
+      params[:d1] = options[:page_title] if options[:page_title]
       params
     end
 
-    def a_week_ago
-      Time.now.utc - 7.days
+    def a_month_ago
+      Time.now.utc.last_month
     end
 
     def today
@@ -79,7 +79,7 @@ module Rugalytics
     def set_default_options(options)
       options.reverse_merge!({
         :report  => 'Dashboard',
-        :from    => a_week_ago,
+        :from    => a_month_ago,
         :to      => today,
         :tab     => 0,
         :format  => FORMAT_CSV,
