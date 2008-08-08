@@ -136,21 +136,21 @@ Let's now grab 100 lines of the Networks report:
 
 You can get a content drilldown report:
 
- report = profile.content_drilldown_report(:url => "/project/abc/")
+ report = profile.content_drilldown_report(:url => "/projects/abc/")
  report.name
- => "Content Drilldown,/project/abc/"
+ => "Content Drilldown,/projects/abc/"
 
  report.items.first
  => # Rugalytics::Item @bounce_rate="0.85", @unique_pageviews="155",
           @percentage_exit="0.776536312849162", @time_on_page="165.75",
-          @pageviews="179", @path="/health/", @dollar_index="0.0",
-          @url="http://your_site.com/project/abc/reports/"
+          @pageviews="179", @path="/reports/", @dollar_index="0.0",
+          @url="http://your_site.com/projects/abc/reports/"
 
 Pageviews by URL:
 
- report = profile.top_content_detail_report(:url => "/project/abc")
+ report = profile.top_content_detail_report(:url => "/projects/abc")
  report.name
- => "Content Detail:,/project/abc"
+ => "Content Detail:,/projects/abc"
 
  report.pageviews_total
  => 179
@@ -164,8 +164,8 @@ Pageviews by page title:
  report.items.first
  => # Rugalytics::Item @bounce_rate="0.85", @unique_pageviews="1550",
           @percentage_exit="0.776536312849162", @time_on_page="165.75",
-          @pageviews="179", @path="/health/", @dollar_index="0.0",
-          @url="http://your_site.com/project/abc"
+          @pageviews="179", @path="/projects/abc", @dollar_index="0.0",
+          @url="http://your_site.com/projects/abc"
 
 
 ==Use in Rails
