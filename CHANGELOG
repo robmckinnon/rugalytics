@@ -1,4 +1,4 @@
-v0.0.9. allowed setting of :url option for content drilldown and top content reports; merged masolino's changes
+v0.0.9. allowed setting of :url and :page_title options for drilldown and content reports; merged masolino's changes
 
 v0.0.8. moved i18n date parse method to Rugalytics module
 
