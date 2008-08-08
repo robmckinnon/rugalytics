@@ -98,6 +98,35 @@ describe Profile do
     end
   end
 
+  describe 'setting default options when no options specified' do
+    before do
+      @profile = Profile.new :profile_id=>123
+    end
+    def self.it_should_default option, value
+      eval %Q|it 'should set :#{option} to #{value}' do
+                @profile.set_default_options({})[:#{option}].should == #{value}
+              end|
+    end
+    it_should_default :report, '"Dashboard"'
+    it_should_default :tab, '0'
+    it_should_default :format, 'Rugalytics::FORMAT_CSV'
+    it_should_default :rows, '50'
+    it_should_default :compute, '"average"'
+    it_should_default :gdfmt, '"nth_day"'
+    it_should_default :view, '0'
+    it 'should default :from to a week ago, and :to to today' do
+      @week_ago = mock('week_ago')
+      @today = mock('today')
+      @profile.should_receive(:a_week_ago).and_return @week_ago
+      @profile.should_receive(:today).and_return @today
+      @profile.should_receive(:ensure_datetime_in_google_format).with(@week_ago).and_return @week_ago
+      @profile.should_receive(:ensure_datetime_in_google_format).with(@today).and_return @today
+      options = @profile.set_default_options({})
+      options[:from].should == @week_ago
+      options[:to].should == @today
+    end
+  end
+
   it "should be able to find all profiles for an account" do
     html = fixture('analytics_profile_find_all.html')
     Profile.should_receive(:get).and_return(html)

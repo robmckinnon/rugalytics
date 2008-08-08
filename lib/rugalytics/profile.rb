@@ -46,21 +46,12 @@ module Rugalytics
     end
 
     def get_report_csv(options={})
-      options.reverse_merge!({
-        :report  => 'Dashboard',
-        :from    => Time.now.utc - 7.days,
-        :to      => Time.now.utc,
-        :tab     => 0,
-        :format  => FORMAT_CSV,
-        :rows    => 50,
-        :compute => 'average',
-        :gdfmt   => 'nth_day',
-        :view    => 0,
-        :d1      => ''
-      })
-      options[:from] = ensure_datetime_in_google_format(options[:from])
-      options[:to]   = ensure_datetime_in_google_format(options[:to])
+      options = set_default_options(options)
+      params = convert_options_to_uri_params(options)
+      self.class.get("https://google.com/analytics/reporting/export", :query_hash => params)
+    end
 
+    def convert_options_to_uri_params(options)
       params = {
         :pdr  => "#{options[:from]}-#{options[:to]}",
         :rpt  => "#{options[:report]}Report",
@@ -70,21 +61,48 @@ module Rugalytics
         :tab  => options[:tab],
         :trows=> options[:rows],
         :gdfmt=> options[:gdfmt],
-        :id   => profile_id,
-        :d1   => options[:d1]
+        :id   => profile_id
       }
+      params[:d1] = options[:url] if options[:url]
       puts params.inspect
-      # https://www.google.com/analytics/reporting/export?fmt=2&id=1712313&pdr=20080701-20080731&cmp=average&&rpt=PageviewsReport
-      self.class.get("https://google.com/analytics/reporting/export", :query_hash => params)
+      params
+    end
+
+    def a_week_ago
+      Time.now.utc - 7.days
+    end
+
+    def today
+      Time.now.utc
+    end
+
+    def set_default_options(options)
+      options.reverse_merge!({
+        :report  => 'Dashboard',
+        :from    => a_week_ago,
+        :to      => today,
+        :tab     => 0,
+        :format  => FORMAT_CSV,
+        :rows    => 50,
+        :compute => 'average',
+        :gdfmt   => 'nth_day',
+        :view    => 0
+      })
+      options[:from] = ensure_datetime_in_google_format(options[:from])
+      options[:to]   = ensure_datetime_in_google_format(options[:to])
+      options
     end
 
     # Extract Page Views from Content Drilldown Report URLs.
-    # Use with :d1 => "/projects/68263/" to options hash
-    # 
-    # TODO: add results from Unique Page Views, Time on Page, Bounce Rate, % Exit
-    def drilldown(options={})
-      content_drilldown_report(options).pageviews_graph.points.sum
-    end
+    # Use with :url => "/projects/68263/" to options hash
+    #
+    # def drilldown(options={})
+      # content_drilldown_report(options).pageviews_total
+    # end
+    #
+    # instead do
+    # report = profile.content_drilldown_report(:url => '/portfolios/')
+    # report.pageviews_total
 
     def pageviews(options={})
       pageviews_report(options).pageviews_total
