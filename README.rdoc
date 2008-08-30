@@ -3,7 +3,9 @@ Rugalytics is a Ruby API for Google Analytics.
 = Warning - API under development
 
 The Rugalytics API is in early development so it may change slightly over time.
-It should be in working order, so please give it a test spin!
+It should be in working order, so please give it a test spin! Sometimes
+Google changes it's CSV export format, which can break Rugalytics. It's usually
+fixed within a week of such occurrences.
 
 The source code is hosted at github. Feel free to fork the code if you have
 something to contribute:

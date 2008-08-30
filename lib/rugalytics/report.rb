@@ -36,11 +36,6 @@ module Rugalytics
       end
     end
 
-    def report_name
-      ActiveSupport::Deprecation.warn "Report#report_name has been deprecated, use Report#name instead"
-      name
-    end
-
     private
 
     def set_attributes lines
@@ -61,18 +56,18 @@ module Rugalytics
           return if index == lines.size
         end
         index = index + 2
-        graph_period = lines[index]
-        index = index.next
-        name = lines[index]
+        column_names = lines[index]
+        name = column_names.split(',').last
         index = index.next
 
         points = []
-        while (point = lines[index]) && point.strip.size > 0
+        while (date_point = lines[index]) && (date = date_point[/^\d\d\d\d\d\d\d\d,/])
+          point = date_point.sub(date,'')
           points << point.tr('",','').to_i
           index = index.next
         end
 
-        graph = Graph.new name, graph_period, points, start_date, end_date
+        graph = Graph.new name, points, start_date, end_date
         morph("#{name.sub(/page views/i,'pageviews')} graph", graph)
       end
     end

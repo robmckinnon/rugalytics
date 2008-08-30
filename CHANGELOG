@@ -1,3 +1,5 @@
+v0.1.0. fixed bug due to change in google's graph csv; removed deprecated load_report method
+
 v0.0.9. allowed setting of :url and :page_title options for drilldown and content reports; merged masolino's changes
 
 v0.0.8. moved i18n date parse method to Rugalytics module

@@ -36,15 +36,6 @@ module Rugalytics
       end
     end
 
-    def load_report(name, options={})
-      if options=={}
-        ActiveSupport::Deprecation.warn "Profile#load_report('#{name}') has been deprecated, use Profile##{name.tableize}_report instead"
-      else
-        ActiveSupport::Deprecation.warn "Profile#load_report('#{name}',options) has been deprecated, use Profile##{name.tableize}_report(options) instead"
-      end
-      create_report(name, options={})
-    end
-
     def get_report_csv(options={})
       options = set_default_options(options)
       params = convert_options_to_uri_params(options)

@@ -3,7 +3,7 @@ include Rugalytics
 
 shared_examples_for "graph created correctly" do
   def graph_correct_for report_start, report_end, expected_points
-    graph = Graph.new 'Page Views', @period, @points, report_start, report_end
+    graph = Graph.new 'Page Views', @points, report_start, report_end
     graph.from.should == report_start
     graph.to.should == report_end
     graph.points.should == expected_points
@@ -12,14 +12,6 @@ shared_examples_for "graph created correctly" do
 
   it "should set given points on graph" do
     graph_correct_for Date.parse('2008-05-01'), Date.parse('2008-05-03'), @points
-  end
-
-  it "should set appropriate point on graph when report start and end is the same date" do
-    graph_correct_for Date.parse('2008-05-01'), Date.parse('2008-05-01'), [@points[0]]
-  end
-
-  it "should set appropriate points on graph when report start and end is a subset of the graph period" do
-    graph_correct_for Date.parse('2008-05-02'), Date.parse('2008-05-03'), [@points[1],@points[2]]
   end
 
   it 'should set points by day' do
@@ -40,7 +32,6 @@ describe Graph do
 
   describe 'when creating with dates formatted Day Month Year' do
     before :all do
-      @period = '1 May 2008 - 3 May 2008'
       @points = [5360, 3330, 4330]
     end
 
@@ -49,7 +40,6 @@ describe Graph do
 
   describe 'when creating with dates formatted "Month Day, Year"' do
     before :all do
-      @period = %Q|"May 1, 2008 - May 3, 2008"|
       @points = [5360, 3330, 4330]
     end
 

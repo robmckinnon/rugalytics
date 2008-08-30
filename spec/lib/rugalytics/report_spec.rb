@@ -20,7 +20,6 @@ describe Report do
       end
 
       it "should set report name from third line of text" do
-        @report.report_name.should == 'Top Content'
         @report.name.should == 'Top Content'
       end
 
@@ -45,7 +44,6 @@ describe Report do
           @report.base_url.should == 'your_site.com/portfolios/health'
         end
         it 'should set report name including path' do
-          @report.report_name.should == 'Content Drilldown,/portfolios/health/'
           @report.name.should == 'Content Drilldown,/portfolios/health/'
         end
       end
@@ -170,6 +168,7 @@ describe Report do
       def graph_correct expected_start, expected_end
         @start_end_dates = "#{@start},#{@end}"
         @name = %Q|Page Views|
+        @column_names = "Day,#{@name}"
         @csv = ['# ----------------------------------------',
                 'your_site.com',
                 'Top Content,',
@@ -179,12 +178,13 @@ describe Report do
                 '# ----------------------------------------',
                 '# Graph',
                 '# ----------------------------------------',
-                @period,
-                @name,
-                '"5,360"',
-                '433']
+                @column_names,
+                '20080828,"5,360"',
+                '20080829,575',
+                '# ----------------------------------------']
         graph = mock('graph')
-        Graph.should_receive(:new).with(@name, @period, [5360, 433], expected_start, expected_end).and_return graph
+
+        Graph.should_receive(:new).with(@name, [5360, 575], expected_start, expected_end).and_return graph
 
         report = Report.new(@csv.join("\n"))
         report.pageviews_graph.should == graph
@@ -193,18 +193,16 @@ describe Report do
 
       describe 'with source date format "Month Day, Year"' do
         it 'should create graph with data under "Graph"' do
-          @start = %Q|"July 5, 2008"|
-          @end = %Q|"August 4, 2008"|
-          @period = %Q|"July 5, 2008 - August 4, 2008"|
-          graph_correct Date.new(2008,7,5), Date.new(2008,8,4)
+          @start = %Q|"August 28, 2008"|
+          @end = %Q|"August 29, 2008"|
+          graph_correct Date.new(2008,8,28), Date.new(2008,8,29)
         end
       end
 
       describe "with source date format 'Day Month Year'" do
         it 'should create graph with data under "Graph"' do
-          @start = %Q|26 May 2008|
-          @end = %Q|31 May 2008|
-          @period = %Q|1 May 2008 - 31 May 2008|
+          @start = %Q|28 August 2008|
+          @end = %Q|29 August 2008|
           graph_correct Date.parse(@start), Date.parse(@end)
         end
       end
