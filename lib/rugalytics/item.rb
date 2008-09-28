@@ -13,10 +13,10 @@ module Rugalytics
         morph(attribute, value)
       end
 
-      if respond_to?(:url)
-        self.path = url
+      if respond_to?(:page)
+        self.path = page
         # todo: For drilldown report, URLs need to be cumulatively created e.g. /health/ -> http://theyworkforyou.co.nz/portfolios/health/
-        self.url = "http://#{base_url}#{url}"
+        self.url = "http://#{base_url}#{page}"
       end
     end
   end

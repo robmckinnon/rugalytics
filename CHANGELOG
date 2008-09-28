@@ -1,3 +1,4 @@
+v0.1.1. fixed bug due to change in google's graph csv
 
 v0.1.0. fixed bug due to change in google's graph csv; removed deprecated load_report method
 

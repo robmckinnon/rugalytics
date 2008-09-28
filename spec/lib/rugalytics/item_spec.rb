@@ -4,7 +4,7 @@ describe Rugalytics::Item, 'when creating' do
 
   before :all do
     @url = 'theyworkforyou.co.nz'
-    @attributes = 'URL,Page Views,Unique Page Views,Time on Page,Bounce Rate,% Exit,$ Index'
+    @attributes = 'Page,Page Views,Unique Page Views,Time on Page,Bounce Rate,% Exit,$ Index'
     @values = '/,189,157,54.94957983193277,0.4862385392189026,0.37037035822868347,0.0'
   end
 
