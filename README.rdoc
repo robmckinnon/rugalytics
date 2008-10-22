@@ -176,10 +176,10 @@ To use from Rails, make a config file rails_root/config/rugalytics.yml
 with the following contents:
 
  ---
- account: [account_name]
- profile: [profile_name]
- username: [user_name]
- password: [pass_w]
+ account: your_account_name
+ profile: your_profile_name
+ username: your_user_name
+ password: your_pass_w
 
 Remember to tell your source control system to ignore this file! If you're
 using git, this means adding config/rugalytics.yml to your .gitignore
