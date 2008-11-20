@@ -67,6 +67,7 @@ module Rugalytics
           index = index.next
         end
 
+        name = name.gsub('/','_per_').gsub('.','')
         graph = Graph.new name, points, start_date, end_date
         morph("#{name.sub(/page views/i,'pageviews')} graph", graph)
       end

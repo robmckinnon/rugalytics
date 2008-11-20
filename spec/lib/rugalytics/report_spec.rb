@@ -165,9 +165,9 @@ describe Report do
     end
 
     describe "when creating graph points from 'Graph'" do
-      def graph_correct expected_start, expected_end
+      def graph_correct expected_start, expected_end, column_name='Page Views', graph_name=:pageviews_graph
         @start_end_dates = "#{@start},#{@end}"
-        @name = %Q|Page Views|
+        @name = column_name
         @column_names = "Day,#{@name}"
         @csv = ['# ----------------------------------------',
                 'your_site.com',
@@ -184,11 +184,11 @@ describe Report do
                 '# ----------------------------------------']
         graph = mock('graph')
 
-        Graph.should_receive(:new).with(@name, [5360, 575], expected_start, expected_end).and_return graph
+        Graph.should_receive(:new).with(@name.sub('/','_per_').sub('.',''), [5360, 575], expected_start, expected_end).and_return graph
 
         report = Report.new(@csv.join("\n"))
-        report.pageviews_graph.should == graph
-        report.attribute_names.should == ['pageviews_graph']
+        report.send(graph_name).should == graph
+        report.attribute_names.should == [graph_name.to_s]
       end
 
       describe 'with source date format "Month Day, Year"' do
@@ -204,6 +204,22 @@ describe Report do
           @start = %Q|28 August 2008|
           @end = %Q|29 August 2008|
           graph_correct Date.parse(@start), Date.parse(@end)
+        end
+      end
+
+      describe "with forward slash in column name" do
+        it 'should create graph with forward slash replaced by _per_ in column name' do
+          @start = %Q|28 August 2008|
+          @end = %Q|29 August 2008|
+          graph_correct Date.parse(@start), Date.parse(@end), 'Pages/Visit', :pages_per_visit_graph
+        end
+      end
+
+      describe "with dot in column name" do
+        it 'should create graph with dot removed in column name' do
+          @start = %Q|28 August 2008|
+          @end = %Q|29 August 2008|
+          graph_correct Date.parse(@start), Date.parse(@end), 'Avg. Time on Site', :avg_time_on_site_graph
         end
       end
     end

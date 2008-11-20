@@ -3,7 +3,7 @@ module Rugalytics
 
     class << self
       def find_all(account_id)
-        doc = Hpricot::XML get("https://www.google.com:443/analytics/settings/home?scid=#{account_id}")
+        doc = Hpricot get("https://www.google.com:443/analytics/settings/home?scid=#{account_id}")
         (doc/'select[@id=profile] option').inject([]) do |profiles, option|
           profile_id = option['value'].to_i
           profiles << Profile.new(:account_id => account_id, :profile_id => profile_id, :name => option.inner_html) if profile_id > 0
@@ -25,6 +25,21 @@ module Rugalytics
       @account_id = attrs[:account_id]  if attrs.has_key?(:account_id)
       @name       = attrs[:name]        if attrs.has_key?(:name)
       @profile_id = attrs[:profile_id]  if attrs.has_key?(:profile_id)
+    end
+
+    def top_report_names
+      unless @report_names
+        html = Profile.get("https://www.google.com/analytics/reporting/?scid=#{profile_id}")
+        # reports = html.scan(/rpt=([A-Za-z]+)("|&)/)
+        reports = html.scan(/changeReport\(&(#39|quot);([a-z_]+)&(#39|quot);/)
+        non_reports = ['goal_intro_report', 'add_segment_report', 'custom_reports_overview_report', 'manage_emails_report', 'manage_segments_report']
+        names = reports.collect do |name|
+          name = name[1].sub(/^maps$/,'geo_map').sub(/^sources$/,'traffic_sources').sub(/^visitors$/,'visitors_overview')
+          "#{name}_report"
+        end
+        @report_names = names.uniq.sort - non_reports
+      end
+      @report_names
     end
 
     def method_missing symbol, *args
@@ -79,6 +94,11 @@ module Rugalytics
         :gdfmt   => 'nth_day',
         :view    => 0
       })
+      if options[:report] == 'GeoMap'
+        options.delete(:tab)
+        options.delete(:gdfmt)
+        options.delete(:rows)
+      end
       options[:from] = ensure_datetime_in_google_format(options[:from])
       options[:to]   = ensure_datetime_in_google_format(options[:to])
       options
@@ -123,9 +143,17 @@ module Rugalytics
     private
 
       def create_report(name, options={})
-        report = Rugalytics::Report.new get_report_csv(options.merge({:report=>name}))
-        puts report.attribute_names
-        report
+        options = options.merge({:report=>name})
+        csv = get_report_csv(options)
+        begin
+          report = Rugalytics::Report.new csv
+          puts report.attribute_names
+          report
+        rescue Exception => e
+          puts convert_options_to_uri_params(options).inspect
+          puts csv
+          raise e
+        end
       end
   end
 end
