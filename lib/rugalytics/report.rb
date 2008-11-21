@@ -44,8 +44,13 @@ module Rugalytics
       @base_url = "#{@base_url}#{names[1].chomp('/')}" if names.size > 1 && names[1][/^\/.+$/]
       @name = lines[2].chomp(',')
       dates = lines[3].include?('","') ? lines[3].split('","') : lines[3].split(',')
+
       @start_date = Rugalytics.i18n_date_parse(dates[0])
       @end_date = Rugalytics.i18n_date_parse(dates[1])
+    end
+
+    def date_from_point date_point
+      date_point[/^\d\d\d\d\d\d\d\d,/] || date_point[/^".+",/] || date_point[/^[^,]+,/]
     end
 
     def handle_graphs lines
@@ -61,7 +66,7 @@ module Rugalytics
         index = index.next
 
         points = []
-        while (date_point = lines[index]) && (date = date_point[/^\d\d\d\d\d\d\d\d,/])
+        while (date_point = lines[index]) && (date = date_from_point(date_point))
           point = date_point.sub(date,'')
           points << point.tr('",','').to_i
           index = index.next

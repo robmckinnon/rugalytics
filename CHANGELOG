@@ -1,3 +1,5 @@
+v0.1.3. fixed bug due to change in google's graph csv date labels
+
 v0.1.2. added profile.report_names method; handle '.' or '/' in graph column names without failing
 
 v0.1.1. fixed bug due to change in google's graph csv

@@ -167,6 +167,9 @@ describe Report do
     describe "when creating graph points from 'Graph'" do
       def graph_correct expected_start, expected_end, column_name='Page Views', graph_name=:pageviews_graph
         @start_end_dates = "#{@start},#{@end}"
+        @point_labels=['20080828', '20080829'] unless @point_labels
+        @label1 = @point_labels[0]
+        @label2 = @point_labels[1]
         @name = column_name
         @column_names = "Day,#{@name}"
         @csv = ['# ----------------------------------------',
@@ -179,8 +182,8 @@ describe Report do
                 '# Graph',
                 '# ----------------------------------------',
                 @column_names,
-                '20080828,"5,360"',
-                '20080829,575',
+                %Q|#{@label1},"5,360"|,
+                %Q|#{@label2},575|,
                 '# ----------------------------------------']
         graph = mock('graph')
 
@@ -192,34 +195,44 @@ describe Report do
       end
 
       describe 'with source date format "Month Day, Year"' do
-        it 'should create graph with data under "Graph"' do
+        before do
           @start = %Q|"August 28, 2008"|
           @end = %Q|"August 29, 2008"|
+        end
+        it 'should create graph with data under "Graph"' do
           graph_correct Date.new(2008,8,28), Date.new(2008,8,29)
+        end
+        describe 'with graph point date format "Month Day, Year"' do
+          it 'should create graph with data under "Graph"' do
+            @point_labels = [@start,@end]
+            graph_correct Date.new(2008,8,28), Date.new(2008,8,29)
+          end
         end
       end
 
       describe "with source date format 'Day Month Year'" do
-        it 'should create graph with data under "Graph"' do
+        before do
           @start = %Q|28 August 2008|
           @end = %Q|29 August 2008|
+        end
+        it 'should create graph with data under "Graph"' do
           graph_correct Date.parse(@start), Date.parse(@end)
         end
-      end
-
-      describe "with forward slash in column name" do
-        it 'should create graph with forward slash replaced by _per_ in column name' do
-          @start = %Q|28 August 2008|
-          @end = %Q|29 August 2008|
-          graph_correct Date.parse(@start), Date.parse(@end), 'Pages/Visit', :pages_per_visit_graph
+        describe 'with graph point date format "Day Month Year"' do
+          it 'should create graph with data under "Graph"' do
+            @point_labels = [@start, @end]
+            graph_correct Date.parse(@start), Date.parse(@end)
+          end
         end
-      end
-
-      describe "with dot in column name" do
-        it 'should create graph with dot removed in column name' do
-          @start = %Q|28 August 2008|
-          @end = %Q|29 August 2008|
-          graph_correct Date.parse(@start), Date.parse(@end), 'Avg. Time on Site', :avg_time_on_site_graph
+        describe "with forward slash in column name" do
+          it 'should create graph with forward slash replaced by _per_ in column name' do
+            graph_correct Date.parse(@start), Date.parse(@end), 'Pages/Visit', :pages_per_visit_graph
+          end
+        end
+        describe "with dot in column name" do
+          it 'should create graph with dot removed in column name' do
+            graph_correct Date.parse(@start), Date.parse(@end), 'Avg. Time on Site', :avg_time_on_site_graph
+          end
         end
       end
     end
