@@ -84,15 +84,40 @@ In the report, there is a +pageviews_graph+ containing the points:
  => [[Mon, 01 Jan 2007, 8200], [Tue, 02 Jan 2007, 8400]]
 
 
-== Load a Report
+== What Reports are There?
 
-The report name, e.g. 'Pageviews' or 'TrafficSources', is the rpt parameter from
-the Google Analytics URL for a CSV report export, e.g.:
+The report name comes from the Google Analytics URL for a CSV report export.
+The report name is the rpt parameter from the URL, e.g. 'Pageviews' or
+'TrafficSources':
 
+ https://www.google.com/analytics/reporting/export?fmt=2&...&&rpt=PageviewsReport&...
  https://www.google.com/analytics/reporting/export?fmt=2&...&&rpt=TrafficSourcesReport&...
 
-From a page on the Analytics website, you can find the CSV URL by clicking on
-the Export tab, and then mousing over the CSV option.
+If you are logged in to the Analytics website, you can find the CSV URL by
+clicking on the Export tab, and then mousing over the CSV option.
+
+To discover a list of report names, there's a method on profile:
+
+ profile.report_names
+ => ["ad_versions_report", "adwords_report", "all_sources_report",
+     "average_pageviews_report", "bounce_rate_report", "browsers_report",
+     "campaigns_report", "colors_report", "content_by_title_report",
+     "content_drilldown_report", "content_report", "dashboard_report",
+     "depth_of_visit_report", "direct_sources_report", "entrances_report",
+     "exits_report", "flash_report", "geo_map_report", "hostnames_report",
+     "java_report", "keyword_position_report", "keywords_report",
+     "languages_report", "length_of_visit_report", "loyalty_report",
+     "networks_report", "os_browsers_report", "pageviews_report",
+     "platforms_report", "recency_report", "referring_sources_report",
+     "resolutions_report", "search_engines_report", "speeds_report",
+     "time_on_site_report", "top_content_detail_keywords_report",
+     "top_content_detail_navigation_report", "top_content_detail_path_report",
+     "top_content_detail_sources_report", "top_content_report",
+     "traffic_sources_report", "unique_visitors_report",
+     "visitor_types_report", "visitors_overview_report", "visits_report"]
+
+
+== Load a Report
 
 Let's load the TrafficSources report:
 
@@ -136,7 +161,25 @@ Let's now grab 100 lines of the Networks report:
 
 == Report by URL
 
-You can get a content drilldown report:
+Entrance search keywords by URL:
+
+ report = profile.top_content_detail_keywords_report(:url=>'/projects/abc')
+ report.name
+ => "Entrance Keywords:,/projects/abc"
+
+ report.items.collect{|i| "#{i.keyword} (#{i.unique_pageviews})"}
+ => ["project abc (200)", "abc project (110)"]
+
+Pageviews by URL:
+
+ report = profile.top_content_detail_report(:url => "/projects/abc")
+ report.name
+ => "Content Detail:,/projects/abc"
+
+ report.pageviews_total
+ => 179
+
+You can get a content drilldown report, for pages under a certain URL path:
 
  report = profile.content_drilldown_report(:url => "/projects/abc/")
  report.name
@@ -147,15 +190,6 @@ You can get a content drilldown report:
           @percentage_exit="0.776536312849162", @time_on_page="165.75",
           @pageviews="179", @path="/reports/", @dollar_index="0.0",
           @url="http://your_site.com/projects/abc/reports/"
-
-Pageviews by URL:
-
- report = profile.top_content_detail_report(:url => "/projects/abc")
- report.name
- => "Content Detail:,/projects/abc"
-
- report.pageviews_total
- => 179
 
 Pageviews by page title:
 
