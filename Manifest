@@ -5,11 +5,13 @@ lib/rugalytics/graph.rb
 lib/rugalytics/item.rb
 lib/rugalytics/profile.rb
 lib/rugalytics/report.rb
+lib/rugalytics/server.rb
 lib/rugalytics.rb
 LICENSE
 Manifest
 README
 README.rdoc
+bin/rugalytics
 rugalytics.yml.example
 spec/fixtures/analytics_account_find_all.html
 spec/fixtures/analytics_profile_find_all.html

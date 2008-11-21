@@ -100,5 +100,6 @@ require File.dirname(__FILE__) + '/rugalytics/profile'
 require File.dirname(__FILE__) + '/rugalytics/report'
 require File.dirname(__FILE__) + '/rugalytics/item'
 require File.dirname(__FILE__) + '/rugalytics/graph'
+require File.dirname(__FILE__) + '/rugalytics/server'
 
 # Rugalytics.config_setup(RAILS_ROOT) if defined?(RAILS_ROOT) && RAILS_ROOT

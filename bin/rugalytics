@@ -1,0 +1,5 @@
+require 'rugalytics'
+
+puts 'rugalytics ' + Rugalytics::VERSION
+
+Rugalytics::Server.new
