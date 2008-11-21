@@ -45,7 +45,7 @@ module Rugalytics
 
     def reports
       profile = Rugalytics.default_profile
-      names = profile.top_report_names
+      names = profile.report_names
       puts names
       names.collect {|n| puts ''; puts n; profile.send(n.to_sym)}
     end
