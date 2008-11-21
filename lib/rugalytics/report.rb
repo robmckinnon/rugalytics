@@ -95,7 +95,24 @@ module Rugalytics
         morph(items_attribute, items)
 
         while (values_line = lines[index]) && values_line[/^# -/].nil? && values_line.strip.size > 0
-          values = FasterCSV.parse_line(values_line)
+          begin
+            values = FasterCSV.parse_line(values_line)
+          rescue Exception => e
+            # fix broken csv
+            values_line.gsub!(/,""/,',"\"')
+            values_line.gsub!(/"",/,'\"",')
+            values_line.gsub!(/^""/,'"\"')
+            values_line.gsub!(/""$/,'\""')
+            values_line.gsub!(/([^\\])""/,'\1\"')
+            values_line.gsub!(/\\"/,'""')
+            begin
+              values = FasterCSV.parse_line(values_line)
+            rescue Exception => e
+              values_line.gsub!(/\\"/,'')
+              values_line.gsub!(/"/,'')
+              values = FasterCSV.parse_line(values_line)
+            end
+          end
           items << Item.new(attributes, values, base_url)
           index = index.next
         end

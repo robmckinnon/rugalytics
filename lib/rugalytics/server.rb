@@ -20,6 +20,7 @@ module Rugalytics
       end
 
       @profile = Rugalytics.default_profile
+      @reports = {}
 
       server = HTTPServer.new :Port => 8888
 
@@ -27,9 +28,11 @@ module Rugalytics
 
       server.mount_proc("/top_content_detail_keywords") {|request, response|
         url = request.query['url']
-        report = @profile.top_content_detail_keywords_report(:url => url)
-        response.body = [url, report.name, report.items.to_yaml].join("\n")
-        response['Content-Type'] = "text/plain"
+        @reports[url] ||= @profile.top_content_detail_keywords_report(:url => url)
+        items = @reports[url].items
+        data = {:url =>url, :report_name=>@reports[url].name, :items=>items}
+        response.body = data.to_json
+        response['Content-Type'] = "application/json"
       }
 
       trap("INT"){ server.shutdown }
