@@ -47,7 +47,11 @@ If account name and profile name are the same:
 At present your language setting for your Google Analytics account
 must be set to English for Rugalytics to work.
 
- Google: Settings -> Language: choose UK English or US English
+ Google: Settings -> Language: choose UK English
+
+ OR
+
+ Google: Settings -> Language: choose US English
 
 
 == Get Profile Summary Statistics
