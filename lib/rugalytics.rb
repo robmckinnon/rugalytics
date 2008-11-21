@@ -43,6 +43,13 @@ module Rugalytics
       end
     end
 
+    def reports
+      profile = Rugalytics.default_profile
+      names = profile.top_report_names
+      puts names
+      names.collect {|n| puts ''; puts n; profile.send(n.to_sym)}
+    end
+
     def default_profile
       config_setup '.' unless config
       if config && config.account

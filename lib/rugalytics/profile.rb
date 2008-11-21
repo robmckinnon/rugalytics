@@ -27,17 +27,35 @@ module Rugalytics
       @profile_id = attrs[:profile_id]  if attrs.has_key?(:profile_id)
     end
 
-    def top_report_names
+    def report_names
       unless @report_names
         html = Profile.get("https://www.google.com/analytics/reporting/?scid=#{profile_id}")
         # reports = html.scan(/rpt=([A-Za-z]+)("|&)/)
         reports = html.scan(/changeReport\(&(#39|quot);([a-z_]+)&(#39|quot);/)
-        non_reports = ['goal_intro_report', 'add_segment_report', 'custom_reports_overview_report', 'manage_emails_report', 'manage_segments_report']
-        names = reports.collect do |name|
-          name = name[1].sub(/^maps$/,'geo_map').sub(/^sources$/,'traffic_sources').sub(/^visitors$/,'visitors_overview')
+
+        non_report_names = ['goal_intro', 'add_segment', 'customs_overview',
+          'manage_emails', 'manage_segments', 'user_defined', 'audio',
+          'custom_reports_overview', 'site_search_intro', 'tv']
+        names = reports.collect { |name| name[1] } - non_report_names
+        more_names = []
+
+        names.each do |name|
+          html = Profile.get("https://www.google.com/analytics/reporting/#{name}?id=#{profile_id}")
+          reports = html.scan(/changeReport\(&(#39|quot);([a-z_]+)&(#39|quot);/)
+          more_names += reports.collect { |name| name[1] }
+        end
+
+        names += more_names
+        names -= non_report_names
+        names = names.collect do |name|
+          name = name.sub(/^maps$/,'geo_map').sub(/^sources$/,'traffic_sources')
+          name = name.sub(/^visitors$/,'visitors_overview')
+          name = name.sub(/^content_detail_(.*)$/,'top_content_detail_\1')
+          name = name.sub(/^content_titles$/,'content_by_title')
           "#{name}_report"
         end
-        @report_names = names.uniq.sort - non_reports
+
+        @report_names = names.uniq.sort
       end
       @report_names
     end

@@ -50,12 +50,17 @@ describe Profile do
       report[9] = 'visitor_types'
       report[10] = 'languages'
       report[11] = 'networks'
-      report[12] = 'user_defined'
       report[13] = 'browsers'
       report[14] = 'platforms'
       report[15] = 'maps'
       report[16] = 'sources'
       report[17] = 'visitors'
+      report[18] = 'resolutions'
+      report[19] = 'java'
+      report[20] = 'flash'
+      report[21] = 'loyalty'
+      report[22] = 'recency'
+      report[23] = 'content'
       html = %Q|<html><head><title>Visitors Overview - Google Analytics</title></head>
 <body dir="ltr" class="report_body">
 <a href="#" onclick="return VisualizationModule.changeReport(&#39;add_segment&#39;);">Create a new advanced segment</a>
@@ -70,14 +75,14 @@ describe Profile do
 <a href="visitor_types?id=321&amp;pdr=20081020-20081119&amp;cmp=average&amp;view=1" onclick="return VisualizationModule.changeReport(&quot;#{report[9]}&quot;, &quot;view\x3d1&quot;);"> New Visits</a>
 <a href="#" onclick="VisualizationModule.changeReport(&quot;#{report[10]}&quot;)">languages</a>,
 <a href="#" onclick="VisualizationModule.changeReport(&quot;#{report[11]}&quot;)">network locations</a>,
-<a href="#" onclick="VisualizationModule.changeReport(&quot;#{report[12]}&quot;)">user defined</a>
+<a href="#" onclick="VisualizationModule.changeReport(&quot;user_defined&quot;)">user defined</a>
 <a href="#" onclick="VisualizationModule.changeReport(&quot;#{report[13]}&quot;, &quot;view=1&quot;)">browsers</a>,
 <a href="#" onclick="VisualizationModule.changeReport(&quot;#{report[14]}&quot;, &quot;view=1&quot;)">operating systems</a>,
 <a href="#" onclick="VisualizationModule.changeReport(&quot;#{report[0]}&quot;, &quot;view=1&quot;)">browser and operating systems</a>,
 <a href="#" onclick="VisualizationModule.changeReport(&quot;#{report[1]}&quot;, &quot;view=1&quot;)">screen colors</a>,
-<a href="#" onclick="VisualizationModule.changeReport(&quot;resolutions&quot;, &quot;view=1&quot;)">screen resolutions</a>,
-<a href="#" onclick="VisualizationModule.changeReport(&quot;java&quot;, &quot;view=1&quot;, &quot;view=1&quot;)">java support</a>,
-<a href="#" onclick="VisualizationModule.changeReport(&quot;flash&quot;, &quot;view=1&quot;, &quot;view=1&quot;)">Flash</a>
+<a href="#" onclick="VisualizationModule.changeReport(&quot;#{report[18]}&quot;, &quot;view=1&quot;)">screen resolutions</a>,
+<a href="#" onclick="VisualizationModule.changeReport(&quot;#{report[19]}&quot;, &quot;view=1&quot;, &quot;view=1&quot;)">java support</a>,
+<a href="#" onclick="VisualizationModule.changeReport(&quot;#{report[20]}&quot;, &quot;view=1&quot;, &quot;view=1&quot;)">Flash</a>
 <a href="#" onclick="VisualizationModule.changeReport(&quot;#{report[15]}&quot;)">Map Overlay</a>
 <a href="browsers?id=321&amp;pdr=20081020-20081119&amp;cmp=average&amp;view=1" onclick="return VisualizationModule.changeReport(&quot;browsers&quot;, &quot;view\x3d1&quot;);"> view full report</a>
 <a href="speeds?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return Vis            <a href="dashboard?dashboard=1&amp;id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;dashboard&#39;)" class="" id="dashboard_nav_item">
@@ -93,31 +98,23 @@ describe Profile do
 <a href="average_pageviews?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;average_pageviews&#39;)" class="">
 <a href="time_on_site?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;time_on_site&#39;)" class="">
 <a href="bounce_rate?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;bounce_rate&#39;)" class="">
-<a href="loyalty?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;loyalty&#39;)" class="">
-<a href="recency?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;recency&#39;)" class="">
-<a href="length_of_visit?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;length_of_visit&#39;)" class="">
-<a href="depth_of_visit?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;depth_of_visit&#39;)" class="">
-<a href="browsers?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;browsers&#39;, &#39;view=1&#39;)" class="">
-<a href="platforms?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;platforms&#39;, &#39;view=1&#39;)" class="">
-<a href="os_browsers?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;os_browsers&#39;, &#39;view=1&#39;)" class="">
-<a href="colors?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;colors&#39;, &#39;view=1&#39;)" class="">
-<a href="resolutions?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;resolutions&#39;, &#39;view=1&#39;)" class="">
-<a href="flash?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;flash&#39;, &#39;view=1&#39;)" class="">
-<a href="java?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;java&#39;, &#39;view=1&#39;)" class="">
-<a href="networks?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;networks&#39;)" class="">
-<a href="hostnames?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;hostnames&#39;)" class="">
-<a href="speeds?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;speeds&#39;)" class="">
+<a href="loyalty?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;#{report[21]}&#39;)" class="">
+<a href="recency?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;#{report[22]}&#39;)" class="">
 <a href="user_defined?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;user_defined&#39;)" class="">
 <a href="sources?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;#{report[16]}&#39;)" class="" id="traffic_sources_nav_item">
-<a href="content?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;content&#39;)" class="" id="content_nav_item">
+<a href="content?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;#{report[23]}&#39;)" class="" id="content_nav_item">
 <a href="goal_intro?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;goal_intro&#39;)" class="" id="goals_nav_item">
 <a href="custom_reports_overview?id=321&amp;pdr=20081020-20081119&amp;cmp=average" onclick="return VisualizationModule.changeReport(&#39;custom_reports_overview&#39;)" class="custom_reporting_section" id="custom_report_nav_item">
 <a href="#" onclick="return VisualizationModule.changeReport(&quot;manage_segments&quot;);">Advanced Segments</a>&nbsp;<b class="beta_label small">Beta</b>
 <a href="#" onclick="return VisualizationModule.changeReport(&quot;manage_emails&quot;);">Email</a>
 </body></html>|
       Profile.should_receive(:get).with("https://www.google.com/analytics/reporting/?scid=#{@profile.profile_id}").and_return html
-      reports = @profile.top_report_names
-      puts reports
+
+      report.values.each do |name|
+        Profile.stub!(:get).with("https://www.google.com/analytics/reporting/#{name}?id=#{@profile.profile_id}").and_return ''
+      end
+
+      reports = @profile.report_names
       report.each do |k,name|
         report_name = "#{name.sub(/^maps$/,'geo_map').sub(/^sources$/,'traffic_sources').sub(/^visitors$/,'visitors_overview')}_report"
         reports.should include(report_name)
