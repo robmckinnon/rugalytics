@@ -1,4 +1,4 @@
-v0.1.2. handle dots or forward slashes in graph column names
+v0.1.2. added profile.report_names method; handle '.' or '/' in graph column names
 
 v0.1.1. fixed bug due to change in google's graph csv
 

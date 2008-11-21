@@ -89,7 +89,7 @@ In the report, there is a +pageviews_graph+ containing the points:
 The report name, e.g. 'Pageviews' or 'TrafficSources', is the rpt parameter from
 the Google Analytics URL for a CSV report export, e.g.:
 
- https://www.google.com/analytics/reporting/export?fmt=2&...&&rpt=TrafficSourcesReport&...
+ https://www.google.com/analytics/reporting/export?fmt=2&...&&rpt=*TrafficSourcesReport*&...
 
 From a page on the Analytics website, you can find the CSV URL by clicking on
 the Export tab, and then mousing over the CSV option.
