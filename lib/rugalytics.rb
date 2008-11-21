@@ -12,7 +12,7 @@ require 'fastercsv'
 
 # See README for usage documentation.
 module Rugalytics
-  VERSION = "0.1.5"
+  VERSION = "0.1.6"
 
   FORMAT_PDF = '0' unless defined? FORMAT_PDF
   FORMAT_XML = '1' unless defined? FORMAT_XML

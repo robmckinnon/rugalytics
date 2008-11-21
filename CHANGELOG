@@ -1,3 +1,5 @@
+v0.1.6. better fix for double quotes in csv causing fastercsv to fail
+
 v0.1.5. fixes for bad quotes in csv causing fastercsv to fail
 
 v0.1.4. now use fastercsv to parse table row data
