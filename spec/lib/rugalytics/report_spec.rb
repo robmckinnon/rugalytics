@@ -98,9 +98,9 @@ describe Report do
     describe "when creating items from 'Table'" do
       before :all do
         @base_url = %Q|your_site.com|
-        @attributes = %Q|URL,Page Views,Unique Page Views,Time on Page,Bounce Rate,% Exit,$ Index|
-        @values1 = %Q|/,189,157,54.94957983193277,0.4862385392189026,0.37037035822868347,0.0|
-        @values2 = %Q|/bills,60,38,54.17307692307692,0.0,0.13333334028720856,0.0|
+        @attributes = %Q|URL,Page Views,Unique Page Views,Time on Page,Bounce Rate,% Exit,$ Index, Keyword|
+        @values1 = %Q|/,189,157,54.94957983193277,0.4862385392189026,0.37037035822868347,0.0,"ABC, Project"|
+        @values2 = %Q|/bills,60,38,54.17307692307692,0.0,0.13333334028720856,0.0,shoes|
         @csv = ['# ----------------------------------------',
                 @base_url,
                 'Top Content,',
@@ -118,8 +118,10 @@ describe Report do
       it 'should create item for each data row in "Table"' do
         item1 = mock('item1')
         item2 = mock('item2')
-        Item.should_receive(:new).with(@attributes.split(','), @values1.split(','), @base_url).and_return item1
-        Item.should_receive(:new).with(@attributes.split(','), @values2.split(','), @base_url).and_return item2
+        array1 = ['/','189','157','54.94957983193277','0.4862385392189026','0.37037035822868347','0.0',"ABC, Project"]
+        array2 = ['/bills','60','38','54.17307692307692','0.0','0.13333334028720856','0.0','shoes']
+        Item.should_receive(:new).with(@attributes.split(','), array1, @base_url).and_return item1
+        Item.should_receive(:new).with(@attributes.split(','), array2, @base_url).and_return item2
 
         report = Report.new(@csv.join("\n"))
         report.items.should == [item1, item2]

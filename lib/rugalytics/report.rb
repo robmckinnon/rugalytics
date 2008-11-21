@@ -94,8 +94,9 @@ module Rugalytics
         items_attribute = (type && type.size > 0) ? "#{type.gsub(/([a-z])([A-Z])/, '\1_\2').downcase}_items" : 'items'
         morph(items_attribute, items)
 
-        while (values = lines[index]) && values[/^# -/].nil? && values.strip.size > 0
-          items << Item.new(attributes, values.split(','), base_url)
+        while (values_line = lines[index]) && values_line[/^# -/].nil? && values_line.strip.size > 0
+          values = FasterCSV.parse_line(values_line)
+          items << Item.new(attributes, values, base_url)
           index = index.next
         end
       end

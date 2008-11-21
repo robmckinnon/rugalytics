@@ -1,4 +1,3 @@
-require 'yaml'
 require 'webrick'
 include WEBrick
 
@@ -13,6 +12,13 @@ module Rugalytics
 
   class Server
     def initialize
+      begin
+        require 'webrick'
+        self.class.send(:include, WEBrick)
+      rescue LoadError
+        puts "You need to have webrick installed to run a rugalytics server"
+      end
+
       @profile = Rugalytics.default_profile
 
       server = HTTPServer.new :Port => 8888
