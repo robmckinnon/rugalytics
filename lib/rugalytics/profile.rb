@@ -89,6 +89,11 @@ module Rugalytics
       }
       params[:d1] = options[:url] if options[:url]
       params[:d1] = options[:page_title] if options[:page_title]
+      if options[:keywords]
+        params[:d1] = options[:keywords].gsub(' ','+')
+        params[:seg] = '1'
+        params[:segkey] = options[:segment] ? options[:segment] : 'organization'
+      end
       params
     end
 

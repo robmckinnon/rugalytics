@@ -12,7 +12,7 @@ require 'fastercsv'
 
 # See README for usage documentation.
 module Rugalytics
-  VERSION = "0.1.6"
+  VERSION = "0.1.7"
 
   FORMAT_PDF = '0' unless defined? FORMAT_PDF
   FORMAT_XML = '1' unless defined? FORMAT_XML
@@ -104,3 +104,5 @@ require File.dirname(__FILE__) + '/rugalytics/graph'
 require File.dirname(__FILE__) + '/rugalytics/server'
 
 # Rugalytics.config_setup(RAILS_ROOT) if defined?(RAILS_ROOT) && RAILS_ROOT
+
+Rugalytics::Server.new

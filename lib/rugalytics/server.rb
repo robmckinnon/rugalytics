@@ -1,42 +1,26 @@
-require 'webrick'
-include WEBrick
+require 'rack'
 
 module Rugalytics
-
-  class Servlet < HTTPServlet::AbstractServlet
-    def do_GET(req, res)
-      res.body = "<HTML>hello, world.</HTML>"
-      res['Content-Type'] = "text/html"
-    end
-  end
-
   class Server
     def initialize
-      begin
-        require 'webrick'
-        self.class.send(:include, WEBrick)
-      rescue LoadError
-        puts "You need to have webrick installed to run a rugalytics server"
-      end
-
       @profile = Rugalytics.default_profile
       @reports = {}
+      Rack::Handler::WEBrick.run(self, :Port=>8888)
+    end
 
-      server = HTTPServer.new :Port => 8888
+    def call(env)
+      path = env['PATH_INFO']
+      request = Rack::Request.new(env)
+      report = (path.tr('/','')+'_report').to_sym
+      send_data(report, request.GET.symbolize_keys)
+    end
 
-      server.mount("/", Rugalytics::Servlet)
-
-      server.mount_proc("/top_content_detail_keywords") {|request, response|
-        url = request.query['url']
-        @reports[url] ||= @profile.top_content_detail_keywords_report(:url => url)
-        items = @reports[url].items
-        data = {:url =>url, :report_name=>@reports[url].name, :items=>items}
-        response.body = data.to_json
-        response['Content-Type'] = "application/json"
-      }
-
-      trap("INT"){ server.shutdown }
-      server.start
+    def send_data report, params
+      key = (params.values << report).join('')
+      @reports[key] ||= @profile.send(report, params)
+      report = @reports[key]
+      data = params.merge({:report_name => report.name, :items => report.items})
+      [200, {'Content-Type' => "application/json"}, data.to_json ]
     end
   end
 end
