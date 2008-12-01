@@ -14,8 +14,12 @@ module Rugalytics
       handle_tables lines
     end
 
+    def attributes
+      morph_attributes.delete_if {|k,v| v.nil?}.stringify_keys
+    end
+
     def attribute_names
-      Report.morph_methods.select {|m| m[/[a-z]$/]}.select {|m| send(m.to_sym)}
+      attributes.keys
     end
 
     def method_missing symbol, *args

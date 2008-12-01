@@ -105,4 +105,4 @@ require File.dirname(__FILE__) + '/rugalytics/server'
 
 # Rugalytics.config_setup(RAILS_ROOT) if defined?(RAILS_ROOT) && RAILS_ROOT
 
-Rugalytics::Server.new
+# Rugalytics::Server.new

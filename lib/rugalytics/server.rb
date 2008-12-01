@@ -9,18 +9,26 @@ module Rugalytics
     end
 
     def call(env)
-      path = env['PATH_INFO']
+      path = env['PATH_INFO'].tr('/','')
       request = Rack::Request.new(env)
-      report = (path.tr('/','')+'_report').to_sym
-      send_data(report, request.GET.symbolize_keys)
+      report_name = (path + '_report').to_sym
+      send_data(report_name, request.GET.symbolize_keys)
     end
 
-    def send_data report, params
-      key = (params.values << report).join('')
-      @reports[key] ||= @profile.send(report, params)
+    def send_data report_name, params
+      key = (params.values << report_name).join('')
+      @reports[key] ||= @profile.send(report_name, params)
       report = @reports[key]
-      data = params.merge({:report_name => report.name, :items => report.items})
-      [200, {'Content-Type' => "application/json"}, data.to_json ]
+      json = report.attributes.to_json
+      json = add_in_front params, json
+      json = add_in_front({:report_name => report.name}, json)
+
+      [200, {'Content-Type' => "application/json"}, json ]
     end
+
+    private
+      def add_in_front hash, json
+        json.sub('{', hash.to_json.chomp("}") + ', ' )
+      end
   end
 end
