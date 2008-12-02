@@ -6,6 +6,7 @@ lib/rugalytics/item.rb
 lib/rugalytics/profile.rb
 lib/rugalytics/report.rb
 lib/rugalytics/server.rb
+lib/rugalytics/rugrat.user.js
 lib/rugalytics.rb
 LICENSE
 Manifest

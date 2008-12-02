@@ -94,6 +94,9 @@ module Rugalytics
         params[:seg] = '1'
         params[:segkey] = options[:segment] ? options[:segment] : 'organization'
       end
+      if options[:value]
+        params[:gval] = options[:value]
+      end
       params
     end
 

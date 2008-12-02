@@ -234,6 +234,41 @@ automatically, e.g.:
  top_items_over_week = report.items.sort_by{|i| i.unique_pageviews.to_i}.reverse
 
 
+==Rugalytics on Rugrat - a Greasemonkey script for Firefox
+
+TO INSTALL:
+
+Create a rugalytics.yml config file containing:
+
+ ---
+ account: your_account_name
+ profile: your_profile_name
+ username: your_user_name
+ password: your_pass_w
+
+
+Run rugalytics executable on console in same directory as rugalytics.yml:
+
+ > rugalytics
+
+
+Add Greasemonkey to Firefox: https://addons.mozilla.org/firefox/748/
+
+Go to: http://localhost:8888/
+
+Add rugrat user script: http://localhost:8888/rugrat.user.js
+
+Configure site for rugrat to run on:
+
+ Tools -> Greasemonkey -> Manage User Scripts
+ -> select rugrat -> press "Add"
+ -> add your site, e.g. http://your_site.com/*
+ -> press "Close"
+
+Browse your site!
+
+
+
 ==Acknowledgements
 
 Rugalytics started life as a fork of jnunemaker's Statwhore. As the code and
