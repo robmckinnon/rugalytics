@@ -88,7 +88,7 @@ In the report, there is a +pageviews_graph+ containing the points:
  => [[Mon, 01 Jan 2007, 8200], [Tue, 02 Jan 2007, 8400]]
 
 
-== What Reports are There?
+== Lots of Reports!
 
 The report name comes from the Google Analytics URL for a CSV report export.
 The report name is the rpt parameter from the URL, e.g. 'Pageviews' or
@@ -252,15 +252,18 @@ Run rugalytics executable on console in same directory as rugalytics.yml:
  > rugalytics
 
 
-Add Greasemonkey to Firefox: https://addons.mozilla.org/firefox/748/
+Add Greasemonkey to Firefox:
+ https://addons.mozilla.org/firefox/748/
 
-Go to: http://localhost:8888/
+Go to:
+ http://localhost:8888/
 
-Add rugrat user script: http://localhost:8888/rugrat.user.js
+Add rugrat user script:
+ http://localhost:8888/rugrat.user.js
 
-Configure site for rugrat to run on:
+Configure website for rugrat to run over:
 
- Tools -> Greasemonkey -> Manage User Scripts
+ Firefox -> Tools -> Greasemonkey -> Manage User Scripts
  -> select rugrat -> press "Add"
  -> add your site, e.g. http://your_site.com/*
  -> press "Close"

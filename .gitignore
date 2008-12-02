@@ -10,3 +10,4 @@ rugalytics.yml
 coverage
 spec/rcov.opts
 spec/rcov_spec.opts
+lib/rugalytics/ahole.user.js
