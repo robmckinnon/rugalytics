@@ -49,8 +49,8 @@ module Rugalytics
         :cmp  => options[:compute],
         :fmt  => options[:format],
         :view => options[:view],
-        :tab  => options[:tab],
-        :trows=> options[:rows],
+        #:tab  => options[:tab],
+        #:trows=> options[:rows],
         :gdfmt=> options[:gdfmt],
         :id   => profile_id
       }
