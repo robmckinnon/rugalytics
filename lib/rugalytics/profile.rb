@@ -51,7 +51,7 @@ module Rugalytics
         :view => options[:view],
         :tab  => options[:tab],
         :trows=> options[:rows],
-        :tst => options[:tst],
+        :tst => options[:page],
         :gdfmt=> options[:gdfmt],
         :id   => profile_id
       }
@@ -76,7 +76,7 @@ module Rugalytics
         :tab     => 0,
         :format  => FORMAT_CSV,
         :rows    => 50,
-        :tst     => 0,
+        :page     => 0,
         :compute => 'average',
         :gdfmt   => 'nth_day',
         :view    => 0
