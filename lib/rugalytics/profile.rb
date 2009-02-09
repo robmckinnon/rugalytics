@@ -72,7 +72,7 @@ module Rugalytics
     def get_report_csv(options={})
       options = set_default_options(options)
       params = convert_options_to_uri_params(options)
-      self.class.get("https://google.com/analytics/reporting/export", :query_hash => params)
+      self.class.get("https://www.google.com/analytics/reporting/export", :query_hash => params)
     end
 
     def convert_options_to_uri_params(options)
