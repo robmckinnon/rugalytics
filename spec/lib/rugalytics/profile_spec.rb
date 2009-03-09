@@ -204,6 +204,7 @@ describe Profile do
     it_should_default :tab, '0'
     it_should_default :format, 'Rugalytics::FORMAT_CSV'
     it_should_default :rows, '50'
+    it_should_default :offset, '0'
     it_should_default :compute, '"average"'
     it_should_default :gdfmt, '"nth_day"'
     it_should_default :view, '0'
@@ -240,6 +241,7 @@ describe Profile do
     it_should_convert :format,  :fmt
     it_should_convert :view,    :view
     it_should_convert :rows,    :trows
+    it_should_convert :offset,  :tst
     it_should_convert :gdfmt,   :gdfmt
     it_should_convert :url,     :d1
     it_should_convert :page_title,:d1
