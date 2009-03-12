@@ -9,7 +9,12 @@ require 'activesupport'
 require 'google/base'
 require 'morph'
 require 'yaml'
-require 'fastercsv'
+
+if RUBY_VERSION < "1.9"
+  require 'fastercsv'
+else
+  require 'csv'
+end
 
 # See README for usage documentation.
 module Rugalytics
