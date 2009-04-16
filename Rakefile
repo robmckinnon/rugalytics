@@ -10,7 +10,7 @@ begin
     m.rubyforge_name = "rugalytics"
     m.rdoc_options << '--inline-source'
     m.rdoc_pattern = ["README", "CHANGELOG", "LICENSE"]
-    m.dependencies = ["hpricot >=0.6", "activesupport >=2.0.2", "googlebase >=0.2.0", "morph >=0.2.0", "fastercsv >=1.4.0", "rack >=0.4.0"]
+    m.dependencies = ["hpricot >=0.6", "activesupport >=2.0.2", "googlebase >=0.2.0", "morph >=0.2.7", "fastercsv >=1.4.0", "rack >=0.4.0"]
     m.executable_pattern = 'bin/rugalytics'
   end
 

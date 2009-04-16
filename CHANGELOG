@@ -1,3 +1,5 @@
+v0.2.0. require Morph v0.2.7
+
 v0.1.9. changes for Ruby 1.9 from leethal; danwrong added offset option to reports to enable paging
 
 v0.1.8. fixed reported bug due to missing 'www' in export url
