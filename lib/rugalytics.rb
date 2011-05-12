@@ -7,9 +7,15 @@ require 'rubygems'
 require 'hpricot'
 
 begin
-  require 'active_support' # new gem name
+  # require 'active_support' # new gem name
+  require 'active_support/core_ext/time'
+  require 'active_support/core_ext/date'
+  require 'active_support/core_ext/enumerable'
+  require 'active_support/core_ext/hash'
+  require 'active_support/core_ext/kernel'
+  require 'active_support/deprecation'
 rescue Exception => e
-  puts e.to_s
+  puts "exception requiring active_support: " + e.to_s
   require 'activesupport' # fallback to old gem name
 end
 
@@ -25,7 +31,7 @@ end
 
 # See README for usage documentation.
 module Rugalytics
-  VERSION = "0.2.0"
+  VERSION = "0.2.1" unless defined? Rugalytics::VERSION
 
   FORMAT_PDF = '0' unless defined? FORMAT_PDF
   FORMAT_XML = '1' unless defined? FORMAT_XML

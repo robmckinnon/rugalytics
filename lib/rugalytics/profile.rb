@@ -102,7 +102,12 @@ module Rugalytics
     end
 
     def a_month_ago
-      Time.now.utc.last_month
+      now = Time.now.utc
+      if now.respond_to?(:prev_month)
+        now.prev_month
+      else
+        now.last_month
+      end
     end
 
     def today
