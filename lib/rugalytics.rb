@@ -5,7 +5,14 @@ require 'uri'
 require 'ostruct'
 require 'rubygems'
 require 'hpricot'
-require 'activesupport'
+
+begin
+  require 'active_support' # new gem name
+rescue Exception => e
+  puts e.to_s
+  require 'activesupport' # fallback to old gem name
+end
+
 require 'google/base'
 require 'morph'
 require 'yaml'
