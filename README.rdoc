@@ -1,6 +1,13 @@
+= The Rugalytics gem no longer works due to changes by Google
+
+For analytics access, check out garb instead:
+https://github.com/vigetlabs/garb
+
+= Old Docs Below
+
 Rugalytics is a Ruby API for accessing your Google Analytics Data.
 
-= Warning - API under development
+= Warning: API under development
 
 The Rugalytics API is in early development so it may change slightly over time.
 It should be in working order, so please give it a test spin! Sometimes
